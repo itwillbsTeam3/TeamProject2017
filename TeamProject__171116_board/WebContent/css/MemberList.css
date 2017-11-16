@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+	margin: 65px auto;
+	width: 1500px;
+}
+/* 전체 */
+.body h1{
+	text-align: center;
+	font-size: 27px;
+	margin-bottom: 20px;
+}
+/* 회원조회 */
+.table{
+text-align: center;
+border-collapse: collapse;
+}
+/* 테이블 */
+#pro{
+	width: 50px;
+}
+#id{
+	width: 100px;
+}
+#pass{
+	width: 100px;
+}
+#name{
+	width: 50px;
+}
+#reg_date{
+	width: 100px;
+}
+#age{
+	width: 50px;
+}
+#gender{
+	width: 100px;
+}
+#email{
+	width: 100px;
+}
+#zip{
+	width: 100px;
+}
+#add{
+	width: 150px;
+}
+#add2{
+	width: 150px;
+}
+#phone{
+	width: 100px;
+}
+#mobile{
+	width: 100px;
+}
+#info{
+	width: 100px;
+}
+#delete{
+	width: 50px;
+}
+/* 각각 width */
+

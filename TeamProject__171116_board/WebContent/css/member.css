@@ -1,0 +1,13 @@
+.form_col{
+	width : 120px;
+}
+.form_row{
+	height : 30px;
+}
+.form_table input{
+	border : 0;
+	border-bottom : 1px solid #DBDBDB;
+	outline-width:0;
+	line-height: 20px;
+	font-size : 16px; 
+}

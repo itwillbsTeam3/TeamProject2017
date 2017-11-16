@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+	margin: 65px auto;
+	width: 600px;
+}
+/* 글 */
+.body>h1{
+	text-align: center;
+}
+/* 회원탈퇴 */
+.form_table{
+	margin: auto;
+}
+/* 테이블 */
+.form_col{
+	text-align: left;
+	width: 150px;
+}
+/* 아이디비밀번호 */
+
+#login_btn{
+	margin-left: 95px;
+}
+/* btn div */
+.btn{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 20px 5px 5px 20px;
+	height: 40px;
+	font-size: 1.2em;
+}
+/* 아래 button 공통 */
+.btn_sub{
+	background-color: #FF5A5F;
+}

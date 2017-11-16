@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+.starRating,
+.starRating span{ 
+	display:inline-block; height:14px; height:14px; 
+background:transparent url(icoFiveStar.gif) no-repeat; overflow:hidden;}
+
+.starRating{ width:79px; vertical-align:middle;}
+.starRating span{ font-size:0; line-height:0; vertical-align:top; 
+text-indent:-100px; *text-indent:0; background-position:0 -14px;}

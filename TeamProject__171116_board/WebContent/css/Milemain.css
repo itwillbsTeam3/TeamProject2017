@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+
+.body{
+	width:500px;
+	margin-top: 150px;
+} 
+/* 마일리지 충전 전체영역 */
+
+.body h1{
+
+	margin: auto;
+	text-align : center;
+}
+/* 마일리지 충전 */
+.form_table{
+	margin: auto;	
+}
+/* 충전금액 table */
+.form_table th, td{
+	width: 100px;
+}
+/* 충전금액 +선택 */
+.form_table th{
+	text-align: left;
+}
+/* 충전금액 */
+.form_table td{
+	text-align: right;
+}
+/* 선택 */
+#login_btn{
+	margin-top:20px;
+	width: 441px;
+	
+}
+/* btn div*/
+
+.btn{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 80px;
+	cursor: pointer;
+	margin: 5px 15px 5px 20px;
+	height: 40px;
+	font-size: 1em;
+}
+/* 아래 button 공통 */
+.btn_submit{
+	background-color: #FF5A5F;
+	margin-left: 150px;
+}
+/* 회원가입버튼 */

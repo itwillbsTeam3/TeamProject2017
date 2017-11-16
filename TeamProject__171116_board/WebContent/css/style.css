@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Container */
+.container {
+
+}
+
+.container_row {
+  text-align: center;
+}
+
+
+/* Slider */
+.slider {
+  user-select: none;
+
+  display: inline-block;
+  position: relative;
+}
+
+.slider_first {
+width : 370px; 
+ 
+}
+
+.slider_second {
+  width : 370px;
+}
+
+.slider_viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider_list {
+
+}
+
+.slider_item {
+  float: left;
+}
+
+.slider_item img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 450px;
+  cursor : pointer;
+}
+
+.slider_nav.is-disabled {
+  display: none;
+}
+
+.slider_control-nav {
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.slider_control-nav-item {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.slider_control-nav-item:hover {
+  opacity: 0.3;
+}
+
+.slider_control-nav-item.is-active {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.slider_arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  width: 26px;
+  height: 49px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.slider_arrow.is-disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.slider_arrow:hover {
+  opacity: 0.5;
+}
+
+.slider_arrow__right {
+  right: 20px;
+  background: url(https://raw.githubusercontent.com/DevTM/simple-slider/master/images/arrow_right.png) no-repeat 0 0;
+}
+
+.slider_arrow__left {
+  left: 20px;
+  background: url(https://raw.githubusercontent.com/DevTM/simple-slider/master/images/arrow_left.png) no-repeat 0 0;
+}
+
+.slider__fullwidth .slider_viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(https://raw.githubusercontent.com/DevTM/simple-slider/master/images/dot.png) repeat 0 0;
+}
+
+.slider__carousel {
+  overflow: hidden;
+}
+
+.slider__carousel::before,
+.slider__carousel::after {
+  content: "";
+  width: 150px;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  z-index: 200;
+}
+
+.slider__carousel::before {
+  left: -5px;
+  background: -webkit-linear-gradient(left, #fff 10%, transparent);
+  background: linear-gradient(to right, #fff 10%, transparent);
+}
+
+.slider__carousel::after {
+  right: -5px;
+  background: -webkit-linear-gradient(right, #fff 10%, transparent);
+  background: linear-gradient(to left, #fff 10%, transparent);
+}
+
+.slider__carousel .slider_viewport {
+  overflow: visible;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.slider__carousel .slider_arrow__left {
+  left: 70px;
+}
+
+.slider__carousel .slider_arrow__right {
+  right: 70px;
+}
+
+.is-animating {
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}

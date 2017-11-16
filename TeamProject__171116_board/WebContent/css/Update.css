@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+	margin: 65px auto;
+	width: 650px;
+	line-height: 2em;
+}
+/* 글 */
+.form_table th{
+	text-align: left;
+	width: 170px;
+}
+/* 목록 */
+.form_table .line{
+	border-bottom : 1px solid #DBDBDB;
+	outline-width:0;
+	line-height: 20px;
+	font-size : 16px; 
+}
+/* 줄긋기 */
+.dup{
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	width: 120px;
+	cursor: pointer;
+	margin: 5px;
+	height: 28px;
+	padding:3px;
+
+}
+/* 번호 우편번호 찾기 파일선택 */
+
+.fileBox .fileName {
+	display:inline-block;
+	width:190px;
+	height:30px;
+	padding-left:10px;
+	margin-right:5px;
+	line-height:30px;
+	border:1px solid #aaa;
+	vertical-align:middle
+}
+
+.fileBox .btn_file {
+display: inline-block;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	width: 95px;
+	cursor: pointer;
+	margin: 5px;
+	height: 28px;
+	padding:3px;
+	background-color: #DBDBDB;
+}
+.filebox label {
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	width: 120px;
+	cursor: pointer;
+	margin: 5px;
+	height: 32px;
+	background-color: #DBDBDB;
+	font-size: 0.9em;
+	line-height: 30px;
+}
+/* btn named upload */
+
+.fileBox input[type="file"] {
+	position:absolute;
+	width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	border:0
+}
+/* file 기존button hidden*/
+.upload-thumb{
+	width:150px;
+	height: 150px;
+	border-radius:50%;
+}
+/* 프로필 img size */
+.btn{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 5px 5px 5px 20px;
+	height: 40px;
+	font-size: 1.2em;
+}
+/* 아래 button 공통 */
+
+.filebox .upload-name {
+    padding: .5em .75em;
+    background-color: #fff;
+    border: 1px solid #a9a9a9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #757575;
+}
+/* 파일 이름 적히는 text */
+.btn_sub{
+	background-color: #FF5A5F;
+	margin-left: 205px;
+}
+/* 회원가입버튼 */

@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+	margin: 65px auto;
+	width: 620px;
+	line-height: 2;
+}
+/* 글 */
+.body>h1{
+	text-align: center;
+}
+/* 회원가입 */
+.form_table{
+	width: 600px;
+}
+/* table 넓이 */
+
+.table_text{
+	padding-left: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+/* 필수사항,선택사항 */
+.form_col{
+	width:150px;
+	padding-left: 20px;
+}
+/* 입력사항 */
+.width_pass{
+	width:430px;
+}
+.form_table textarea{
+	width: 402px;
+}
+/* textarea */
+.form_col_radio{
+	padding-left:0px;
+}
+
+/* 성별 여자 radio */
+.form_col input {
+    height: 15px;
+    padding-top: 50%;
+    margin:0 10px;
+}
+/* radio */
+.dup{
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	width: 120px;
+	cursor: pointer;
+	margin: 5px;
+	height: 32px;
+	padding:3px;
+	background-color: #DBDBDB;
+}
+/* 번호 우편번호 찾기 파일선택 */
+#login_btn{
+	width: 600px;
+}
+.fileBox .fileName {
+	display:inline-block;
+	width:190px;
+	height:30px;
+	padding-left:10px;
+	margin-right:5px;
+	line-height:30px;
+	border:1px solid #aaa;
+	background-color:#fff;
+	vertical-align:middle
+}
+
+.fileBox .btn_file {
+display: inline-block;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	width: 95px;
+	cursor: pointer;
+	margin: 5px;
+	height: 34px;
+	padding:3px;
+	background-color: #DBDBDB;
+	font-size : 17px;
+}
+.fileBox input[type="file"] {
+	position:absolute;
+	width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	border:0
+}
+/* file button */
+#image img{
+	max-width : 500px !important;
+}
+/* 프로필 img size */
+.button_all{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 5px 5px 5px 20px;
+	height: 40px;
+	font-size: 1.2em;
+}
+/* 아래 button 공통 */
+.button_submit{
+	background-color: #FF5A5F;
+	margin-left: 205px;
+}
+/* 회원가입버튼 */

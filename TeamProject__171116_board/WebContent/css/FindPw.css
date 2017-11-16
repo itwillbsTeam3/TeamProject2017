@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+* {
+   margin: 0;
+   padding: 0;
+   color: #333;
+   font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+	line-height: 2em;
+	width: 500px;
+	height: 600px;
+}
+/* 전체 div */
+.body h1{
+	text-align: center;
+	font-size: 27px;
+	margin-bottom: 20px;
+}
+/* 가입정보 */
+.btn{
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 5px;
+	color: #333;
+	height: 40px;
+}
+/* button 전체 */
+.btn_submit{
+	background-color: #FF5A5F;
+	margin-left: 140px;
+}
+/* 회원가입 btn */

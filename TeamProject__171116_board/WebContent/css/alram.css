@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-family: 'Nanum Gothic';
+}
+/* 전체영역 */
+.body{
+    margin-top: 100px;
+    width: 650px;
+}
+.body h1{
+	width:55px;
+	margin: auto;
+}
+.container{ 
+	font-size: 18px;
+	position: flex;
+	flex-direction : column-reverse;
+	font-weight: bold;
+	margin-top: 20px;
+}
+.container>div{
+	margin-top: 25px;
+	color :black;
+}
+.container>div>div{
+	margin-top: 12px;
+}
+.content>div{
+	position: flex;
+	flex-wrap : wrap;
+	justify-content: left;
+	line-height: 30px;
+	height: 30px;
+	padding: 20px;
+}
+.plus{
+	width: 20px;
+	position : absolute;
+	 top: 8px;
+    left: 170px;
+	
+}
+.content{
+	position: flex;
+	flex-wrap : wrap;
+	text-align: left;
+	margin-left: 40px;
+}
+.item{
+
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position : relative;
+}
+.imgs{
+	background-color : rgba(0,0,0,0);
+	width: 30px;
+	height: 30px;
+}
+	
+.time{
+	padding-left: 32px;
+	line-height: 35px;
+}
+a:link {
+	text-decoration:none; 
+	color:#333;
+} 
+a:visited {
+	text-decoration:none; 
+	color:#333;
+} 
+a:hover {text-decoration:none; color:black;} 
+}
+
+#sys{
+	border-top : 1px solid #DBDBDB;
+}
