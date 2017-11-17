@@ -88,7 +88,7 @@ list1 = alram.getsysAlram(name);
 %>">
 
 <img class="imgs" src ="./img/c1.png">
-<%=list1.get(i).getContent()%>하셨습니다.
+<%=list1.get(i).getContent()%>셨습니다.
 <a href="Sysalram.ar?num=<%=list1.get(i).getNum()%>">
 <img src="./img/x.png" style ="width:20px;background-color: black;cursor:pointer;"></a><br>
 <%String timestr = list1.get(i).getDate().toString();%>
