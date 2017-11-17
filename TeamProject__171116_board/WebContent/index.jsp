@@ -8,7 +8,9 @@
 </head>
 <body>
 <%
-// 멤버 주소이동
+// 멤버 주소이동123555
+//999
+//000
 response.sendRedirect("./Main.me");
 %>
 </body>
