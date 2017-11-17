@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="net.booking.action.Mydatecarculator"%>
 <%@page import="net.Host.db.HostingBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,7 +9,8 @@
 <title>booking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="./css/bootstrap.css" rel="stylesheet">
-<link href="./css/booking.css?v=4" rel="stylesheet" type="text/css">
+<link href="./css/booking.css?v=5" rel="stylesheet" type="text/css">
+<link href="./css/default.css?v=18" rel="stylesheet" type="text/css">
 
 <%
 request.setCharacterEncoding("UTF-8");
@@ -32,27 +34,30 @@ y =Integer.parseInt(qee[0]);
 m =Integer.parseInt(qee[1]);
 d =Integer.parseInt(qee[2]);
 int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
+DecimalFormat dc = new DecimalFormat("#,###");
+String price_1000 = dc.format(price*interval);
 %>
 
 
 </head>
     
 <body>
-<div id="booking_wrap">
-<div id="booking_logo">
-	<img src="./img/hoster.png">
-	<div class="clear"></div>
-</div>
+	<div class="wrap">
+		<!--헤더들어가는곳-->
+		<jsp:include page="../inc/header.jsp" />
+		<!--헤더들어가는곳-->
+			<div id="booking_wrap">
+
 
     	<h2>예약할 숙소 정보</h2>
     	<form action="./HostingBookingAction.bo" class="booking" method="post">
-        <div id="subject"><%=subject %></div>
     	<dl class="dl-horizontal">
+    	<dt>숙박명</dt><dd><%=subject %></dd>
         <dt>호스트</dt><dd><%=host_id %></dd>
         <dt>예약예정일</dt><dd> <%=checkin %> ~  <%=checkout %></dd>
         <dt>예약자</dt> <dd><%=session.getAttribute("id") %></dd>
         <dt>1박기준 금액</dt> <dd><%=price %></dd>
-        <dt>결제방법</dt><dd>
+<!--         <dt>결제방법</dt><dd>
         <label class="radio-inline">
        	<input type="radio" name="ra" class="ok" id="ok1" value="카드결제" >카드결제
         </label>
@@ -61,8 +66,9 @@ int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
 		</label>
 		<label class="radio-inline">
         	<input type="radio" name="ra" class="ok" id="ok3"  value="마일리지결제">마일리지결제
-        </label></dd>
-		<dt>결제금액<dt> <dd><%=price*interval%></dd>
+        </label></dd> -->
+        <!-- 결제방법 선택이 필요한가?? -->
+		<dt>결제금액<dt> <dd><%=price_1000 %>원</dd>
 		<dt>요구사항<dt> <dd><textarea name="etc" rows="5" cols="50%" style="padding-left:5px;"></textarea></dd>
 		</dl>
 			<input type="hidden" name="subject" value="<%=subject%>">
@@ -70,9 +76,15 @@ int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
 			<input type="hidden" name="checkin" value="<%=checkin%>">
 			<input type="hidden" name="checkout" value="<%=checkout%>">
 			<input type="hidden" name="price"  value="<%=price%>">
+			<!-- 1박기준 가격이 넘어가는게 맞나요?? -->
 			<input type="hidden" name="num"  value="<%=hb.getNum()%>">
 			<input type="submit" value="예약하기" style="float:right; margin-bottom:10px;">		
 		</form>
-</div>
+		
+			</div>
+				<!-- 푸터들어가는곳 -->
+		<jsp:include page="../inc/footer.jsp" />
+		<!-- 푸터들어가는곳 -->
+		</div>
 </body>
 </html>
