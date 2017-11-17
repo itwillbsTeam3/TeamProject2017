@@ -9,6 +9,7 @@
 <body>
 <%
 // 멤버 주소이동123555
+//999
 response.sendRedirect("./Main.me");
 %>
 </body>
