@@ -22,7 +22,7 @@
 		<div class="body">
 		<h1>결제내역</h1>
 		<table class="pay_table">
-			<tr >
+			<tr>
 				<td class="tableTD td1">구분</td>
 				<td class="tableTD td2">금액</td>
 				<td class="tableTD td3">결제일자</td>

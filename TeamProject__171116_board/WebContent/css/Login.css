@@ -17,11 +17,11 @@
 	
 }
 
-.Login_table>h1 {
+/* .inner_table {
 	text-align: center;
-}
+} */
 /* body안 h1 Login */
-.body>table {
+.inner_table {
 	height: 30px;
 }
 /* table 적용 */

@@ -14,8 +14,9 @@
    request.setCharacterEncoding("UTF-8");
    MemberDAO mdao = new MemberDAO();
    String name = request.getParameter("name");
-   String phone = request.getParameter("phone");
-   String id = mdao.searchId(name, phone);
+   String mobile = request.getParameter("mobile");
+   String id = mdao.searchId(name, mobile);
+   MemberBean mb = mdao.getMember(id);
 %>
 <body>
 <div id="wrap">
@@ -27,7 +28,9 @@
    <%
    if(id!=null){ 
    %>
- 	<h1>이름이 <%=name %>인 님의 아이디는 <%=id.replaceAll("(?<=.{2}).", "*") %>입니다.</h1>
+   	<h1>회원님의 아이디는 아래와 같습니다.</h1>
+   	<h1><span style="font-weight:bold; color:red;"><%=mb.getId()%></span>
+   	(가입일 : <% String reg = mb.getReg_date().toString();%><%=reg.substring(0,reg.length()-10)%>)</h1>
 	<div id="notice">
 	<input type="button" value="로그인" onclick="location.href='./Main.me'" class="btn">
 	</div>
