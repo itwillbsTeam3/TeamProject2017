@@ -16,6 +16,9 @@
 	/* box-shadow: 0 22px 33px rgba(0, 0, 0, 0.2); */
 	
 }
+.Login_table>h1{
+	text-align: center;
+}
 
 /* .inner_table {
 	text-align: center;
