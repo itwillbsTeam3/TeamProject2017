@@ -17,7 +17,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=3" rel="stylesheet" type="text/css">
-<link href="./css/board.css?v=23" rel="stylesheet" type="text/css">
+<link href="./css/board.css?v=24" rel="stylesheet" type="text/css">
 <link href="./css/star.css?v=6" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./css/style.css" type="text/css">
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -311,6 +311,7 @@ function popup()
 					</div>
 				</div>
 				<div id="content_mid">
+
 					<div>편의시설</div>
 					<div style="width: 100%;min-height : 80px;">
 						<div class="option_left">
@@ -361,7 +362,7 @@ function popup()
    <%}%>
 						</div>
 						<div class="clear"></div>
-                    <div>가족 편의 시설</div>
+                    <div class="option_1">가족 편의 시설</div>
 					<div class="option_left">
 					   <%
    String option2_1[] = {"아기욕조","아기모니터","베이비시터","욕조","기저귀 교환대","어린이용 장남감","어린이용 식기","벽난로 안정장치"};
@@ -383,7 +384,8 @@ function popup()
 							</div>						
    <%}%>
 					</div>
-					<div>안전 기능</div>
+					<div class="clear"></div>
+					<div class="option_2">안전 기능</div>
 					<div class="option_left">
    <%
    String option3_1[] = {"화재감지기","소화기"};
