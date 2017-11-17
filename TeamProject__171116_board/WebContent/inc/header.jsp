@@ -204,7 +204,7 @@
 			<%}else if(profile == null){ %>
 			<img src="./img/nopro.png" width="50px" height="50px" style="border-radius: 50%;">
 			<%} %>
-			<div class="dropdown">
+			<span class="dropdown">
 				<button class="login">
 					<%
 						if (alrampopup != 0) {
@@ -214,13 +214,13 @@
 						}
 					%>
 				</button>
-				<div class="dropdown-content">
+				<span class="dropdown-content">
 					<a href="./MemberCheckPw.me">정보수정</a><a href="./MemberList.me">회원관리</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800'); return false">1:1채팅</a>
 					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=1200 height=800'); return false">알림(<%=alrampopup%>)</a>
-				</div>
-			</div>
-			<a href="./MemberLogoutAction.me">로그아웃</a>
+				</span>
+			</span>
+			<span><a href="./MemberLogoutAction.me">로그아웃</a></span>
 		</div>
 		<%
 			} else if (id == null) {
