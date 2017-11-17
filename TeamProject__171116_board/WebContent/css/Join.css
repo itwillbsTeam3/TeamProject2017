@@ -123,3 +123,8 @@ display: inline-block;
 	margin-left: 205px;
 }
 /* 회원가입버튼 */
+.upload-thumb{
+	width : 100px;
+	height : 100px;
+	border-radius:50%;
+}
