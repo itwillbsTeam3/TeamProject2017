@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="net.Host.db.HostingDAO"%>
 <%@page import="net.Host.db.HostingBean"%>
@@ -21,6 +22,7 @@ HostingBean hb = new HostingBean();
 HostingDAO hbdao = new HostingDAO();
 ArrayList<HostingBean> list = new ArrayList<HostingBean>();
 list =(ArrayList<HostingBean>)request.getAttribute("list");
+DecimalFormat dc = new DecimalFormat("#,###");
 %>
   <script type="text/javascript">
   $(document).ready(function(){
@@ -225,7 +227,7 @@ $(function(){
 						<%=list.get(i).getSubject()%>
 					</div>
 					<div class="mainbooking_price">
-						<%=list.get(i).getPrice() %>
+						<%=dc.format(list.get(i).getPrice()) %>원
 					</div>
 					<div class="mainbooking_star">
 						<%if(list.get(i).getGrade()==0){%> NEW!!

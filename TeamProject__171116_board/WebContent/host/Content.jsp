@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="net.comment.db.CommentBean"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="net.booking.action.Mydatecarculator"%>

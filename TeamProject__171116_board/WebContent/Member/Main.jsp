@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="net.Host.db.HostingBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="net.Host.db.HostingDAO"%>
@@ -224,6 +225,7 @@ jb(function(){
 							int rlist_num = rlist.size();
 							ArrayList<HostingBean> glist = (ArrayList<HostingBean>)request.getAttribute("glist");
 							int glist_num = glist.size();
+							DecimalFormat dc = new DecimalFormat("#,###");
 						%>
 			<div class="mainbooking_wrap">
 			<!-- 별점 -->
@@ -242,7 +244,7 @@ jb(function(){
 								<img alt="" src="./upload/<%=plist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=plist.get(i).getSubject()%></div>
-							<div class="mainbooking_price"><%=plist.get(i).getPrice()%></div>
+							<div class="mainbooking_price"><%=dc.format(plist.get(i).getPrice())%>원</div>
 							<div class="mainbooking_star">별점</div>
 						</div>
 						<%
@@ -268,7 +270,7 @@ jb(function(){
 								<img alt="" src="./upload/<%=rlist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=rlist.get(i).getSubject()%></div>
-							<div class="mainbooking_price"><%=rlist.get(i).getPrice()%></div>
+							<div class="mainbooking_price"><%=dc.format(rlist.get(i).getPrice())%>원</div>
 							<div class="mainbooking_star">별점</div>
 						</div>
 						<%
@@ -294,7 +296,7 @@ jb(function(){
 								<img alt="" src="./upload/<%=glist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=glist.get(i).getSubject()%></div>
-							<div class="mainbooking_price"><%=glist.get(i).getPrice()%></div>
+							<div class="mainbooking_price"><%=dc.format(glist.get(i).getPrice())%>원</div>
 							<div class="mainbooking_star">평점</div>
 						</div>
 						<%
