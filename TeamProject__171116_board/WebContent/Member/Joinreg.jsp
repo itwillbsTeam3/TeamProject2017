@@ -99,8 +99,7 @@ $(document).ready(function(){
          <div class="clear"></div>   
 		 <div class="btn_all">
 		 <input type="submit" value="동의" class="button" />
-		 <input	type="button" value="비동의" class="button" onclick="chkno()" />			
-		 <input type="button" value="취소"	class="button" onclick="location.href='./Main.me'"/>
+		 <input type="button" value="비동의"	class="button" onclick="location.href='./Main.me'"/>
 		</div>
 		</div>
 		</form>
