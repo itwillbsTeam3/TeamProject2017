@@ -16,6 +16,8 @@
 .pay_table{
 	border-collapse: collapse;
 	margin-top : 20px;
+	    margin-right : auto;
+    margin-left : auto;
 }
 .pay_table td{
 	border : 1px solid #333;
@@ -39,6 +41,8 @@
 .booking_table{
 	border-collapse: collapse;
 	margin-top : 20px;
+	    margin-right : auto;
+    margin-left : auto;
 }
 .booking_table td{
 	border : 1px solid #333;
@@ -74,6 +78,8 @@
 .hosting_table{
 	border-collapse: collapse;
 	margin-top : 20px;
+	    margin-right : auto;
+    margin-left : auto;
 }
 .hosting_table td{
 	border : 1px solid #333;
