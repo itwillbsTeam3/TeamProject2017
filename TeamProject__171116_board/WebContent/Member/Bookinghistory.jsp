@@ -31,6 +31,7 @@
 				<td class="Boo_td td5">체크아웃</td>
 				<td class="Boo_td td6">결제액</td>
 				<td class="Boo_td td7">결제일자</td>
+				<td class="Boo_td td8">취소</td>
 			</tr>
 			<%
 				for (int i = 0; i < hb.size(); i++) {
@@ -43,6 +44,7 @@
 				<td><%=hb.get(i).getCheckout()%></td>
 				<td><%=hb.get(i).getPrice()%></td>
 				<td><%=hb.get(i).getDate()%></td>
+				<td>취소</td>
 			</tr>
 			<%
 				}
