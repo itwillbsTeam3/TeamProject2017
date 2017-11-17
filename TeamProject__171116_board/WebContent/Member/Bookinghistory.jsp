@@ -20,11 +20,11 @@
 		<!--헤더들어가는곳-->
 		<jsp:include page="../inc/header.jsp" />
 		<!--헤더들어가는곳-->
-		<div class="body">
+		<div class="pay_body">
 		<h1>예약내역</h1>
-		<table border="1px">
+		<table class="booking_table">
 			<tr>
-				<td></td>
+				<td>No.</td>
 				<td>숙소이름</td>
 				<td>호스트</td>
 				<td>체크인</td>

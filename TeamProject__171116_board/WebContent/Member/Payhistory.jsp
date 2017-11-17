@@ -12,14 +12,14 @@
 	ArrayList<HistoryBean> hb = (ArrayList<HistoryBean>) request.getAttribute("hb"); //호스팅글 정보
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=1" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=5" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="wrap">
 		<!--헤더들어가는곳-->
 		<jsp:include page="../inc/header.jsp" />
 		<!--헤더들어가는곳-->
-		<div class="body">
+		<div class="pay_body">
 		<h1>결제내역</h1>
 		<table class="pay_table">
 			<tr>
