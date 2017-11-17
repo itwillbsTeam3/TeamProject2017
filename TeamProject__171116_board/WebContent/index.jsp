@@ -7,15 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
 <%
 // 멤버 주소이동
-=======
-<%
-// 멤버 주소이동123555
-//999
-//000
->>>>>>> parent of f973168... Test
 response.sendRedirect("./Main.me");
 %>
 </body>
