@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/member.css?v=2" rel="stylesheet" type="text/css">
+<link href="css/MemberList.css?v=3" rel="stylesheet" type="text/css">
 
 <script>
 //삭제할 아이디를 넘김
@@ -44,21 +44,21 @@
 	
 	<table border="1">
 		<tr>
-		<th>프로필</th>
-		<th>아이디</th>
-		<th>비밀번호</th>
-		<th>이름</th>
-		<th>가입날짜</th>
-		<th>나이</th>
-		<th>성별</th>
-		<th>이메일</th>
-		<th>주소1</th>
-		<th>주소2</th>
-		<th>우편번호</th>
-		<th>집전화</th>
-		<th>휴대전화</th>
-		<th>자기소개</th>
-		<th>구분</th>
+		<th id="pro">프로필</th>
+		<th id="id">아이디</th>
+		<th id="pass">비밀번호</th>
+		<th id="name">이름</th>
+		<th id="reg_date">가입날짜</th>
+		<th id="age">나이</th>
+		<th id="gender">성별</th>
+		<th id="email">이메일</th>
+		<th id="zip">우편번호</th>
+		<th id="add">주소1</th>
+		<th id="add2">주소2</th>
+		<th id="phone">집전화</th>
+		<th id="mobile">휴대전화</th>
+		<th id="info">자기소개</th>
+		<th id="delete">구분</th>
 		</tr>
 		<%
         for(int i=0; i< mb.size();i++){
@@ -74,12 +74,16 @@
             <td><%=mb.get(i).getAge() %></td>
             <td><%=mb.get(i).getGender() %></td>
             <td><%=mb.get(i).getEmail() %></td> 
+            <td><%=mb.get(i).getZip_code() %></td>
             <td><%=mb.get(i).getAddress() %></td> 
             <td><%=mb.get(i).getAddress2() %></td>
-            <td><%=mb.get(i).getZip_code() %></td>
             <td><%=mb.get(i).getPhone() %></td>
             <td><%=mb.get(i).getMobile() %></td>
-			<td><%=mb.get(i).getSelfinfo() %></td>
+<%    String info_content=mb.get(i).getSelfinfo();
+if(mb.get(i).getSelfinfo().length()>16){
+	info_content=mb.get(i).getSelfinfo().substring(0,15)+"...";
+} %>
+			<td data-toggle="tooltip" data-placement="bottom" title="<%=mb.get(i).getSelfinfo()%>"><%=info_content %></td>
 			<td>
 			<%
             if("admin".equals(mb.get(i).getId())){

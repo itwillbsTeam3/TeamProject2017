@@ -7,8 +7,8 @@
 }
 /* 전체영역 */
 .body{
-	margin: 65px auto;
-	width: 1500px;
+	margin: 120px auto;
+	width: 1300px;
 }
 /* 전체 */
 .body h1{
@@ -17,11 +17,18 @@
 	margin-bottom: 20px;
 }
 /* 회원조회 */
-.table{
-text-align: center;
-border-collapse: collapse;
+.body table{
+	margin-top:20px;
+	text-align: center;
+	border-collapse:collapse;
+	font-size: 13px;
 }
 /* 테이블 */
+.body table td,th{
+    border: 1px solid #333;
+    height: 55px;
+}
+/*  */
 #pro{
 	width: 50px;
 }
@@ -32,16 +39,16 @@ border-collapse: collapse;
 	width: 100px;
 }
 #name{
-	width: 50px;
+	width: 70px;
 }
 #reg_date{
-	width: 100px;
+	width: 110px;
 }
 #age{
-	width: 50px;
+	width: 60px;
 }
 #gender{
-	width: 100px;
+	width: 60px;
 }
 #email{
 	width: 100px;
@@ -50,10 +57,10 @@ border-collapse: collapse;
 	width: 100px;
 }
 #add{
-	width: 150px;
+	width: 300px;
 }
 #add2{
-	width: 150px;
+	width: 300px;
 }
 #phone{
 	width: 100px;
@@ -64,8 +71,26 @@ border-collapse: collapse;
 #info{
 	width: 100px;
 }
+
 #delete{
 	width: 50px;
 }
 /* 각각 width */
+
+.MemberList_count{
+	margin: 20px auto; 
+	width: 200px;
+	}
+.MemberList_back{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 5px 5px 5px 20px;
+	height: 40px;
+	background-color: #DBDBDB;
+	line-height: 40px;
+	}
 
