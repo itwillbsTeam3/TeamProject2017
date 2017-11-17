@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Update.css?v=4" rel="stylesheet" type="text/css">
+<link href="css/Update.css?v=5" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -69,7 +69,7 @@ function sub(){
 		<jsp:include page="../inc/header.jsp" />
 		<div class="clear"></div>
 		<div class="body">
-			<h1>이메일 변경</h1><br>
+			<h1 class="UpdateMail h1">이메일 변경</h1><br>
 			<form action="./MemberEmailUpdateAction.me" class="form" name="fr" id="update" method="post" enctype="multipart/form-data">
 			<table class="form_table">
 				<input type="hidden" name="id" id="id" value="<%=mb.getId()%>" readonly>

@@ -121,3 +121,7 @@ display: inline-block;
 	margin-left: 205px;
 }
 /* 회원가입버튼 */
+.UpdateMail.h1{
+	text-align : center;
+	padding-top : 50px;
+}
