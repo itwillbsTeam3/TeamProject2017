@@ -3,7 +3,6 @@
 <%@page import="net.booking.action.Mydatecarculator"%>
 <%@page import="net.booking.action.checkinout"%>
 <%@page import="java.util.ArrayList"%>
-
 <%@page import="net.booking.db.BookingDAO"%>
 <%@page import="net.booking.db.BookingBean"%>
 <%@page import="java.text.NumberFormat"%>
