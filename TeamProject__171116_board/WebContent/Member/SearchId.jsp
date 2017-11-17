@@ -22,8 +22,8 @@
 <tr><td colspan="2"><h2>아이디 찾기</h2></td></tr>
 <tr><td>이름</td><td><input type="text" name="name"></td></tr>
 <tr><td>휴대전화번호</td><td><input type="text" name="mobile"></td></tr>
-<tr><td><input type="submit" name="search" value="찾기" class="submit" ></td>
-<td><input type="button" name="cancel" value="취소" class="cancel" onclick="location.href='./Main.me'"></td>
+<tr><td><input type="submit" name="search" value="찾기" class="btn submit" ></td>
+<td><input type="button" name="cancel" value="취소" class="btn" onclick="location.href='./Main.me'"></td>
 </tr>
 </table>
 </form>
