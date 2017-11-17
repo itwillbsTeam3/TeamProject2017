@@ -62,7 +62,6 @@ int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
 		<label class="radio-inline">
         	<input type="radio" name="ra" class="ok" id="ok3"  value="마일리지결제">마일리지결제
         </label></dd>
-		<dt><dt><dd><div id="text1">선택해주세요</div></dd>
 		<dt>결제금액<dt> <dd><%=price*interval%></dd>
 		<dt>요구사항<dt> <dd><textarea name="etc" rows="5" cols="50%" style="padding-left:5px;"></textarea></dd>
 		</dl>
