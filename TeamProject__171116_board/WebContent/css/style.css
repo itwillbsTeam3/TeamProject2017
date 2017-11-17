@@ -70,7 +70,7 @@ width : 370px;
   z-index: 999;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
   text-align: center;
 }
 

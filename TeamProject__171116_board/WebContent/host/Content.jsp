@@ -630,10 +630,10 @@ int endNum = pagesize;
 			        <input type="hidden" name="price" value="<%=hb.getPrice()%>"> 
 			       	<h3 style="text-align: center;">현재까지 <%=hb.getReadcount() %>명이 이글을 보았습니다.</h3>
 					<div id="button_wrap"></div>
-					
+					<div class="datepicker_wrap">
 					<input type="text" name="checkin" id="checkin" placeholder="체크인" class="datepicker1">~
 					<input type="text"  name="checkout" id="checkout" placeholder="체크아웃" class="datepicker2"><br>
-					
+					</div>
 					<button id="content_btn" <%if(session.getAttribute("id")==null){ %>onclick="go()"<%}else{%>onclick="fo()"<%} %>>
 						<span>예약</span>
 					</button>
