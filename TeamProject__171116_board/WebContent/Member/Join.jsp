@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Join.css?v=4" rel="stylesheet" type="text/css">
+<link href="css/Join.css?v=5" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -273,7 +273,7 @@ $(document).ready(function(){
 							class="dup button_sub"><br> <input type="text"
 							size="40" name="address" id="sample4_roadAddress"
 							placeholder="도로명주소"><br> <input type="text"
-							size="40" name="address2" id="sample4_jibunAddress jibun_address"
+							size="40" name="address2" id="sample4_jibunAddress"
 							placeholder="지번주소"> <span id="guide" style="color: #999;"></span></td>
 					</tr>
 					<tr>
