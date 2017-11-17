@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="net.booking.db.BookingBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,6 +12,7 @@
 	request.setCharacterEncoding("UTF-8");
 	ArrayList<BookingBean> hb = (ArrayList<BookingBean>) request.getAttribute("hb"); //호스팅글 정보
 	int a = 0;
+	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
 <link href="./css/history.css" rel="stylesheet" type="text/css">
@@ -41,7 +43,7 @@
 			<td><%=hb.get(i).getGuest_id()%></td>
 			<td><%=hb.get(i).getCheckin()%></td>
 			<td><%=hb.get(i).getCheckout()%></td>
-			<td><%=hb.get(i).getPrice()%></td>
+			<td><%=dc.format(hb.get(i).getPrice())%>원</td>
 			<td><%=hb.get(i).getDate()%></td>
 		</tr>
 		<%

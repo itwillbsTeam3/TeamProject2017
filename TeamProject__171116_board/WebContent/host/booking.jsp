@@ -35,7 +35,6 @@ m =Integer.parseInt(qee[1]);
 d =Integer.parseInt(qee[2]);
 int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
 DecimalFormat dc = new DecimalFormat("#,###");
-String price_1000 = dc.format(price*interval);
 %>
 
 
@@ -56,7 +55,7 @@ String price_1000 = dc.format(price*interval);
         <dt>호스트</dt><dd><%=host_id %></dd>
         <dt>예약예정일</dt><dd> <%=checkin %> ~  <%=checkout %></dd>
         <dt>예약자</dt> <dd><%=session.getAttribute("id") %></dd>
-        <dt>1박기준 금액</dt> <dd><%=price %></dd>
+        <dt>1박기준 금액</dt> <dd><%=dc.format(price)%>원</dd>
 <!--         <dt>결제방법</dt><dd>
         <label class="radio-inline">
        	<input type="radio" name="ra" class="ok" id="ok1" value="카드결제" >카드결제
@@ -68,7 +67,7 @@ String price_1000 = dc.format(price*interval);
         	<input type="radio" name="ra" class="ok" id="ok3"  value="마일리지결제">마일리지결제
         </label></dd> -->
         <!-- 결제방법 선택이 필요한가?? -->
-		<dt>결제금액<dt> <dd><%=price_1000 %>원</dd>
+		<dt>결제금액<dt> <dd><%=dc.format(price*interval) %>원</dd>
 		<dt>요구사항<dt> <dd><textarea name="etc" rows="5" cols="50%" style="padding-left:5px;"></textarea></dd>
 		</dl>
 			<input type="hidden" name="subject" value="<%=subject%>">
