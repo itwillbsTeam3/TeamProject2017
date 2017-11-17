@@ -5,7 +5,7 @@
 <head>
 <title>회원가입 </title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Joinreg.css?v=3" rel="stylesheet" type="text/css">
+<link href="css/Joinreg.css?v=4" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript">
