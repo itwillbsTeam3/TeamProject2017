@@ -273,7 +273,7 @@ $(document).ready(function(){
 							class="dup button_sub"><br> <input type="text"
 							size="40" name="address" id="sample4_roadAddress"
 							placeholder="도로명주소"><br> <input type="text"
-							size="40" name="address2" id="sample4_jibunAddress"
+							size="40" name="address2" id="sample4_jibunAddress jibun_address"
 							placeholder="지번주소"> <span id="guide" style="color: #999;"></span></td>
 					</tr>
 					<tr>
@@ -302,8 +302,8 @@ $(document).ready(function(){
 					</tr>
 				</table>
 				<div id="login_btn">
-					<input type="button" value="Join" class="button_all button_submit" onclick="javascript:jo_check()">
-					<input type="button" value="Cancel" class="button_all" onclick="location.href='./Main.me'"/>
+					<input type="button" value="Join" class="btn btn_submit" onclick="javascript:jo_check()">
+					<input type="button" value="Cancel" class="btn" onclick="location.href='./Main.me'"/>
 				</div>
 			</form>
 		</div>

@@ -63,50 +63,84 @@
 	background-color: #DBDBDB;
 }
 /* 번호 우편번호 찾기 파일선택 */
+#jibun_address{
+	margin-bottom: 10px;
+}
+
 #login_btn{
 	width: 600px;
 }
-.fileBox .fileName {
-	display:inline-block;
-	width:190px;
-	height:30px;
-	padding-left:10px;
-	margin-right:5px;
-	line-height:30px;
-	border:1px solid #aaa;
-	background-color:#fff;
-	vertical-align:middle
+.filebox input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip:rect(0,0,0,0);
+	border: 0;
 }
 
-.fileBox .btn_file {
-display: inline-block;
+
+.filebox label {
+	display: inline-block;
 	border-radius: 5px;
 	border: none;
 	text-align: center;
-	width: 95px;
+	width: 120px;
 	cursor: pointer;
 	margin: 5px;
-	height: 34px;
-	padding:3px;
+	height: 32px;
 	background-color: #DBDBDB;
-	font-size : 17px;
+	font-size: 0.9em;
+	line-height: 30px;
+	
 }
-.fileBox input[type="file"] {
-	position:absolute;
-	width:1px;
-	height:1px;
-	padding:0;
-	margin:-1px;
-	overflow:hidden;
-	clip:rect(0,0,0,0);
-	border:0
+/* btn named upload */
+
+.filebox .upload-name {
+	padding: .5em .75em;
+	background-color:#fff;
+  border: 1px solid #a9a9a9;
+   -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+  color:#757575;
 }
-/* file button */
-#image img{
-	max-width : 500px !important;
+
+/* imaged preview */
+.filebox .upload-display {
+	display: block;
+	margin-bottom: 5px;
+	
 }
-/* 프로필 img size */
-.button_all{	
+
+@media(min-width: 768px) {
+	.filebox .upload-display {
+		display: block;
+		margin-right: 5px;
+		margin-bottom: 0;
+	}
+}
+
+.filebox .upload-thumb-wrap {
+	display: block;
+	padding: 2px;
+	vertical-align: middle;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.filebox .upload-display img {
+	display: block;
+	width: 150px;
+	height: 150px;
+	border-radius:50%;
+}
+
+
+
+.btn{	
 	display: inline-block;
 	border-radius: 10px;
 	border: none;
@@ -118,13 +152,8 @@ display: inline-block;
 	font-size: 1.2em;
 }
 /* 아래 button 공통 */
-.button_submit{
+.btn_submit{
 	background-color: #FF5A5F;
 	margin-left: 205px;
 }
 /* 회원가입버튼 */
-.upload-thumb{
-	width : 100px;
-	height : 100px;
-	border-radius:50%;
-}
