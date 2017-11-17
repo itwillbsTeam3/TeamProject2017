@@ -13,6 +13,7 @@
 	int a = 0;
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
+<link href="./css/history.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="wrap">

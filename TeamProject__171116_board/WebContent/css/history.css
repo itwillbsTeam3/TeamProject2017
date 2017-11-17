@@ -1,0 +1,19 @@
+.pay_table{
+	border-collapse: collapse;
+}
+.tableTD{
+	border : 1px solid black;
+	text-align: center;
+}
+.pay_table tr{
+	height : 30px;
+}
+.tableTD.td1{
+	width : 50px;
+}
+.tableTD.td2{
+	width : 150px
+}
+.tableTD.td3{
+	width : 100px
+}

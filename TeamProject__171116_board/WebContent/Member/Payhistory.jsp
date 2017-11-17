@@ -12,6 +12,7 @@
 	ArrayList<HistoryBean> hb = (ArrayList<HistoryBean>) request.getAttribute("hb"); //호스팅글 정보
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="wrap">
@@ -20,11 +21,11 @@
 		<!--헤더들어가는곳-->
 		<div class="body">
 		<h1>결제내역</h1>
-		<table border="1px">
-			<tr>
-				<td>구분</td>
-				<td>금액</td>
-				<td>결제일자</td>
+		<table class="pay_table">
+			<tr >
+				<td class="tableTD td1">구분</td>
+				<td class="tableTD td2">금액</td>
+				<td class="tableTD td3">결제일자</td>
 			</tr>
 			<%
 				for (int i = 0; i < hb.size(); i++) {
