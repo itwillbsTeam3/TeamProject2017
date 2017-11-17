@@ -1,10 +1,14 @@
-/* payhistory */
+/* 
+************payhistory**************** 
+*/
 .pay_body{
 	margin-right: auto;
     margin-left: auto;
-    width: 600px;
+    width: 700px;
     min-height: 600px;
     margin-top: 100px;
+    margin-right : auto;
+    margin-left : auto;
 }
 .pay_body>h1{
 	text-align : center;
@@ -20,16 +24,18 @@
 .pay_table tr{
 	height : 30px;
 }
-.tableTD.td1{
+.Pay_td.td1{
 	width : 100px;
 }
-.tableTD.td2{
+.Pay_td.td2{
 	width : 300px
 }
-.tableTD.td3{
+.Pay_td.td3{
 	width : 200px
 }
-/* bookinghistory */
+/* 
+*********bookinghistory************ 
+*/
 .booking_table{
 	border-collapse: collapse;
 	margin-top : 20px;
@@ -40,4 +46,60 @@
 }
 .booking_table tr{
 	height : 30px;
+}
+.Boo_td.td1{
+	width : 50px;
+}
+.Boo_td.td2{
+	width : 100px;
+}
+.Boo_td.td3{
+	width : 100px;
+}
+.Boo_td.td4{
+	width : 100px;
+}
+.Boo_td.td5{
+	width : 100px;
+}
+.Boo_td.td6{
+	width : 100px;
+}
+.Boo_td.td7{
+	width : 100px;
+}
+/* 
+**************hostinghistory*************** 
+*/
+.hosting_table{
+	border-collapse: collapse;
+	margin-top : 20px;
+}
+.hosting_table td{
+	border : 1px solid #333;
+	text-align: center;
+}
+.hosting_table tr{
+	height : 30px;
+}
+.Hos_td.td1{
+	width : 50px;
+}
+.Hos_td.td2{
+	width : 100px;
+}
+.Hos_td.td3{
+	width : 100px;
+}
+.Hos_td.td4{
+	width : 100px;
+}
+.Hos_td.td5{
+	width : 100px;
+}
+.Hos_td.td6{
+	width : 100px;
+}
+.Hos_td.td7{
+	width : 100px;
 }

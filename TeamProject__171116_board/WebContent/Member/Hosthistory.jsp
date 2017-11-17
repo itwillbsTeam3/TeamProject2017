@@ -20,17 +20,17 @@
 	<!--헤더들어가는곳-->
 	<jsp:include page="../inc/header.jsp" />
 	<!--헤더들어가는곳-->
-	<div class="body">
+	<div class="pay_body">
 	<h1>호스팅내역</h1>
-	<table border="1px">
+	<table class="hosting_table">
 		<tr>
-			<td></td>
-			<td>숙소이름</td>
-			<td>예약자</td>
-			<td>체크인</td>
-			<td>체크아웃</td>
-			<td>결제액</td>
-			<td>결제일자</td>
+			<td class="Hos_td td1">No.</td>
+			<td class="Hos_td td2">숙소이름</td>
+			<td class="Hos_td td3">예약자</td>
+			<td class="Hos_td td4">체크인</td>
+			<td class="Hos_td td5">체크아웃</td>
+			<td class="Hos_td td6">결제액</td>
+			<td class="Hos_td td7">결제일자</td>
 		</tr>
 		<%
 			for (int i = 0; i < hb.size(); i++) {

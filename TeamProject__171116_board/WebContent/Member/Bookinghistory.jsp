@@ -13,7 +13,7 @@
 	int a = 0;
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="wrap">
@@ -24,13 +24,13 @@
 		<h1>예약내역</h1>
 		<table class="booking_table">
 			<tr>
-				<td>No.</td>
-				<td>숙소이름</td>
-				<td>호스트</td>
-				<td>체크인</td>
-				<td>체크아웃</td>
-				<td>결제액</td>
-				<td>결제일자</td>
+				<td class="Boo_td td1">No.</td>
+				<td class="Boo_td td2">숙소이름</td>
+				<td class="Boo_td td3">호스트</td>
+				<td class="Boo_td td4">체크인</td>
+				<td class="Boo_td td5">체크아웃</td>
+				<td class="Boo_td td6">결제액</td>
+				<td class="Boo_td td7">결제일자</td>
 			</tr>
 			<%
 				for (int i = 0; i < hb.size(); i++) {
