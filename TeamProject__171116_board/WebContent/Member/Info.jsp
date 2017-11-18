@@ -42,9 +42,9 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 			<tr>
 				<td>성별</td>
 				<td><input type="radio" name="gender" value="남자" 
-					<% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %>> 남자
+					<% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %> disabled="disabled"> 남자
 					<input type="radio" name="gender" value="여자" 
-					<% if((mb.getGender()).equals("여자")){ %> checked <% } %>>여자</td>
+					<% if((mb.getGender()).equals("여자")){ %> checked <% } %> disabled="disabled">여자</td>
 			</tr>
 			<tr>
 				<td>이메일</td><td><%=mb.getEmail() %></td>
