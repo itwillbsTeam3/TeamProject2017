@@ -277,6 +277,11 @@
 	display: inline-block;
 	white-space: nowrap;
 	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+#content_btn:hover {
+	transform: translateY(-3px);
 }
 
 #content_btn>span {
@@ -349,6 +354,11 @@ to {
 	margin: 5px;
 	color: #333;
 	height: 40px;
+	transition: 0.3s ease;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
 }
 
 .option{

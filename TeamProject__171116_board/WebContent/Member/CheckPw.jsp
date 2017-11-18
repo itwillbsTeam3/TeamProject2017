@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/CheckPw.css?v=6" rel="stylesheet" type="text/css">
+<link href="css/CheckPw.css?v=9" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -44,7 +44,7 @@
 						</tr>
 					</table>
 					<div id="table_search">
-						<input type="submit" name="delete" value="회원정보수정" class="btn">
+						<input type="submit" name="delete" value="회원정보수정" class="btn submit">
 						<input type="button" name="main" value="메인"
 							onclick="location.href='./Main.me'" class="btn">
 					</div>
