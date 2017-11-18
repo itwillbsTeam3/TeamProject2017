@@ -64,21 +64,10 @@ jb(function(){
 			$('.right.n3').on('click', moveSlider3);
 			}
 
-		/* 		var end = $('.slider').position().left;
-		 if (end < -528) {
-		 $('.slider').animate({
-		 left : -528
-		 }, 30);
-		 } else if (end > 0) {
-		 $('.slider').animate({
-		 left : 0
-		 }, 30);
-		 } */
 		$('.dropdown_span').on('click',function(){
 			var content = $(this).text();
 			$('.search_address').val(content);
 			$('.dropdown-content_where').css('display','none');
-			//$('.dropdown-content').css('display','');
 			//검색창 드롭다운
 		})
 		

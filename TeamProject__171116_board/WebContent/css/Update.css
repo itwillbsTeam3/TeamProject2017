@@ -7,9 +7,10 @@
 }
 /* 전체영역 */
 .body{
-	margin: 65px auto;
+	margin: 100px auto 20px auto;
 	width: 650px;
 	line-height: 2em;
+
 }
 /* 글 */
 .form_table th{

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=4" rel="stylesheet" type="text/css">
-<link href="./css/board.css?v=11" rel="stylesheet" type="text/css">
+<link href="./css/list.css?v=11" rel="stylesheet" type="text/css">
 
 <link rel = "stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>

@@ -13,6 +13,73 @@
 <script src="js/script.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('.remaining').each(function() {
+        var $count = $('.count', this);
+        var $input = $(this).prev();
+        var maximumCount = $count.text() * 1;
+        var update = function() {
+            var before = $count.text() * 1;
+            var now = maximumCount - $input.val().length;
+            if (now < 0) {
+                var str = $input.val();
+                alert('글자 입력수가 초과하였습니다.');
+                $input.val(str.substr(0, maximumCount));
+                now = 0;
+            }
+            if (before != now) {
+                $count.text(now);
+            }
+        };
+        $input.bind('input keyup paste', function() {
+            setTimeout(update, 0)
+        });
+        update();
+    });
+});
+</script>
+<script type="text/javascript">
+function up_check(){
+		var pw = $("#pass").val();
+		var pw2 = $("#pass2").val();
+		var nm = $("#name").val();
+		var ag = $("#age").val();
+		var sp = $("#sample4_postcode").val();
+		var ra = $("#sample4_roadAddress").val();
+		var ja = $("#sample4_jibunAddress").val();
+		var ph = $("#phone").val();
+		var mo = $("#mobile").val();
+		var sf = $("#selfinfo").val();
+		
+		if(pw==""){alert("비밀번호를 입력하세요.");fr.pass.focus();return false;
+		}else if(pw.length < 4 || pw.length > 12){alert("비밀번호는 4자 ~ 12자 사이를 입력하세요.");fr.pass.focus();return false;
+	 	}else if(pw2==""){alert("비밀번호확인을 입력하세요.");fr.pass2.focus();return false;
+		}else if(pw2.length < 4 || pw2.length > 12){alert("비밀번호확인은 4자 ~ 12자 사이를 입력하세요.");fr.pass2.focus();return false;
+ 		}else if(pw != pw2){alert("비밀번호가 일치하지 않습니다.");fr.pass.focus();return false;
+		}else if(nm == ""){alert("이름을 입력하세요.");fr.name.focus();return false;
+		}else if(nm.length < 2 || nm.length > 5){alert("이름은 2자 ~ 5자 사이를 입력하세요.");fr.name.focus();return false;
+		}else if(ag == ""){alert("나이를 입력하세요.");fr.age.focus();return false;
+		}else if(sp == ""){alert("우편번호를 입력하세요.");fr.zip_code.focus();return false;
+		}else if(ra == ""){alert("도로명 주소를 입력하세요.");fr.address.focus();return false;
+		}else if(ja == ""){alert("지번 주소를 입력하세요.");fr.address2.focus();return false;
+		}else if(ph == ""){alert("집전화번호를 입력하세요.");fr.address2.focus();return false;
+		}else if(mo == ""){alert("휴대전화번호를 입력하세요.");fr.mobile.focus();return false;
+		}else if(sf == ""){alert("자기소개를 입력하세요.");fr.selfinfo.focus();return false;
+		}else if(sf.length>100){alert("자기소개는 100자 이내입니다.");fr.selfinfo.focus();return false;
+		}else{
+			up_save();	
+		}
+		
+}	
+</script>
+<script type="text/javascript">
+function up_save() {
+	var str = document.getElementById('update');
+	str.submit();
+	alert("회원정보가 수정되었습니다.");
+}
+</script>
 <script>
 $(document).ready(function(){
 	   var fileTarget = $('.filebox .upload-hidden');
@@ -82,10 +149,10 @@ $(document).ready(function(){
 		<!-- 본문 -->
 		<div class="body">
 			<h1>업데이트</h1><br>
-			<form action="./MemberUpdateAction.me" class="form" name="fr" id="join" method="post" onsubmit="return check2()" enctype="multipart/form-data">
+			<form action="./MemberUpdateAction.me" class="form" name="fr" id="update" method="post" enctype="multipart/form-data">
 			<table class="form_table">
 				<tr>
-					<th class="form_col">아이디</th><td><input type="text" name="id" value="<%=mb.getId()%>" readonly></td>
+					<th class="form_col">아이디</th><td><input type="text" name="id" id="id" value="<%=mb.getId()%>" readonly></td>
 				</tr>
 				<tr>
 					<th>새비밀번호</th><td><input type="password" name="pass" id="pass"><font name="check" size="2" color="red"></font></td>
@@ -94,21 +161,20 @@ $(document).ready(function(){
 					<th>새비밀번호확인</th><td><input type="password" name="pass2" id="pass2"></td>
 				</tr>
 				<tr>
-					<th>이름</th><td><input type="text" name="name" value="<%=mb.getName() %>"></td>
+					<th>이름</th><td><input type="text" name="name" id="name" value="<%=mb.getName() %>"></td>
 				</tr>
 				<tr>
-					<th>나이</th><td><input type="text" name="age" value="<%=mb.getAge()%>"></td>
+					<th>나이</th><td><input type="text" name="age" id="age" value="<%=mb.getAge()%>"></td>
 				</tr>
 				<tr>
 					<th>성별</th><td>
-					<input type="radio" name="gender" value="남자" 
-					<% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %>> 남자
-					<input type="radio" name="gender" value="여자" 
-					<% if((mb.getGender()).equals("여자")){ %> checked <% } %>>여자</td>
+					<input type="radio" name="gender" value="남자" <% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %>> 남
+					<input type="radio" name="gender" value="여자" <% if((mb.getGender()).equals("여자")){ %> checked <% } %>>여</td>
 				</tr>
 				<tr>
-					<th>이메일</th><td><input type="text" name="email" value="<%=mb.getEmail() %>"></td>
-				</tr>
+					<th>이메일</th>
+					<td><input type="email" name="email" class="email" value="<%=mb.getEmail()%>" readonly="readonly"></td>
+				</tr>	
 				<tr>
 					<th>우편번호</th><td><input type="text" name="zip_code" id="sample4_postcode" value="<%=mb.getZip_code()%>" readonly>
 					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="dup"></td>
@@ -121,38 +187,46 @@ $(document).ready(function(){
 				</tr>
 				
 				<tr>
-					<th>집전화</th><td><input type="text" name="phone" value="<%=mb.getPhone()%>"></td>
+					<th>집전화</th><td><input type="text" name="phone" id="phone" value="<%=mb.getPhone()%>"></td>
 				</tr>
 				<tr>
-					<th>휴대전화</th><td><input type="text" name="mobile" value="<%=mb.getMobile()%>"></td>
+					<th>휴대전화</th><td><input type="text" name="mobile" id="mobile" value="<%=mb.getMobile()%>"></td>
 				</tr>
 				<tr class="fileBox">
-				<td class="form_col">프로필</td>
+				<th class="form_col">프로필</th>
 				<td>
 				<div class="fileBox">
 				<%if(mb.getProfile()!=null){ %>
 				<div class="filebox bs3-primary preview-image">
-				<div class="upload-display"><div class="upload-thumb-wrap"><img src="./upload/<%=mb.getProfile() %>" class="upload-thumb" ></div></div>
-				<input class="upload-name" value="<%=mb.getProfile() %>"  disabled="disabled"
-				style="width: 200px;"> <label for="input_file">업로드</label>
+				<div class="upload-display"><div class="upload-thumb-wrap">
+				<img src="./upload/<%=mb.getProfile() %>" class="upload-thumb" ></div>
+				
+				<!-- 기존 파일 -->
+              	<input type="hidden" name="PreFile" value="<%=mb.getProfile() %>"></div>
+				<!-- 업로드 파일 -->
+				<input class="upload-name" value="<%=mb.getProfile() %>" disabled="disabled" style="width: 200px;"> 
+				<label for="input_file">업로드</label>
 				<input type="file" id="input_file" name="profile" class="upload-hidden">
 				<%} %>
-				<%if(mb. getProfile()==null){ %>
+				<%if(mb.getProfile()==null){ %>
 				<div class="filebox bs3-primary preview-image">
-				<input class="upload-name" value="파일선택" disabled="disabled"
-				style="width: 200px;"> <label for="input_file">업로드</label>
+				<input class="upload-name" value="파일선택" disabled="disabled" style="width: 200px;"> 
+				<label for="input_file">업로드</label>
 				<input type="file" id="input_file" name="profile" class="upload-hidden">
-				<%} %>
+				<%}%>
+				
 				</div>
 				</td>
 			</tr>
 				<tr>
-					<th>자기소개</th><td><textarea name="selfinfo" cols="60" rows="5" name="selfinfo"><%=mb.getSelfinfo()%></textarea></td>
+					<th>자기소개</th><td><textarea name="selfinfo" cols="60" rows="5" id="selfinfo" name="selfinfo"><%=mb.getSelfinfo()%></textarea>
+					<div class ="remaining">남은 글자수: <span class="count">100</span></div></td>
 				</tr>
 			</table> 
 				<div id="login_btn">
-					<input type="submit" value="Update" class="btn btn_sub"> 
-					<input type="reset" value="Cancel" class="btn">
+<!-- 					<input type="submit" value="Update" class="btn btn_sub" >  -->
+					<input type="button" value="Update" class="btn btn_sub" onclick="javascript:up_check()">
+					<input type="button" value="Cancel" onclick="location.href='./MemberInfoAction.me' " class="btn">
 				</div>
 			</form>
 		</div>
