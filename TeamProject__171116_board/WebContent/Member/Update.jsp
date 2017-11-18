@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Update.css?v=4" rel="stylesheet" type="text/css">
+<link href="css/Update.css?v=8" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -224,9 +224,9 @@ $(document).ready(function(){
 				</tr>
 			</table> 
 				<div id="login_btn">
-<!-- 					<input type="submit" value="Update" class="btn btn_sub" >  -->
-					<input type="button" value="Update" class="btn btn_sub" onclick="javascript:up_check()">
-					<input type="button" value="Cancel" onclick="location.href='./MemberInfoAction.me' " class="btn">
+
+					<input type="button" value="업데이트" class="btn btn_sub" onclick="javascript:up_check()">
+					<input type="button" value="취소" onclick="location.href='./MemberInfoAction.me' " class="btn">
 				</div>
 			</form>
 		</div>

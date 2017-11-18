@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Info.css" rel="stylesheet" type="text/css">
+<link href="css/Info.css?v=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%
@@ -73,7 +73,7 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 			</tr>
 			</table>
 			 <div id="Info_btn">
-				<span></span><input type="button" value="정보수정" onclick="location.href='./MemberUpdate.me'" class="btn"> 
+				<span></span><input type="button" value="정보수정" onclick="location.href='./MemberUpdate.me'" class="btn update"> 
 				<input type="button" value="회원탈퇴" onclick="location.href='./MemberDelete.me'" class="btn">
 			</div>
 		</div>
