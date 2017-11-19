@@ -100,7 +100,9 @@ if(mb.get(i).getSelfinfo().length()>16){
     } 
     %>
 	</table>
+	<div class="MemberList_count">
 	<%
+	
 		if (count != 0) {
 			int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
 			int pageBlock = 10;
@@ -117,7 +119,8 @@ if(mb.get(i).getSelfinfo().length()>16){
 			if (endPage < pageCount) {%><a href="./MemberList.me?pageNum=<%=startPage + pageBlock%>">[다음]</a><%}
 		}
 	%>
-	<br><a href="./Main.me">이전으로</a><br>
+	</div>
+	<div class="MemberList_back"><a href="./Main.me">메인으로</a></div>
 	</div>
 	<!-- 본문 -->
 	<!-- 푸터들어가는곳 -->
