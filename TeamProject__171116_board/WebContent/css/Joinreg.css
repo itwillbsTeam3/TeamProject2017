@@ -8,7 +8,7 @@
 /* 전체영역 */
 .body{
 	margin:65px auto;
-	width: 529px;
+	width: 550px;
 }
 /* 글전체 */
 .Join_Main{
@@ -28,6 +28,12 @@
 	padding-left: 10px;
 }
 /* 동의 글 */
+.content>textarea{
+	padding:10px;
+}
+
+
+/* textarea 패딩 적용 */
 .che_box{
 	position: absolute;
 	width: 22px;
@@ -37,17 +43,20 @@
 }
 /* chechbox 공통*/
 .che_box_all{
-	margin-left:409px;
+	margin-left:429px;
 }
 /* 모두동의 chechbox */
 .che_box_per1{
-	margin-left: 156px;
+	margin-left: 176px;
 }
 /* 개인수집 chechbox */
 .che_box_per2{
-	margin-left: 315px;
+	margin-left: 335px;
 }
 /* 개인위탁 chechbox */
+
+
+
 .btn_all{
 	margin:20px auto 0px;
 	width: 355px;
