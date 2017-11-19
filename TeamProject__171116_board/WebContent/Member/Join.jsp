@@ -302,8 +302,8 @@ $(document).ready(function(){
 					</tr>
 				</table>
 				<div id="login_btn">
-					<input type="button" value="Join" class="btn btn_submit" onclick="javascript:jo_check()">
-					<input type="button" value="Cancel" class="btn" onclick="location.href='./Main.me'"/>
+					<input type="button" value="회원가입" class="btn btn_submit" onclick="javascript:jo_check()">
+					<input type="button" value="취소" class="btn" onclick="location.href='./Main.me'"/>
 				</div>
 			</form>
 		</div>
