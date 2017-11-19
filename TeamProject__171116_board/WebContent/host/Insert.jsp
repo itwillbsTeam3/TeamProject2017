@@ -12,6 +12,11 @@
 <script>
 
 $(document).ready(function(){
+	$('#File2').css('display','none');
+	$('#File3').css('display','none');
+	$('#File4').css('display','none');
+	$('#File5').css('display','none');
+	
 	$('#btn_plus').on('click',function(){
 	if($('#File2').css('display')=='none'){
 		$('#File2').css('display','block');
