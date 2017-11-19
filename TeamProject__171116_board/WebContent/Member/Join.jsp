@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Join.css?v=6" rel="stylesheet" type="text/css">
+<link href="css/Join.css?v=7" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>

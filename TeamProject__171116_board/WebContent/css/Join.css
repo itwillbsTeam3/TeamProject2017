@@ -159,6 +159,11 @@
 	margin: 5px 5px 5px 20px;
 	height: 40px;
 	font-size: 17px;
+	transition: 0.3s ease;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
 }
 /* 아래 button 공통 */
 .btn_submit{

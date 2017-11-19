@@ -55,6 +55,11 @@
 	width: 100px;
 	cursor: pointer;
 	margin: 5px;
+	transition: 0.3s ease;
+}
+
+.click_btn:hover {
+	transform: translateY(-3px);
 }
 /* button 전체 */
 .btn_login {
