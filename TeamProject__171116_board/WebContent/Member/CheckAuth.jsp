@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/CheckAuth.css?v=6" rel="stylesheet" type="text/css">
+<link href="css/CheckAuth.css?v=7" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -79,7 +79,7 @@ function ck_au_save() {
 						</tr>
 					</table>
 					<div id="table_search">
-						<input type="button" name="delete" value="인증시도" class="btn" onclick="javascript:ck_au()">
+						<input type="button" name="delete" value="인증시도" class="btn btn_submit" onclick="javascript:ck_au()">
 						<input type="button" name="main" value="메인"
 							onclick="location.href='./Main.me'" class="btn">
 					</div>

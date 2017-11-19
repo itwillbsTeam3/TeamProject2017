@@ -21,6 +21,7 @@ h2{
 	font-size:17px;
 	margin-left: 140px;
 	margin-bottom:20px;
+	text-align: left;
 }
 /* table text */
 #notice input{
@@ -39,10 +40,10 @@ h2{
 }
 /* button 전체 */
 .btn_submit{
-	background-color: #FF5A5F;
-	margin-left: 140px;
+/* 	background-color: #FF5A5F;*/
+ 	margin-left: 50px;
 }
-
+/* 인증시도 */
 .article{
 	padding-top: 100px;
 }
