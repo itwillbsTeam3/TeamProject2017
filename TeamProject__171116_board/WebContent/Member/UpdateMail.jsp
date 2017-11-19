@@ -116,7 +116,7 @@ function sub(){
 			</table> 
 				<div id="login_btn">
 					<input type="button" value="업데이트" class="btn btn_sub" onclick="javascript:up_em_echeck()">
-					<input type="button" value="Cancel" onclick="location.href='./Main.me' " class="btn">
+					<input type="button" value="취소" onclick="location.href='./Main.me' " class="btn">
 				</div>
 			</form>
 		</div>
