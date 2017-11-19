@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Join.css?v=7" rel="stylesheet" type="text/css">
+<link href="css/Join.css?v=8" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -204,7 +204,7 @@ $(document).ready(function(){
 					</tr>
 					<tr class="form_row">
 						<td class="form_col">아이디</td>
-						<td><input type="text" name="id" class="id" id="id"><span
+						<td style="width:444px"><input type="text" name="id" class="id" id="id"><span
 							id="idchk"></span></td>
 					</tr>
 					<tr>
@@ -235,7 +235,7 @@ $(document).ready(function(){
 					</tr>
 					<tr>
 						<td class="form_col">성별</td>
-						<td class="form_col form_col_radio""><input type="radio"
+						<td class=" form_col_radio""><input type="radio"
 							name="gender" value="남자" checked>남자 <input type="radio"
 							name="gender" value="여자" class="form_radio_g">여자</td>
 					</tr>

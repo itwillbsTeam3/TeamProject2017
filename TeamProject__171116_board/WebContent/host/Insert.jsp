@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=2" rel="stylesheet" type="text/css">
-<link href="./css/insert.css?v=5" rel="stylesheet" type="text/css">
+<link href="./css/insert.css?v=6" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap"></script>
 <script>
@@ -142,16 +142,16 @@ $(document).ready(function(){
 			<form action="./HostinginsertAction.ho" method="post" enctype="multipart/form-data">
 			<div id="hosting">
 				
-					<div>주제</div>
+					<div class="section">주제</div>
 					<input type="text" name="subject">
 						<div class="border_bottom"> </div>
-					<div>소개</div>
+					<div class="section">소개</div>
 					<textarea rows="5" cols="60" name="content"></textarea>
 						<div class="border_bottom"> </div>
-					<div>가격(원)</div>
+					<div class="section">가격(원)</div>
 					<input type="text" name="price">
 						<div class="border_bottom"> </div>
-					<div>인원/침실</div>
+					<div class="section">인원/침실</div>
 					인원 : 
 				
 					<select name="numberOfGuest">
@@ -182,10 +182,10 @@ $(document).ready(function(){
 					<option value="4">4개</option>
 					</select>
 	<div class="border_bottom"> </div>
-					<div>이용 규칙</div>
+					<div class="section">이용 규칙</div>
 					<textarea rows="5" cols="60" name="Etc"></textarea>
 						<div class="border_bottom"> </div>
-					<div>숙소이미지</div>
+					<div class="section">숙소이미지</div>
 					<div id="insert_img">
 					<input type="file" id="File1" name="File1">
 					<input type="button" id="btn_plus" value="사진 추가하기">
@@ -195,7 +195,7 @@ $(document).ready(function(){
 					<input type="file" id="File5" name="File5">
 					</div>
 					<div class="border_bottom"> </div>
-					<div style="font-size:17px;">편의시설</div>
+					<div  class="section">편의시설</div>
 					<div id="insert_checkbox" style="font-size : 14px;">
 					
    <%
@@ -207,7 +207,7 @@ $(document).ready(function(){
    <%}%>
    </div>
    <div class="border_bottom"> </div>
-   <div style="font-size:17px;">가족 편의 시설</div>
+   <div class="section">가족 편의 시설</div>
    <div id="insert_checkbox" style="font-size : 14px;">
    <%
    String option2_1[] = {"아기욕조","아기모니터","베이비시터","욕조","기저귀 교환대","어린이용 장남감","어린이용 식기","벽난로 안정장치"};
@@ -218,7 +218,7 @@ $(document).ready(function(){
       <%}%> 
    </div>
    <div class="border_bottom"> </div>
-   <div style="font-size:17px;">안전 기능</div>
+   <div class="section">안전 기능</div>
    <div id="insert_checkbox" style="font-size : 14px;">
    <%
    String option3_1[] = {"화재감지기","소화기"};
@@ -237,8 +237,8 @@ $(document).ready(function(){
     margin-right: auto; "></div>
 					</div>
 					<div id="insert_btn">
-						<input type="submit" value="호스팅하기" onclick="test()" class="hosting_button">  
-						<input type="reset" value="다시쓰기">
+						<input type="submit" value="호스팅하기" onclick="test()" class="hosting_button btn">  
+						<input type="reset" value="다시쓰기" class="btn">
 					</div>
 				</form>
 			</div>
