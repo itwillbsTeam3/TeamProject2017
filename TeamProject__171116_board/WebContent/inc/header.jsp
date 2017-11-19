@@ -183,7 +183,7 @@
 	<div class="modal_login">
 		<!-- login -->
 		<div class="Login_table">
-			<h1>Login</h1>
+			<h1>로그인</h1>
 			<br>
 			<form action="./MemberLoginAction.me" name="fr" method="post">
 				<table class="inner_table">
@@ -197,8 +197,8 @@
 					</tr>
 				</table>
 				<div class="login_btn">
-					<input type="submit" value="Login" class="click_btn btn_login">
-					<input type="reset" value="Cancel" class="click_btn btn_cancel"
+					<input type="submit" value="로그인" class="click_btn btn_login">
+					<input type="reset" value="취소" class="click_btn btn_cancel"
 						id="btn_cancel">
 				</div>
 				<div class="login_btn_find">
