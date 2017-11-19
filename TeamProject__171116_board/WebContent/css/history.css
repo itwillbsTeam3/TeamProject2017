@@ -113,7 +113,7 @@
 	width : 100px;
 }
 
-.Hosthistory_back{	
+.history_back{	
 	margin-top:30px;
 	display: inline-block;
 	border-radius: 10px;
@@ -127,3 +127,7 @@
 }
 /* 메인으로  */
 
+.payhistory{
+	margin-left: 50px;
+}
+/* 결제내역 안 메인으로*/
