@@ -32,6 +32,10 @@
 	padding-left: 20px;
 }
 /* 입력사항 */
+.form_table input{
+	padding-left: 10px;
+}
+/* input 파일선택 부분이랑 달라서 강제 적용*/
 .width_pass{
 	width:430px;
 }
@@ -98,14 +102,19 @@
 }
 /* btn named upload */
 
+
+/* filebox css */
 .filebox .upload-name {
 	padding: .5em .75em;
 	background-color:#fff;
-  border: 1px solid #a9a9a9;
-   -webkit-appearance: none; /* 네이티브 외형 감추기 */
-  -moz-appearance: none;
-  appearance: none;
-  color:#757575;
+  	border: 1px solid #a9a9a9;
+  	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+  	-moz-appearance: none;
+  	appearance: none;
+  	color:#757575;
+  /* 글씨체랑 높이 달라서 강제 적용 */
+    font-size: 0.9em;
+    height: 10px;
 }
 
 /* imaged preview */
@@ -137,7 +146,7 @@
 	height: 150px;
 	border-radius:50%;
 }
-
+/* filebox css */
 
 
 .btn{	
