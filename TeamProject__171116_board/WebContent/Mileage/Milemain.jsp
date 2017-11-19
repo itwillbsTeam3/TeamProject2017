@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Milemain.css?v=4" rel="stylesheet" type="text/css">
+<link href="css/Milemain.css?v=5" rel="stylesheet" type="text/css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
@@ -90,7 +90,7 @@ function mil_charge() {
 					</tr>
 				</table>
 					<div id="login_btn">
-						<input type="button" value="충전하기" class="btn btn_submit" onclick="javascript:mi_ch_check()"> 
+						<input type="button" value="충전" class="btn btn_submit" onclick="javascript:mi_ch_check()"> 
 						<input type="button" value="Cancel" class="btn" onclick="location.href='./Main.me'"/>
 					</div>
 			</form>

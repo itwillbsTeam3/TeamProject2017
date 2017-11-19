@@ -14,25 +14,27 @@
 /* 마일리지 충전 전체영역 */
 
 .body h1{
-
+	width:210px;
 	margin: auto;
 	text-align : center;
 }
 /* 마일리지 충전 */
 .form_table{
+	width:500px;
 	margin: auto;	
 }
 /* 충전금액 table */
 .form_table th, td{
 	width: 100px;
-}
+}s
 /* 충전금액 +선택 */
 .form_table th{
 	text-align: left;
 }
 /* 충전금액 */
 .form_table td{
-	text-align: right;
+
+	
 }
 /* 선택 */
 #login_btn{
