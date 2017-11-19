@@ -13,6 +13,21 @@
 <script src="js/script.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style type="text/css">
+.body{
+width: 550px !important;
+} 
+.form_table th {
+width: 145px;
+}
+#login_btn{
+margin-top: 20px;
+}
+.btn_sub{
+margin-left: 170px;
+}
+
+</style>
 <script type="text/javascript">
 function up_em_echeck(){
 		var em = $(".email").val();
