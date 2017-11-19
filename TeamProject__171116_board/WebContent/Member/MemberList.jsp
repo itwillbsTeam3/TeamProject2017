@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/MemberList.css?v=3" rel="stylesheet" type="text/css">
+<link href="css/MemberList.css?v=4" rel="stylesheet" type="text/css">
 
 <script>
 //삭제할 아이디를 넘김
@@ -91,7 +91,7 @@ if(mb.get(i).getSelfinfo().length()>16){
             <label><span style="color:red; font-weight: bold;">불가</span></label></td>
             <%
             }else{
-            %><input type="button" value="탈퇴" onclick="idDelete('<%=mb.get(i).getId() %>');"></td>
+            %><input type="button" value="탈퇴" class="delete_btn" onclick="idDelete('<%=mb.get(i).getId() %>');"></td>
             <%
             }
             %>

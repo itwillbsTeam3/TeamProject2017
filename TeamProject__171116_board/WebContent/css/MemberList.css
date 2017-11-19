@@ -74,13 +74,22 @@
 
 #delete{
 	width: 50px;
+
 }
 /* 각각 width */
-
+.delete_btn{	
+	display: inline-block;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #DBDBDB;
+	height: 30px;
+}
+/* 탈퇴버튼 */
 .MemberList_count{
 	margin: 20px auto; 
 	width: 200px;
-	}
+}
+/* Memberlist_count 1~10 */
 .MemberList_back{	
 	display: inline-block;
 	border-radius: 10px;
@@ -93,4 +102,4 @@
 	background-color: #DBDBDB;
 	line-height: 40px;
 }
-
+/* 메인으로  */

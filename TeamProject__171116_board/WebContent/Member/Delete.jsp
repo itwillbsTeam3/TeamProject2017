@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/member.css?v=2" rel="stylesheet" type="text/css">
+<link href="css/Delete.css?v=1" rel="stylesheet" type="text/css">
 <script src="js/script.js"></script>
 </head>
 <body>
@@ -35,10 +35,9 @@
 					</tr>
 				</table>
 				<div id="login_btn">
-					<input type="button" name="main" value="메인" onclick="location.href='./Main.me'">
-					<input type="button" name="update" value="뒤로 가기" onclick="location.href='./MemberUpdate.me'">
-					<input type="submit" name="delete" value="회원탈퇴">
-					<input type="reset" value="Cancel" class="click_btn">
+					<input type="button" name="main" value="메인" class="btn btn_main" onclick="location.href='./Main.me'">
+					<input type="button" name="update" value="정보수정" class="btn" onclick="location.href='./MemberUpdate.me'">
+					<input type="submit" name="delete" value="회원탈퇴" class="btn btn_submit">
 					<div style="margin:10px;  width:550px; background-color:#EAEAEA; padding: 5px 0 5px 15px;">
 					※ 탈퇴하시면 복구 불가능합니다.<br>
 					- 탈퇴할 시 해당 계정의 정보가 지워집니다.<br>
