@@ -35,3 +35,24 @@ dt, dd {
 h2{
 	text-align : center !important;	
 }
+a{
+	color : #333 !important;
+}
+.submit_btn{	
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+	height: 40px;
+	transition: 0.3s ease;
+	background-color: #FF5A5F;
+	margin-right : auto;
+	margin-left : auto;
+	font-size : 17px;
+}
+
+.submit_btn:hover {
+	transform: translateY(-3px);
+}

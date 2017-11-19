@@ -67,8 +67,7 @@ public class BookingAction implements Action{
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
 		out.println("alert('잔액이 부족합니다.마일리지를 충전해주세요.');");
-		out.println("opener.location.href='./Milemain.mi' ");
-		out.println("window.close();");
+		out.println("location.href='./Main.me' ");
 		out.println("</script>");
 		out.close();
 		return null;		
@@ -86,9 +85,10 @@ public class BookingAction implements Action{
 	PrintWriter out = response.getWriter();
 	out.println("<script>");
 	out.println("alert('예약이 완료 되었습니다.');");
-	out.println("window.close();");
+	out.println("location.href='./Main.me' ");
 	out.println("</script>");
 	out.close();
 	return null;
+
 	}
 }

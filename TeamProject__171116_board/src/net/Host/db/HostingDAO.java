@@ -28,6 +28,7 @@ public class HostingDAO {
 		con=ds.getConnection();
 		return con;
 	}
+	
 	public void insertContent(HostingBean temp){
 		try {
 			con = getConnection();
@@ -54,6 +55,7 @@ public class HostingDAO {
 				} 
 		}	
 	}	
+	
 	public void updatereadcount(int num){
 	try {
 		con = getConnection();
@@ -70,6 +72,7 @@ public class HostingDAO {
 			} // 마무리 객체닫기
 	}
 	}
+	
 	public HostingBean getContent(int num ,boolean check) {
 		HostingBean content = new HostingBean();
 		try {
@@ -110,6 +113,7 @@ public class HostingDAO {
 		}
 		return content;
 	}
+	
 	public HostingBean getContent(String id) {
 		HostingBean temp = new HostingBean();
 		

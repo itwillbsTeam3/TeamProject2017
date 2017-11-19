@@ -9,7 +9,7 @@
 <title>booking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="./css/bootstrap.css" rel="stylesheet">
-<link href="./css/booking.css?v=5" rel="stylesheet" type="text/css">
+<link href="./css/booking.css?v=6" rel="stylesheet" type="text/css">
 <link href="./css/default.css?v=18" rel="stylesheet" type="text/css">
 
 <%
@@ -75,9 +75,10 @@ DecimalFormat dc = new DecimalFormat("#,###");
 			<input type="hidden" name="checkin" value="<%=checkin%>">
 			<input type="hidden" name="checkout" value="<%=checkout%>">
 			<input type="hidden" name="price"  value="<%=price%>">
-			<!-- 1박기준 가격이 넘어가는게 맞나요?? -->
 			<input type="hidden" name="num"  value="<%=hb.getNum()%>">
-			<input type="submit" value="예약하기" style="float:right; margin-bottom:10px;">		
+			<div style="text-align:center;">
+			<input type="submit" value="예약하기" class="submit_btn">
+			</div>		
 		</form>
 		
 			</div>
