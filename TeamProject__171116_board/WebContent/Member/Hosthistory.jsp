@@ -50,7 +50,7 @@
 			}
 		%>
 	</table>
-		<div class="Hosthistory_back"><a href="./Main.me">메인으로</a></div>
+		<div class="history_back"><a href="./Main.me">메인으로</a></div>
 	</div>
 	<!-- 푸터들어가는곳 -->
 	<jsp:include page="../inc/footer.jsp" />
