@@ -15,7 +15,7 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=2" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="wrap">
@@ -50,6 +50,7 @@
 			}
 		%>
 	</table>
+		<div class="Hosthistory_back"><a href="./Main.me">메인으로</a></div>
 	</div>
 	<!-- 푸터들어가는곳 -->
 	<jsp:include page="../inc/footer.jsp" />

@@ -95,7 +95,7 @@
 	width : 50px;
 }
 .Hos_td.td2{
-	width : 100px;
+	width : 150px;
 }
 .Hos_td.td3{
 	width : 100px;
@@ -112,3 +112,18 @@
 .Hos_td.td7{
 	width : 100px;
 }
+
+.Hosthistory_back{	
+	margin-top:30px;
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	height: 40px;
+	background-color: #DBDBDB;
+	line-height: 40px;
+}
+/* 메인으로  */
+
