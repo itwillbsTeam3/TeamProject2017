@@ -237,7 +237,7 @@ $(document).ready(function(){
     margin-right: auto; "></div>
 					</div>
 					<div id="insert_btn">
-						<input type="submit" value="호스팅하기" onclick="test()">  
+						<input type="submit" value="호스팅하기" onclick="test()" class="hosting_button">  
 						<input type="reset" value="다시쓰기">
 					</div>
 				</form>
