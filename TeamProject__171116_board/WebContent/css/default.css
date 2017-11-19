@@ -32,49 +32,7 @@ a:link {
 	padding-bottom: 80px;
 }
 
-/* header */
-#topmenu {
-	width: 100%;
-	position: fixed;
-	top: 0;
-	height: 65px;
-	z-index: 50;
-	background-color: white;
-	line-height: 1;
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
 
-#topmenu_left {
-	float: left;
-	margin-top: 3px;
-	margin-left: 40px;
-}
-
-#topmenu_right {
-	float: right;
-	margin-top: 8px;
-	margin-right: 40px;
-	font-size: 17px;
-	height: 50px;
-}
-
-#topmenu_right div a {
-	margin-left: 20px;
-}
-
-#topmenu_out {
-	display: table;
-	padding-top: 15px;
-}
-
-#topmenu_in {
-	display: table;
-}
-
-#topmenu_in>span {
-	display: table-cell;
-	vertical-align: middle;
-}
 /* main */
 .body {
 	margin-right: auto;

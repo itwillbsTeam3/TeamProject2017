@@ -141,4 +141,9 @@ star-input>.input.focus {
     top: 95px;
     position: absolute;
     background-color: #FF5A5F;
+	transition: 0.3s ease;
+}
+
+.btn_review_write:hover {
+	transform: translateY(-3px);
 }

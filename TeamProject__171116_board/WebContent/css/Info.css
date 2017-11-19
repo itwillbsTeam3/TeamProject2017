@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,36 +7,36 @@
 	font-family: 'Nanum Gothic';
 }
 /* 전체영역 */
-.body{
-	padding-top : 30px;
+.body {
+	padding-top: 30px;
 	width: 500px;
 	margin-bottom: 40px;
 }
 /* 글 */
-.form_table th{
+.form_table th {
 	text-align: left;
 }
 /* 목록 */
-.form_table .line{
-	border-bottom : 1px solid #DBDBDB;
-	outline-width:0;
+.form_table .line {
+	border-bottom: 1px solid #DBDBDB;
+	outline-width: 0;
 	line-height: 20px;
-	font-size : 16px; 
+	font-size: 16px;
 }
 /* 줄긋기 */
-.body>h1{
+.body>h1 {
 	text-align: center;
 }
 /* 회원정보 */
-.form_col{
-	width: 120px;	
+.form_col {
+	width: 120px;
 }
 /* 테이블 th */
-.form_table img{
+.form_table img {
 	padding: 10px;
 }
-
-.btn{
+/* 버튼 */
+.btn {
 	display: inline-block;
 	border-radius: 10px;
 	border: none;
@@ -45,16 +46,30 @@
 	margin: 5px;
 	color: #333;
 	height: 40px;
+	transition: 0.3s ease;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
 }
 /* button 전체 */
-.btn_update{
+.btn_update {
 	background-color: #FF5A5F;
 	margin-left: 140px;
 }
 /* 회원정보수정 btn */
-.form_table tr{
-	height : 35px !important;
+.form_table tr {
+	height: 35px !important;
 }
-#Info_btn{
-	text-align : center;
+
+#Info_btn {
+	text-align: center;
+}
+
+td:first-child {
+	font-weight: bold;
+}
+
+.btn.update {
+	background-color: #FF5A5F;
 }

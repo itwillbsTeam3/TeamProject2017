@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Info.css" rel="stylesheet" type="text/css">
+<link href="css/Info.css?v=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%
@@ -42,9 +42,9 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 			<tr>
 				<td>성별</td>
 				<td><input type="radio" name="gender" value="남자" 
-					<% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %>> 남자
+					<% if(mb.getGender() == null || mb.getGender().equals("남자")){ %> checked <%} %> disabled="disabled"> 남자
 					<input type="radio" name="gender" value="여자" 
-					<% if((mb.getGender()).equals("여자")){ %> checked <% } %>>여자</td>
+					<% if((mb.getGender()).equals("여자")){ %> checked <% } %> disabled="disabled">여자</td>
 			</tr>
 			<tr>
 				<td>이메일</td><td><%=mb.getEmail() %></td>
@@ -73,7 +73,7 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 			</tr>
 			</table>
 			 <div id="Info_btn">
-				<span></span><input type="button" value="정보수정" onclick="location.href='./MemberUpdate.me'" class="btn"> 
+				<span></span><input type="button" value="정보수정" onclick="location.href='./MemberUpdate.me'" class="btn update"> 
 				<input type="button" value="회원탈퇴" onclick="location.href='./MemberDelete.me'" class="btn">
 			</div>
 		</div>

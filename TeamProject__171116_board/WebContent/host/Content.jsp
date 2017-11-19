@@ -18,8 +18,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=3" rel="stylesheet" type="text/css">
-<link href="./css/board.css?v=24" rel="stylesheet" type="text/css">
-<link href="./css/star.css?v=6" rel="stylesheet" type="text/css">
+<link href="./css/content.css?v=25" rel="stylesheet" type="text/css">
+<link href="./css/star.css?v=7" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./css/style.css" type="text/css">
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 

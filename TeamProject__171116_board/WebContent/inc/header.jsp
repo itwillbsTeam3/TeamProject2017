@@ -10,67 +10,7 @@
 	pageEncoding="UTF-8"%>
 <!-- <script src ="js/jquery-3.2.1.min.js"></script> -->
 <link href="css/Login.css?v=7" rel="stylesheet" type="text/css">
-
-<style type="text/css">
-.popup {
-	position: relative;
-	display: inline-block;
-}
-
-.popuptext {
-	display: none;
-	width: 50px;
-	background-color: skyblue;
-	color: white;
-	text-align: center;
-	border-radius: 50%;
-	padding: 8px 0;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -25px;
-	margin-bottom: -5px;
-	font-weight: bold;
-}
-
-.popuptext::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: -5px;
-	border-style: solid;
-	border-color: green transparent transparent transparent;
-}
-
-.show {
-	visibility: hidden;
-	animation: fadeIn 1s;
-}
-
-/* Modal 관련 */
-#modal01 {
-	display: none;
-	position: fixed;
-	z-index: 99;
-	padding-top: 150px;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-/* Modal Content(내용) */
-.modal_content_header {
-	animation-name: zoom;
-	animation-duration: 0.6s;
-	text-align: center;
-	position: relative;
-}
-</style>
+<link href="css/header.css?v=1" rel="stylesheet" type="text/css">
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -208,7 +148,7 @@
 				<button class="login">
 					<%
 						if (alrampopup != 0) {
-					%><b><%=id%>(<%=alrampopup%>)<b><%
+					%><b><%=id%>(<%=alrampopup%>)</b><%
 						} else {
 					%><b><%=id%></b><%
 						}
@@ -220,7 +160,9 @@
 					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=1200 height=800'); return false">알림(<%=alrampopup%>)</a>
 				</span>
 			</span>
-			<span><a href="./MemberLogoutAction.me">로그아웃</a></span>
+			<span>
+			<a href="./MemberLogoutAction.me">로그아웃</a>
+			</span>
 		</div>
 		<%
 			} else if (id == null) {

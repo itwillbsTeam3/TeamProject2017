@@ -1,0 +1,27 @@
+/* list */
+#list_wrap {
+	width: 1700px;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 800px;
+}
+
+#list_body {
+	margin-top: 100px;
+	width: 1100px;
+	min-height: 600px;
+}
+
+#map_wrap {
+	width: 600px;
+	height: 800px;
+	position: absolute;
+	top: 0px;
+	left: 1100px;
+}
+
+.list_wrap {
+	width: 348px;
+	display: inline-flex;
+}
