@@ -107,34 +107,26 @@ $(document).ready(function(){
 		<div class="body">
 			<div id="background">
 				<div id="hosting_intro">
-					<span style="font-size: 20px;">HOST ON BUSAN TRIP</span><br> <span
-						style="font-size: 44px;">Earn money as a <br> HOSTER
+					<span style="font-size: 31px;">자신의 집을 공유해서</span><br> <span
+						style="font-size: 44px;">수입을 올려보세요<br> HOSTER가 도와드립니다.
 					</span>
 				</div>
-				<div id="gradient"></div>
+				<div id="host_3table">
+				<div>
+					<div style="font-size: 28px; font-weight: bold">Hoster의 장점</div><br> <span style="font-size: 19px;">
+						호스트가 공유하는 숙소와 방의 종류와 관계없이 간편하고 안전하게 수입을 창출하도록 지원하며, 
+						숙소를 찾는 수억 명의 여행자에게 호스트의 숙소를 소개합니다.</span>
+				</div>
+				<div>
+					<div style="font-size: 28px; font-weight: bold">포인트제도</div><br> <span style="font-size: 19px;">
+						숙소예약을 통해 얻은 포인트로 다른 호스트의 숙소를 예약할 수 있습니다.</span>
+				</div>
+				<div>
+					<div style="font-size: 28px; font-weight: bold">한방에 가능합니다.</div><br> <span style="font-size: 19px;">
+						번거로운 절차가 필요없이 한방에 숙소를 등록하고 예약을 할수 있으며 알람기능을 제공합니다.</span>
+				</div>
 			</div>
-			<div class="clear"></div>
-			<div id="host_3table">
-				<div>
-					<span style="font-size: 28px; font-weight: bold">Why host on
-						hoster?</span><br> <span style="font-size: 19px;">Lorem
-						ipsum dolor sit amet, consectetur adipiscing elit. Nulla mi elit,
-						tincidunt mattis fermentum id, finibus id lorem. Integer enim
-						tortor, dapibus nec tincidunt ac.</span>
-				</div>
-				<div>
-					<span style="font-size: 28px; font-weight: bold">You’re in
-						control</span><br> <span style="font-size: 19px;">Lorem ipsum
-						dolor sit amet, consectetur adipiscing elit. Nulla mi elit,
-						tincidunt mattis fermentum id, finibus id lorem. Integer enim
-						tortor, dapibus nec tincidunt ac, rhoncus ac lectus.</span>
-				</div>
-				<div>
-					<span style="font-size: 28px; font-weight: bold">We’re there
-						at every step</span><br> <span style="font-size: 19px;">Lorem
-						ipsum dolor sit amet, consectetur adipiscing elit. Nulla mi elit,
-						tincidunt mattis fermentum id, finibus id lorem. </span>
-				</div>
+				<div id="gradient"></div>
 			</div>
 			<div class="clear"></div>
 			
