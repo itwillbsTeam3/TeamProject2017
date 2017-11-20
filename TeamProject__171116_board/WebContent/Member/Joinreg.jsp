@@ -5,7 +5,7 @@
 <head>
 <title>회원가입 </title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Joinreg.css?v=5" rel="stylesheet" type="text/css">
+<link href="css/Joinreg.css?v=6" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript">
@@ -88,7 +88,7 @@ $(document).ready(function(){
            </textarea><br>
          <div class="clear"></div>   
 		 <div class="btn_all">
-		 <input type="submit" value="동의" class="button" />
+		 <input type="submit" value="동의" class="button" style="background-color:#FF5A5F;"/>
 		 <input type="button" value="비동의" class="button" onclick="location.href='./Main.me'"/>
 		</div>
 		</div>
