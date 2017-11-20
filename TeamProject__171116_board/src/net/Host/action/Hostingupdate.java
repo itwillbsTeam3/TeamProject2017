@@ -35,7 +35,7 @@ public class Hostingupdate implements Action {
 		
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./host/update.jsp");
+		forward.setPath("./host/hostUpdate.jsp");
 		return forward;
 	}
 

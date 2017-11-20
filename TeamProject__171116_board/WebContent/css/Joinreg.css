@@ -73,6 +73,11 @@
 	margin: 5px;
 	height: 40px;
 	font-size: 1.2em;
+	transition: 0.3s ease;
+}
+
+.button:hover {
+	transform: translateY(-3px);
 }
 /* 버튼 전체 */
 .button_sub{
