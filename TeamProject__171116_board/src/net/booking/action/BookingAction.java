@@ -81,6 +81,11 @@ public class BookingAction implements Action{
 	htb.setMileage(bb.getPrice());
 	historydao.insertHistory(htb);
 	
+	htb.setFlag(2);
+	htb.setId(bb.getHost_id());
+	htb.setMileage(bb.getPrice());
+	historydao.insertHistory(htb);
+	
 	response.setContentType("text/html; charset=UTF-8");
 	PrintWriter out = response.getWriter();
 	out.println("<script>");

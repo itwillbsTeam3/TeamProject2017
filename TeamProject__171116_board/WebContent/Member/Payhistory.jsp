@@ -36,10 +36,15 @@
 			<tr>
 				<td>사용</td>
 				<%
-					} else {
+					} else if(hb.get(i).getFlag() == 0){
 				%>
 			<tr>
 				<td>충전</td>
+				<%
+					} else if(hb.get(i).getFlag() == 2){
+				%>
+			<tr>
+				<td>입금</td>
 				<%
 					}
 				%>
