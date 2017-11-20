@@ -113,12 +113,16 @@
 					<a href="./MemberCheckPw.me">정보수정</a>
 					<a href="./MemberEmailUpdate.me">이메일 변경</a>
 					<a href="./History.hi">결제내역</a>
+					<!-- 호스팅내용이 없으면 안뜨게 -->
+					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
+					<%} %>
+					<!-- 호스팅내용이 없으면 안뜨게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800'); return false">1:1채팅</a>
 					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=1200 height=800'); return false">알림(<%=alrampopup%>)</a>
 
-					</a>
+
 				</span>
 			</span>
 			
