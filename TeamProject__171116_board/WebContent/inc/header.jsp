@@ -116,8 +116,11 @@
 					<!-- 호스팅내용이 없으면 안뜨게 -->
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
-					<%} %>
+					<%}else{ %>
 					<!-- 호스팅내용이 없으면 안뜨게 -->
+					<!-- 호스팅 내용이 있으면 수정가능하게 -->
+					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
+					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800'); return false">1:1채팅</a>
 					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=1200 height=800'); return false">알림(<%=alrampopup%>)</a>
