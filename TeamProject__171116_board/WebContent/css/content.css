@@ -382,3 +382,6 @@ to {
     padding-top: 10px;
     margin-top : 10px;
 }
+#host_introduce{
+	word-break:break-all;
+}
