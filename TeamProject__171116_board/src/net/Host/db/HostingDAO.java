@@ -210,6 +210,8 @@ public class HostingDAO {
 		return 1;
 	}
 	public ArrayList<HostingBean> getcontentList(int start,int size,String address){
+		
+		
 		address = "%"+address+"%";
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {

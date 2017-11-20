@@ -61,7 +61,7 @@ public class Mydatecarculator{
 		String temp;
 					for(int i = 0 ; i  < date_to_date ; i ++){
 					Date x = new Date(year-1900,month-1,day+i);
-				//	System.out.println("씨발런아" + x);
+				//	System.out.println("test" + x);
 					String z = "\""+x.toString()+"\"";
 					temp = "";
 					for(int q = 0 ; q < z.length() ; q++){
@@ -93,7 +93,7 @@ public class Mydatecarculator{
 			String temp;
 						for(int i = 0 ; i  < date_to_date ; i ++){
 						Date x = new Date(year-1900,month-1,day+i);
-					//	System.out.println("씨발런아" + x);
+					//	System.out.println("test" + x);
 						String z = "\""+x.toString()+"\"";
 						temp = "";
 						for(int q = 0 ; q < z.length() ; q++){

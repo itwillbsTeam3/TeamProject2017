@@ -59,7 +59,7 @@ public class BookingAction implements Action{
 		out.close();
 		return null;
 	}
-	check = miledao.useMileage(bb.getGuest_id(),bb.getPrice());
+	check = miledao.useMileage(bb.getGuest_id(),bb.getPrice(),bb.getCheckin(),bb.getCheckout(),bb.getHost_id());
 	//호스트에게 마일리지 주기 
 	if(check==-1){		
 		response.setCharacterEncoding("UTF-8");

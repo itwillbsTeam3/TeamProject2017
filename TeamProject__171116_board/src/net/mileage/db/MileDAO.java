@@ -111,7 +111,7 @@ public class MileDAO {
 		return check;
 	}
 	//마일리지사용
-	public int useMileage(String id,int money){
+	public int useMileage(String id,int money,String in,String out,String hostid){
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		String sql="";
@@ -161,7 +161,7 @@ public class MileDAO {
 			pstmt.setString(4, "sys");
 			pstmt.setString(5, "sys");
 			pstmt.setInt(6, 0);
-			pstmt.setString(7, "\""+money+"마일리지를 사용"+"\"");
+			pstmt.setString(7, "\""+hostid+"님 숙소에 ("+in+"~"+out+") 예약되었습니다."+"\"");
 			pstmt.executeUpdate();
 			
 			
@@ -213,7 +213,7 @@ public class MileDAO {
 			pstmt.setString(4, guest_id);
 			pstmt.setString(5, "sys");
 			pstmt.setInt(6, 0);
-			pstmt.setString(7,"\""+guest_id+"님이 숙소를 예약"+"\"");
+			pstmt.setString(7,"\""+guest_id+"님이 숙소를 예약하였습니다."+"\"");
 			pstmt.executeUpdate();
 			//---------------------------------------------------------
 			System.out.println("updateMileage sql 끝");
