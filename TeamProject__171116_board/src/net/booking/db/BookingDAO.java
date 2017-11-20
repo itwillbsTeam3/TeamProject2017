@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import net.booking.action.Mydatecarculator;
 import net.booking.action.checkinout;
 import net.booking.db.BookingBean;
 
@@ -55,6 +56,21 @@ public class BookingDAO {
 	}
 	public int checkbooking(String host_id,String checkin,String checkout){
 		  int check = 0;
+		  Mydatecarculator car = new Mydatecarculator();
+			int y,m,d,yy,mm,dd;
+			String []qe = checkin.split("-");
+			yy =Integer.parseInt(qe[0]);
+			mm =Integer.parseInt(qe[1]);
+			dd =Integer.parseInt(qe[2]);
+			String []qee = checkout.split("-");
+			y =Integer.parseInt(qee[0]);
+			m =Integer.parseInt(qee[1]);
+			d =Integer.parseInt(qee[2]);
+			int interval = car.GetDifferenceOfDate(y, m, d, yy, mm, dd);
+			System.out.println(interval);
+			if(interval<=0){
+				return 0;
+			}
 		  System.out.println("ㅅㅅㅅㅅㅅㅅ");
 		      try {
 		         con = getConnection();

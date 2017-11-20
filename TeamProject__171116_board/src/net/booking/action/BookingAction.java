@@ -42,23 +42,14 @@ public class BookingAction implements Action{
 	y =Integer.parseInt(qee[0]);
 	m =Integer.parseInt(qee[1]);
 	d =Integer.parseInt(qee[2]);
+
 	int interval = master.GetDifferenceOfDate(y, m, d, yy, mm, dd);
 	bb.setPrice(Integer.parseInt(request.getParameter("price"))*interval);
+	
 	bb.setEtc(request.getParameter("etc"));
 
 	MileDAO miledao = new MileDAO();
-	
-	check = bkdao.checkbooking(bb.getHost_id(),bb.getCheckin(),bb.getCheckout());
-	System.out.println(check);
-	if(check == 0){
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("alert('예약할수 없는 기간입니다. 날짜를 정확히 입력해주세요.');");
-		out.println("window.close();");
-		out.println("</script>");
-		out.close();
-		return null;
-	}
+
 	check = miledao.useMileage(bb.getGuest_id(),bb.getPrice(),bb.getCheckin(),bb.getCheckout(),bb.getHost_id());
 	//호스트에게 마일리지 주기 
 	if(check==-1){		
