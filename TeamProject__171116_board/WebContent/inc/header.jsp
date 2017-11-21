@@ -192,7 +192,7 @@
 			<form action="./MemberLoginAction.me" name="fr" method="post">
 				<table class="inner_table">
 					<tr class="login_row">
-						<td class="form_col">아이디</td>
+						<td class="form_col" width=80px>아이디</td>
 						<td><input type="text" name="id"></td>
 					</tr>
 					<tr class="login_row">
