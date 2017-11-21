@@ -9,7 +9,7 @@
 <body>
 <%
 // 멤버 주소이동
-response.sendRedirect("./Main.me");
+ response.sendRedirect("./Main.me");
 %>
 </body>
 </html>
