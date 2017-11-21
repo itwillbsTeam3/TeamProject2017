@@ -160,8 +160,8 @@
 				</button>
 				<span class="dropdown-content">
 					<a href="./MemberCheckPw.me">정보수정</a><a href="./MemberList.me">회원관리</a>
-					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800'); return false">1:1채팅</a>
-					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=1200 height=800'); return false">알림(<%=alrampopup%>)</a>
+					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800 location=no left=600px'); return false">1:1채팅</a>
+					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=770 height=800 location=no left=500px'); return false">알림(<%=alrampopup%>)</a>
 				</span>
 			</span>
 			<span>
