@@ -385,3 +385,6 @@ to {
 #host_introduce{
 	word-break:break-all;
 }
+textarea{
+	resize: none;
+}

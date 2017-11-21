@@ -137,3 +137,6 @@
 #address{
 	margin : 10px;
 }
+textarea{
+	resize: none;
+}
