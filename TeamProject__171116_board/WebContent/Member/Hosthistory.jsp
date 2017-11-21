@@ -15,7 +15,15 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=2" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=3" rel="stylesheet" type="text/css">
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	  $('table tr:odd').css("backgroundColor","white");         // odd 홀수
+	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.first_tr').css("backgroundColor","#666")// even 짝수
+	}); 
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -25,7 +33,7 @@
 	<div class="pay_body">
 	<h1>호스팅내역</h1>
 	<table class="hosting_table">
-		<tr>
+		<tr class="first_tr">
 			<td class="Hos_td td1">No.</td>
 			<td class="Hos_td td2">숙소이름</td>
 			<td class="Hos_td td3">예약자</td>
@@ -50,7 +58,9 @@
 			}
 		%>
 	</table>
+	<div class="main_wrap">
 		<div class="history_back"><a href="./Main.me">메인으로</a></div>
+	</div>
 	</div>
 	<!-- 푸터들어가는곳 -->
 	<jsp:include page="../inc/footer.jsp" />

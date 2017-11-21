@@ -78,16 +78,16 @@
 
 #content_top {
 	border-bottom: 1px solid #DBDBDB;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	line-height: 2;
 }
 
 #content_mid {
-	margin-top: 12px;
+	margin-top: 20px;
 	font-size: 20px;
 	line-height: 2;
 	border-bottom: 1px solid #DBDBDB;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	display: inline-block;
 	width: 600px;
 }
@@ -138,9 +138,9 @@
 }
 
 #content_price {
-	margin-top: 12px;
+	margin-top: 20px;
 	border-bottom: 1px solid #DBDBDB;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	line-height: 2;
 	font-size: 20px;
 	width: 600px;
@@ -152,16 +152,16 @@
 
 #content_check {
 	width: 600px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	line-height: 2;
 	font-size: 20px;
 	border-bottom: 1px solid #DBDBDB;
 }
 
 #content_selfinfo {
-	margin-top: 12px;
+	margin-top: 20px;
 	width: 600px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	line-height: 2;
 	font-size: 20px;
 	border-bottom: 1px solid #DBDBDB;
@@ -172,9 +172,9 @@
 }
 
 #content_law {
-	margin-top: 12px;
+	margin-top: 20px;
 	width: 600px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	line-height: 2;
 	font-size: 20px;
 	border-bottom: 1px solid #DBDBDB;
@@ -185,9 +185,9 @@
 }
 
 #hosting_review_wrap {
-	margin-top: 12px;
+	margin-top: 20px;
 	width: 600px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	font-size: 17px;
 	border-bottom: 1px solid #DBDBDB;
 }
@@ -227,6 +227,7 @@
 
 .reviewer_name {
 	height: 32px;
+	font-weight : bold;
 }
 
 .reviewer_info {
@@ -239,6 +240,7 @@
 .review_content {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	word-break:break-all;
 }
 
 #content_map {
@@ -331,9 +333,9 @@ to {
 }
 
 #host_intro_wrap {
-	margin-top: 12px;
+	margin-top: 20px;
 	width: 600px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	font-size: 17px;
 	border-bottom: 1px solid #DBDBDB;
 	line-height: 2;
@@ -376,15 +378,29 @@ to {
 	border-top: 1px solid #DBDBDB;
     padding-top: 10px;
     margin-top : 10px;
+    font-weight : bold;
 }
 .option_2{
 	border-top: 1px solid #DBDBDB;
     padding-top: 10px;
     margin-top : 10px;
+    font-weight : bold;
 }
 #host_introduce{
 	word-break:break-all;
 }
-textarea{
-	resize: none;
+.reviewBtn{
+	display: inline-block;
+    border: none;
+    text-align: center;
+    cursor : pointer;
+    width: 100px;
+    margin: 10px;
+    height: 30px;
+    position : relative;
 }
+.reviewBtn>img{
+	position : absolute;
+	left : 35px;
+}
+

@@ -12,12 +12,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/MemberList.css?v=4" rel="stylesheet" type="text/css">
-
+<link href="css/MemberList.css?v=5" rel="stylesheet" type="text/css">
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	  $('table tr:odd').css("backgroundColor","white");         
+	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.first_tr').css("backgroundColor","#666");
+	}); 
+</script>
 <script>
 //삭제할 아이디를 넘김
     function idDelete(delID){
+	if(confirm("정말 삭제하시겠습니까?")==true){
 		location.href = "./MemberDel.me?id=" + delID;
+	}else{
+		return;
+	}
 	}   
 </script>
 
@@ -43,7 +54,7 @@
 		<h1>회원 목록 및 관리</h1><h2>회원 수 : <%=count%>명</h2>
 	
 	<table border="1">
-		<tr>
+		<tr class="first_tr">
 		<th id="pro">프로필</th>
 		<th id="id">아이디</th>
 		<th id="pass">비밀번호</th>
@@ -100,7 +111,8 @@ if(mb.get(i).getSelfinfo().length()>16){
     } 
     %>
 	</table>
-	<div class="MemberList_count">
+	<div  class="MemberList_count_wrap">
+		<div class="MemberList_count">
 	<%
 	
 		if (count != 0) {
@@ -119,8 +131,11 @@ if(mb.get(i).getSelfinfo().length()>16){
 			if (endPage < pageCount) {%><a href="./MemberList.me?pageNum=<%=startPage + pageBlock%>">[다음]</a><%}
 		}
 	%>
+		</div>
 	</div>
-	<div class="MemberList_back"><a href="./Main.me">메인으로</a></div>
+	<div class="MemberList_back_wrap">
+		<div class="MemberList_back"><a href="./Main.me">메인으로</a></div>
+	</div>
 	</div>
 	<!-- 본문 -->
 	<!-- 푸터들어가는곳 -->

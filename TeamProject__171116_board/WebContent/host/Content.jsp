@@ -18,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=3" rel="stylesheet" type="text/css">
-<link href="./css/content.css?v=26" rel="stylesheet" type="text/css">
+<link href="./css/content.css?v=31" rel="stylesheet" type="text/css">
 <link href="./css/star.css?v=7" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./css/style.css" type="text/css">
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -313,7 +313,7 @@ function popup()
 				</div>
 				<div id="content_mid">
 
-					<div>편의시설</div>
+					<div style="font-weight : bold;">편의시설</div>
 					<div style="width: 100%;min-height : 80px;">
 						<div class="option_left">
    <%
@@ -508,15 +508,25 @@ int pageNum = (int)request.getAttribute("pageNum");
 int starNum = 1;
 int endNum = pagesize;
 %>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=1&scroll=ok&countstop=ok'" type="button" value="[--">
+<div style="text-align : center;">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=1&scroll=ok&countstop=ok'" class="reviewBtn btn1">
+<img src="./img/arrow/l.png" width="30px">
+</div>
 <%if(pageNum==1) {%>
 <%}else{ %>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum-1%>&scroll=ok&countstop=ok'" type="button" style="width: 40px; height: 40px;" value="[-">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum-1%>&scroll=ok&countstop=ok'" class="reviewBtn btn2">
+<img src="./img/arrow/ll.png" width="30px">
+</div>
 <%} %>
 <%if(pagesize!=pageNum){ %>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum+1%>&scroll=ok&countstop=ok'" type="button" style="width: 40px; height: 40px;" value="-]">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum+1%>&scroll=ok&countstop=ok'" class="reviewBtn btn3">
+<img src="./img/arrow/r.png" width="30px">
+</div>
 <%}%>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pagesize%>&scroll=ok&countstop=ok'" type="button" value="--]">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pagesize%>&scroll=ok&countstop=ok'" class="reviewBtn btn4">
+<img src="./img/arrow/rr.png" width="30px">
+</div>
+</div>
 <div class="review_input">
 <div class="star-input-wrap"></div>
 
@@ -568,11 +578,11 @@ int endNum = pagesize;
 					</div>
 				</div>
 <!-- 		버튼위치 조정 필요합니다 -->
-		<div>
+<!-- 		<div>
             <input type="button" value="수정" onclick="location.href=''" class="btn">
             <input type="button" value="삭제" onclick="location.href=''" class="btn">
             <input type="button" value="목록" onclick="location.href=''" class="btn">
-        </div>
+        </div> -->
 <!-- 		버튼위치 조정 필요합니다 -->        
 				<div id="content_map">
 					

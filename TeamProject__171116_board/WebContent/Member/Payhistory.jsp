@@ -14,7 +14,15 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=5" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=6" rel="stylesheet" type="text/css">
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	  $('table tr:odd').css("backgroundColor","white");         
+	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.first_tr').css("backgroundColor","#666")
+	}); 
+</script>
 </head>
 <body>
 	<div class="wrap">
@@ -24,7 +32,7 @@
 		<div class="pay_body">
 		<h1>결제내역</h1>
 		<table class="pay_table">
-			<tr>
+			<tr class="first_tr">
 				<td class="Pay_td td1">구분</td>
 				<td class="Pay_td td2">금액</td>
 				<td class="Pay_td td3">결제일자</td>
@@ -55,7 +63,9 @@
 				}
 			%>
 		</table>
+			<div class="main_wrap">
 			<div class="history_back payhistory"><a href="./Main.me">메인으로</a></div>
+			</div>
 		</div>
 		<!-- 푸터들어가는곳 -->
 		<jsp:include page="../inc/footer.jsp" />

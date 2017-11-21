@@ -202,7 +202,7 @@ textarea{
 
 .mainslider_font {
 	font-size: 24px;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .mainbooking {
@@ -246,7 +246,7 @@ textarea{
 
 .mainbooking_slide {
 	width: 254px;
-	height: 450px;
+	height: 465px;
 	padding-left: 5px;
 	padding-right: 5px;
 	flex: 1;

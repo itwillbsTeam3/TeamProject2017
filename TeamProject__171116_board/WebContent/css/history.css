@@ -20,20 +20,26 @@
     margin-left : auto;
 }
 .pay_table td{
-	border : 1px solid #333;
+	border : 1px solid #C1C3D1;
 	text-align: center;
 }
 .pay_table tr{
-	height : 30px;
+	height : 35px;
 }
 .Pay_td.td1{
 	width : 100px;
 }
 .Pay_td.td2{
-	width : 300px
+	width : 300px;
 }
 .Pay_td.td3{
-	width : 200px
+	width : 200px;
+}
+.first_tr>td{
+	color : white;
+}
+.main_wrap{
+	text-align : center;
 }
 /* 
 *********bookinghistory************ 
@@ -45,11 +51,11 @@
     margin-left : auto;
 }
 .booking_table td{
-	border : 1px solid #333;
+	border : 1px solid #C1C3D1;
 	text-align: center;
 }
 .booking_table tr{
-	height : 30px;
+	height : 35px;
 }
 .Boo_td.td1{
 	width : 50px;
@@ -85,11 +91,11 @@
     margin-left : auto;
 }
 .hosting_table td{
-	border : 1px solid #333;
+	border : 1px solid #C1C3D1;
 	text-align: center;
 }
 .hosting_table tr{
-	height : 30px;
+	height : 35px;
 }
 .Hos_td.td1{
 	width : 50px;
@@ -126,8 +132,3 @@
 	line-height: 40px;
 }
 /* 메인으로  */
-
-.payhistory{
-	margin-left: 50px;
-}
-/* 결제내역 안 메인으로*/
