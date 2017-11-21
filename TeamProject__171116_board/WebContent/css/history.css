@@ -38,6 +38,9 @@
 .first_tr>td{
 	color : white;
 }
+.main_wrap{
+	text-align : center;
+}
 /* 
 *********bookinghistory************ 
 */
@@ -48,7 +51,7 @@
     margin-left : auto;
 }
 .booking_table td{
-	border : 1px solid #333;
+	border : 1px solid #C1C3D1;
 	text-align: center;
 }
 .booking_table tr{
@@ -88,7 +91,7 @@
     margin-left : auto;
 }
 .hosting_table td{
-	border : 1px solid #333;
+	border : 1px solid #C1C3D1;
 	text-align: center;
 }
 .hosting_table tr{
