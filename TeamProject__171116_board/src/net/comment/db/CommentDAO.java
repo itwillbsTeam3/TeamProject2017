@@ -115,7 +115,7 @@ public class CommentDAO {
 			
 			sql="select profile from member where id = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, temp.getTarget());
+			pstmt.setString(1, temp.getName());
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				profile = rs.getString("profile");
@@ -172,6 +172,7 @@ public class CommentDAO {
 		return true;
 	}
 	public boolean insertComment(CommentBean temp){
+		System.out.println("ㅇㅋㅇㅋ"+temp.getName() + temp.getTarget());
 		double grade = 0;
 		int alram = 0;
 		String profile = "";
@@ -181,7 +182,7 @@ public class CommentDAO {
 			
 			sql="select profile from member where id = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, temp.getTarget());
+			pstmt.setString(1, temp.getName());
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				profile = rs.getString("profile");

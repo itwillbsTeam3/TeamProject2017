@@ -13,7 +13,7 @@ public class insertcomment implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		request.setCharacterEncoding("utf-8");
-		
+		System.out.println("댓글 처리부분입니다.");
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
 		String target = request.getParameter("target");

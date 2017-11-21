@@ -11,6 +11,7 @@ public class recommentaction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+		System.out.println("대댓글 처리부분입니다.");
 		String name = request.getParameter("name");
 		String comment = request.getParameter("recomment");
 		String target = request.getParameter("target");
