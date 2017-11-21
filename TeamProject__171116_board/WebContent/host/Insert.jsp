@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=2" rel="stylesheet" type="text/css">
-<link href="./css/insert.css?v=6" rel="stylesheet" type="text/css">
+<link href="./css/insert.css?v=7" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap"></script>
 <script>

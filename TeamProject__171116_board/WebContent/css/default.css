@@ -31,7 +31,9 @@ a:link {
 	position: relative;
 	padding-bottom: 80px;
 }
-
+textarea{
+	resize: none;
+}
 
 /* main */
 .body {
