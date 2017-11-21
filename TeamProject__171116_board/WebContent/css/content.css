@@ -227,6 +227,7 @@
 
 .reviewer_name {
 	height: 32px;
+	font-weight : bold;
 }
 
 .reviewer_info {
