@@ -18,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=3" rel="stylesheet" type="text/css">
-<link href="./css/content.css?v=30" rel="stylesheet" type="text/css">
+<link href="./css/content.css?v=31" rel="stylesheet" type="text/css">
 <link href="./css/star.css?v=7" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./css/style.css" type="text/css">
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -313,7 +313,7 @@ function popup()
 				</div>
 				<div id="content_mid">
 
-					<div>편의시설</div>
+					<div style="font-weight : bold;">편의시설</div>
 					<div style="width: 100%;min-height : 80px;">
 						<div class="option_left">
    <%
