@@ -58,16 +58,17 @@ public class HostingOptionDAO {
 		try{
 			con=getConnection();
 		
-			sql="insert into room (numberOfGuest,numberOfRoom,numberOfBed,numberOfToilet,option1,option2,option3) values(?,?,?,?,?,?,?)";
+			sql="insert into room values(?,?,?,?,?,?,?,?)";
 			pstmt=con.prepareStatement(sql);
-			
-			pstmt.setString(1, hb.getNumberOfGuest());
-			pstmt.setString(2, hb.getNumberOfRoom());
-			pstmt.setString(3, hb.getNumberOfBed());
-			pstmt.setString(4, hb.getNumberOfToilet());
-			pstmt.setString(5, hb.getOption1());
-			pstmt.setString(6, hb.getOption2());	
-			pstmt.setString(7, hb.getOption3());			
+			System.out.println(hb.getNum());
+			pstmt.setInt(1, hb.getNum());
+			pstmt.setString(2, hb.getNumberOfGuest());
+			pstmt.setString(3, hb.getNumberOfRoom());
+			pstmt.setString(4, hb.getNumberOfBed());
+			pstmt.setString(5, hb.getNumberOfToilet());
+			pstmt.setString(6, hb.getOption1());
+			pstmt.setString(7, hb.getOption2());	
+			pstmt.setString(8, hb.getOption3());			
 			pstmt.executeUpdate(); //구문 
 			
 		}catch(Exception e){

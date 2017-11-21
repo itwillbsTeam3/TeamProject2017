@@ -332,7 +332,7 @@ function popup()
    for(int i=0; i<2; i++){
    %>
 							<div<%if(hto.getOption1().charAt(i+option1_1.length)=='0'){%> style="color: rgba(102,102,102,0.5);; text-decoration: line-through; "<%} %>>
-								<%if(hto.getOption1().charAt(i+option1_1.length)=='1'){ %><img alt="" src="./logo/op1_1_<%=i%>.png"><%=option1_2[i]%>
+								<%if(hto.getOption1().charAt(i+option1_1.length)=='1'){ %><img alt="" src="./logo/op1_2_<%=i%>.png"><%=option1_2[i]%>
 								<%}else{%><%=option1_2[i]%><%} %>
 							</div>							
    <%}%>
@@ -357,7 +357,7 @@ function popup()
    for(int i=2; i<option1_2.length; i++){
    %>
 							<div<%if(hto.getOption1().charAt(i+option1_1.length)=='0'){%> style="color: rgba(102,102,102,0.5);; text-decoration: line-through; "<%} %>>
-								<%if(hto.getOption1().charAt(i+option1_1.length)=='1'){ %><img alt="" src="./logo/op1_1_<%=i%>.png"><%=option1_2[i]%>
+								<%if(hto.getOption1().charAt(i+option1_1.length)=='1'){ %><img alt="" src="./logo/op1_2_<%=i%>.png"><%=option1_2[i]%>
 								<%}else{%><%=option1_2[i]%><%} %>
 							</div>							
    <%}%>
@@ -393,7 +393,7 @@ function popup()
    String option3_2[] = {"일산화탄소 감지기","후레쉬"};
    for(int i=0; i<option3_1.length; i++){%>
 							<div<%if(hto.getOption3().charAt(i)=='0'){%> style="color: rgba(102,102,102,0.5);; text-decoration: line-through; "<%} %>>
-								<%if(hto.getOption3().charAt(i)=='1'){ %><img alt="" src="./logo/op2_1_<%=i%>.png"><%=option3_1[i]%>
+								<%if(hto.getOption3().charAt(i)=='1'){ %><img alt="" src="./logo/op3_1_<%=i%>.png"><%=option3_1[i]%>
 								<%}else{%><%=option3_1[i]%><%} %>
 							</div>						
    <%}%>
@@ -403,7 +403,7 @@ function popup()
    for(int i=0; i<option3_2.length; i++){
    %>
 							<div<%if(hto.getOption3().charAt(i+option3_1.length)=='0'){%> style="color: rgba(102,102,102,0.5);; text-decoration: line-through; "<%} %>>
-								<%if(hto.getOption3().charAt(i+option3_1.length)=='1'){ %><img alt="" src="./logo/op2_1_<%=i%>.png"><%=option3_2[i]%>
+								<%if(hto.getOption3().charAt(i+option3_1.length)=='1'){ %><img alt="" src="./logo/op3_2_<%=i%>.png"><%=option3_2[i]%>
 								<%}else{%><%=option3_2[i]%><%} %>
 							</div>						
    <%}%>
