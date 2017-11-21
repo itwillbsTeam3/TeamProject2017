@@ -388,13 +388,16 @@ to {
 }
 .reviewBtn{
 	display: inline-block;
-    border-radius: 5px;
     border: none;
     text-align: center;
     cursor : pointer;
-    width: 150px;
-    margin: 5px;
-    color: #333;
+    width: 100px;
+    margin: 10px;
     height: 30px;
+    position : relative;
+}
+.reviewBtn>img{
+	position : absolute;
+	left : 35px;
 }
 

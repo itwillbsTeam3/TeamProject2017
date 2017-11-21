@@ -509,15 +509,23 @@ int starNum = 1;
 int endNum = pagesize;
 %>
 <div style="text-align : center;">
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=1&scroll=ok&countstop=ok'" type="button" value="첫페이지" class="reviewBtn btn1">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=1&scroll=ok&countstop=ok'" class="reviewBtn btn1">
+<img src="./img/arrow/l.png" width="30px">
+</div>
 <%if(pageNum==1) {%>
 <%}else{ %>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum-1%>&scroll=ok&countstop=ok'"type="button" value="이전페이지" class="reviewBtn btn2">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum-1%>&scroll=ok&countstop=ok'" class="reviewBtn btn2">
+<img src="./img/arrow/ll.png" width="30px">
+</div>
 <%} %>
 <%if(pagesize!=pageNum){ %>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum+1%>&scroll=ok&countstop=ok'" type="button"value="다음페이지" class="reviewBtn btn3">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pageNum+1%>&scroll=ok&countstop=ok'" class="reviewBtn btn3">
+<img src="./img/arrow/r.png" width="30px">
+</div>
 <%}%>
-<input onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pagesize%>&scroll=ok&countstop=ok'" type="button" value="끝페이지" class="reviewBtn btn4">
+<div onclick="location.href='./HostingContentAction.ho?num=<%=hb.getNum()%>&pageNum=<%=pagesize%>&scroll=ok&countstop=ok'" class="reviewBtn btn4">
+<img src="./img/arrow/rr.png" width="30px">
+</div>
 </div>
 <div class="review_input">
 <div class="star-input-wrap"></div>
