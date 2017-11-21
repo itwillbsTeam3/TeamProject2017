@@ -69,7 +69,7 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 				<td>프로필</td><td><img src="./upload/<%=mb.getProfile() %>" width="100px" height="100px" style="border-radius:50%;"></td>
 			</tr>
 			<tr>
-				<td>자기소개</td><td><textarea name="selfinfo" cols="60" rows="5" readyonly><%=mb.getSelfinfo() %></textarea></td>
+				<td>자기소개</td><td><textarea name="selfinfo" cols="60" rows="5" readonly><%=mb.getSelfinfo() %></textarea></td>
 			</tr>
 			</table>
 			 <div id="Info_btn">
