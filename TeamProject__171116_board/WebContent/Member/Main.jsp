@@ -228,13 +228,33 @@ jb(function(){
 						<%
 							for (int i = 0; i < plist.size(); i++) {
 						%>
-						<div class="mainbooking_slide n1">
+						<div class="mainbooking_slide n1" style="cursor: pointer;" onclick="location.href = './HostingContentAction.ho?num=<%=plist.get(i).getNum()%>'">
 							<div class="mainbooking_img">
 								<img alt="" src="./upload/<%=plist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=plist.get(i).getSubject()%></div>
 							<div class="mainbooking_price"><%=dc.format(plist.get(i).getPrice())%>원</div>
-							<div class="mainbooking_star">별점</div>
+							<div class="mainbooking_star"><%if(plist.get(i).getGrade()==0){%> NEW!!
+						<%}else{%> <%int s=(int)(plist.get(i).getGrade()*10);
+						int a=s/10;
+						int b=s%10;
+						int count=5;
+						
+						for(int j=0; j<a; j++){
+								%><img src="./star/star.png"width="20px" height="20px"><%
+							count--;
+						}if(b!=0){
+							%><img src="./star/star0<%=b%>.png" width="20px" height="20px"><%
+							count--;
+							for(int j=0; j<count; j++){
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+						}else{
+							for(int j=0; j<count; j++){
+						
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+							}%> <%}%></div>
 						</div>
 						<%
 							}
@@ -254,13 +274,33 @@ jb(function(){
 						<%
 							for (int i = 0; i < rlist.size(); i++) {
 						%>
-						<div class="mainbooking_slide n2">
+						<div class="mainbooking_slide n2" style="cursor: pointer;" onclick="location.href = './HostingContentAction.ho?num=<%=rlist.get(i).getNum()%>'">
 							<div class="mainbooking_img">
 								<img alt="" src="./upload/<%=rlist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=rlist.get(i).getSubject()%></div>
 							<div class="mainbooking_price"><%=dc.format(rlist.get(i).getPrice())%>원</div>
-							<div class="mainbooking_star">별점</div>
+							<div class="mainbooking_star"><%if(rlist.get(i).getGrade()==0){%> NEW!!
+						<%}else{%> <%int s=(int)(rlist.get(i).getGrade()*10);
+						int a=s/10;
+						int b=s%10;
+						int count=5;
+						
+						for(int j=0; j<a; j++){
+								%><img src="./star/star.png"width="20px" height="20px"><%
+							count--;
+						}if(b!=0){
+							%><img src="./star/star0<%=b%>.png" width="20px" height="20px"><%
+							count--;
+							for(int j=0; j<count; j++){
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+						}else{
+							for(int j=0; j<count; j++){
+						
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+							}%> <%}%></div>
 						</div>
 						<%
 							}
@@ -280,13 +320,33 @@ jb(function(){
 						<%
 							for (int i = 0; i < glist.size(); i++) {
 						%>
-						<div class="mainbooking_slide n3">
+						<div class="mainbooking_slide n3" style="cursor: pointer;" onclick="location.href = './HostingContentAction.ho?num=<%=glist.get(i).getNum()%>'">
 							<div class="mainbooking_img">
 								<img alt="" src="./upload/<%=glist.get(i).getFile1()%>">
 							</div>
 							<div class="mainbooking_content"><%=glist.get(i).getSubject()%></div>
 							<div class="mainbooking_price"><%=dc.format(glist.get(i).getPrice())%>원</div>
-							<div class="mainbooking_star">평점</div>
+							<div class="mainbooking_star"><%if(glist.get(i).getGrade()==0){%> NEW!!
+						<%}else{%> <%int s=(int)(glist.get(i).getGrade()*10);
+						int a=s/10;
+						int b=s%10;
+						int count=5;
+						
+						for(int j=0; j<a; j++){
+								%><img src="./star/star.png"width="20px" height="20px"><%
+							count--;
+						}if(b!=0){
+							%><img src="./star/star0<%=b%>.png" width="20px" height="20px"><%
+							count--;
+							for(int j=0; j<count; j++){
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+						}else{
+							for(int j=0; j<count; j++){
+						
+								%><img src="./star/star00.png"width="20px" height="20px"><%
+							}
+							}%> <%}%> </div>
 						</div>
 						<%
 							}

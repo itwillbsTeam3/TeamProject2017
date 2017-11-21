@@ -166,13 +166,13 @@ mb = mdao.getMember(id);
 			<div id="hosting">
 				
 					<div class="section">주제</div>
-					<input type="text" name="subject">
+					<input type="text" name="subject" required>
 						<div class="border_bottom"> </div>
 					<div class="section">소개</div>
-					<textarea rows="5" cols="60" name="content"></textarea>
+					<textarea rows="5" cols="60" name="content" required></textarea>
 						<div class="border_bottom"> </div>
 					<div class="section">가격(원)</div>
-					<input type="text" name="price">
+					<input type="text" name="price" required>
 						<div class="border_bottom"> </div>
 					<div class="section">인원/침실</div>
 					인원 : 
