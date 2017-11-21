@@ -15,7 +15,15 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=1" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=3" rel="stylesheet" type="text/css">
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	  $('table tr:odd').css("backgroundColor","white");         // odd 홀수
+	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.first_tr').css("backgroundColor","#666")// even 짝수
+	}); 
+</script>
 </head>
 <body>
 	<div class="wrap">
@@ -25,7 +33,7 @@
 		<div class="pay_body">
 		<h1>예약내역</h1>
 		<table class="booking_table">
-			<tr>
+			<tr class="first_tr">
 				<td class="Boo_td td1">No.</td>
 				<td class="Boo_td td2">숙소이름</td>
 				<td class="Boo_td td3">호스트</td>
