@@ -1,3 +1,5 @@
+<%@page import="net.member.db.MemberBean"%>
+<%@page import="net.member.db.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -33,7 +35,35 @@ $(document).ready(function(){
 	});//파일넣는 버튼 나타나게 하는것
 
 });
+<%
+String id = "";
+if(session.getAttribute("id")==null){
+	
+}
+else{
+	id = (String)session.getAttribute("id"); 
+}
+MemberDAO mdao = new MemberDAO();
+MemberBean mb = new MemberBean();
+mb = mdao.getMember(id);
 
+%>
+		function first(geocoder, resultsMap) {
+		    var address = "<%=mb.getAddress2()%>";
+		    geocoder.geocode({'address': address}, function(results, status) {
+		      if (status === 'OK') {
+		        resultsMap.setCenter(results[0].geometry.location);
+		        //alert(results[0].geometry.location);
+		        var marker = new google.maps.Marker({
+		          map: resultsMap,
+		          position : results[0].geometry.location,
+		          icon : 'img/circle-button.png'
+		        });
+		      } else {
+		        alert('주소를 불러올수없습니다.!');
+		      }
+		    });
+		  }
       function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('address').value;
         alert(address);
@@ -69,6 +99,7 @@ $(document).ready(function(){
               
             geocodeAddress(geocoder, map);
         });
+        first(geocoder,map);
       }
       function test()
       {
@@ -224,7 +255,7 @@ $(document).ready(function(){
 	<div class="border_bottom"> </div>
 	<div id="insert_map">
 					<div style="font-size:17px;">주소 (기본값은 본인의 주소로 되어있습니다.)</div>
-					<input type="text" name="address" id="address"><input type="button" id = "upmap" value="위치 확인"><br>
+					<input type="text" name="address" id="address" value="<%=mb.getAddress2()%>"><input type="button" id = "upmap" value="위치 확인"><br>
 					<div id= "map" style="width: 700px; height: 700px;margin-left: auto;
     margin-right: auto; "></div>
 					</div>
