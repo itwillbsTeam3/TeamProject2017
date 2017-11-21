@@ -239,6 +239,7 @@
 .review_content {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	word-break:break-all;
 }
 
 #content_map {
@@ -385,6 +386,14 @@ to {
 #host_introduce{
 	word-break:break-all;
 }
-textarea{
-	resize: none;
+.reviewBtn{
+	display: inline-block;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    cursor : pointer;
+    width: 70px;
+    margin: 5px;
+    color: #333;
+    height: 30px;
 }
