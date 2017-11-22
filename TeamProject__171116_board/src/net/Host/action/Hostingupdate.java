@@ -25,7 +25,6 @@ public class Hostingupdate implements Action {
 		temp = btdao.getContent(id);
 		request.setAttribute("temp", temp);
 		
-
 		HostingOptionBean hto = new HostingOptionBean();
 		HostingOptionDAO htodao = new HostingOptionDAO();
 		

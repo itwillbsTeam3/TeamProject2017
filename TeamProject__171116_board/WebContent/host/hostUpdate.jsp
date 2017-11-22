@@ -1,3 +1,5 @@
+<%@page import="net.Option.db.HostingOptionBean"%>
+<%@page import="net.Host.db.HostingBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -98,6 +100,10 @@ $(document).ready(function(){
 
 </script>
 </head>
+<%
+HostingBean temp = (HostingBean)request.getAttribute("temp");
+HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
+%>
 <body>
 	<div class="wrap">
 		<!--헤더들어가는곳-->
@@ -114,17 +120,16 @@ $(document).ready(function(){
 			<div id="hosting">
 				
 					<div class="section">주제</div>
-					<input type="text" name="subject">
+					<input type="text" name="subject" value="<%=temp.getSubject() %>">
 						<div class="border_bottom"> </div>
 					<div class="section">소개</div>
-					<textarea rows="5" cols="60" name="content"></textarea>
+					<textarea rows="5" cols="60" name="content" ><%=temp.getContent()%></textarea>
 						<div class="border_bottom"> </div>
 					<div class="section">가격(원)</div>
-					<input type="text" name="price">
+					<input type="text" name="price" value="<%=temp.getPrice()%>">
 						<div class="border_bottom"> </div>
 					<div class="section">인원/침실</div>
-					인원 : 
-				
+					인원 :			
 					<select name="numberOfGuest">
 					<option value="1">1인</option>
 					<option value="2">2인</option>
