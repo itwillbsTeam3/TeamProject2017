@@ -83,6 +83,7 @@
 	cursor: pointer;
 	background-color: #DBDBDB;
 	height: 30px;
+	border: 1px solid #999;
 }
 /* 탈퇴버튼 */
 .MemberList_count{
@@ -90,7 +91,8 @@
 
 }
 .MemberList_count a{
-	margin-left : 10px;
+	margin-left : 5px;
+	margin-right : 5px;
 }
 .MemberList_count_wrap{
 	text-align: center;

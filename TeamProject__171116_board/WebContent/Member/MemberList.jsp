@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/MemberList.css?v=5" rel="stylesheet" type="text/css">
+<link href="css/MemberList.css?v=6" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		<div class="clear"></div>
 		<!-- 본문 -->
 		<div class="body">
-		<h1>회원 목록 및 관리</h1><h2>회원 수 : <%=count%>명</h2>
+		<h1 style="font-size : 40px;">회원 목록 및 관리</h1><h2>회원 수 : <%=count%>명</h2>
 	
 	<table border="1">
 		<tr class="first_tr">
