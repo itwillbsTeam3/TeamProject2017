@@ -119,7 +119,7 @@
 					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
-					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=800 location=no left=600px'); return false">1:1채팅</a>
+					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=860 location=no left=600px'); return false">1:1채팅</a>
 					<a href="#" onclick="window.open('./Alram.ar','', 'resizable=no width=770 height=800 location=no left=500px'); return false">알림(<%=alrampopup%>)</a>
 
 

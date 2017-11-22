@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/custom.css?v=1">
 	<title>Insert title here</title>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -63,7 +63,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default">
+<%-- 	<nav class="navbar navbar-default">
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="./Main.me">메인</a></li>
@@ -83,7 +83,7 @@
 				</li>
 			</ul>
 		</div>
-	</nav>
+	</nav> --%>
 	<div class="container">
 		<table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #dddddd";>
 			<thead>
