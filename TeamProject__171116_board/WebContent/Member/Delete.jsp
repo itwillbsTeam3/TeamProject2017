@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/Delete.css?v=1" rel="stylesheet" type="text/css">
+<link href="css/Delete.css?v=2" rel="stylesheet" type="text/css">
 <script src="js/script.js"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="clear"></div>
 		<!-- 본문 -->
 		<div class="body">
-			<h1>Delete Member</h1>
+			<h1>회원탈퇴</h1>
 			<br>
 			<%
 			String id =(String)session.getAttribute("id");
