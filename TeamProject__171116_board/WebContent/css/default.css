@@ -245,21 +245,21 @@ textarea{
 }
 
 .mainbooking_slide {
-	width: 254px;
+	width: 244px;
 	height: 465px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	flex: 1;
 	float: left;
 }
 
 .mainbooking_img {
 	height: 320px;
-	width: 254px;
+	width: 244px;
 }
 
 .mainbooking_img>img {
-	width: 254px;
+	width: 244px;
 	height: 320px;
 	border-radius : 3px;
 }
@@ -270,21 +270,21 @@ textarea{
 	font-weight: bold;
 	text-align: left;
 	padding: 5px;
-	width: 254px;
+	width: 244px;
 }
 
 .mainbooking_price {
 	text-align: left;
 	padding-left: 5px;
 	height: 30px;
-	width: 254px;
+	width: 244px;
 }
 
 .mainbooking_star {
 	text-align: left;
 	padding-left: 5px;
 	height: 20px;
-	width: 254px;
+	width: 244px;
 }
 /* footer */
 .footer {
