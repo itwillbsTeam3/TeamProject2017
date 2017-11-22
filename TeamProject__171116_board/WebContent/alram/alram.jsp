@@ -14,7 +14,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$('.plus').parent().next().hide();
-	$('.plus').click(function(){$(this).parent().next().toggle('slow');});
+	$('.plus').click(function(){$(this).parent().next().slideToggle('slow');});
 	$('.what').mouseover(function(){$(this).css('text-decoration','underline');});
 	$('.what').mouseleave(function(){$(this).css('text-decoration','none');});
 });
