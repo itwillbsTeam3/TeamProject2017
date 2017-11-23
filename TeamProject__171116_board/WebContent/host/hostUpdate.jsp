@@ -1,3 +1,5 @@
+<%@page import="net.member.db.MemberBean"%>
+<%@page import="net.member.db.MemberDAO"%>
 <%@page import="net.Option.db.HostingOptionBean"%>
 <%@page import="net.Host.db.HostingBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -36,7 +38,35 @@ $(document).ready(function(){
 	});//파일넣는 버튼 나타나게 하는것
 
 });
+<%
+String id = "";
+if(session.getAttribute("id")==null){
+	
+}
+else{
+	id = (String)session.getAttribute("id"); 
+}
+MemberDAO mdao = new MemberDAO();
+MemberBean mb = new MemberBean();
+mb = mdao.getMember(id);
+%>
 
+		function first(geocoder, resultsMap) {
+		    var address = "<%=mb.getAddress2()%>";
+		    geocoder.geocode({'address': address}, function(results, status) {
+		      if (status === 'OK') {
+		        resultsMap.setCenter(results[0].geometry.location);
+		        //alert(results[0].geometry.location);
+		        var marker = new google.maps.Marker({
+		          map: resultsMap,
+		          position : results[0].geometry.location,
+		          icon : 'img/circle-button.png'
+		        });
+		      } else {
+		        alert('주소를 불러올수없습니다.!');
+		      }
+		    });
+	 }
       function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('address').value;
         alert(address);
@@ -72,6 +102,7 @@ $(document).ready(function(){
               
             geocodeAddress(geocoder, map);
         });
+        first(geocoder,map);
       }
       function test()
       {
@@ -207,8 +238,8 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
    String option2_1[] = {"아기욕조","아기모니터","베이비시터","욕조","기저귀 교환대","어린이용 장남감","어린이용 식기","벽난로 안정장치"};
    String option2_2[] = {"게임기","유아용의자","전원 콘센터","다기능/아기침대","암막커튼","계단 차단문","테이블모서리 보호대","창문 안전장치"};
    for(int i=0; i<option2_1.length; i++){
-      %><div class="option1_wrap"><span><input type="checkbox" name="op2_<%=i%>"></span> <span><%=option2_1[i]%></span>
-      <span class="option1_right"><span><input type="checkbox" name="op2_<%=option2_1.length+i%>"></span> <span><%=option2_2[i]%></span></span></div>
+      %><div class="option1_wrap"><span><input type="checkbox" name="op2_<%=i%>" <%if(hto.getOption2().charAt(i)=='1'){%>checked<%}%>></span> <span><%=option2_1[i]%></span>
+      <span class="option1_right"><span><input type="checkbox" name="op2_<%=option2_1.length+i%>" <%if(hto.getOption2().charAt(i+option2_1.length)=='1'){%>checked<%}%>></span> <span><%=option2_2[i]%></span></span></div>
       <%}%> 
    </div>
    <div class="border_bottom"> </div>
@@ -218,21 +249,21 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
    String option3_1[] = {"화재감지기","소화기"};
    String option3_2[] = {"일산화탄소 감지기","후레쉬"};
    for(int i=0; i<option3_1.length; i++){
-      %><div class="option1_wrap"><span><input type="checkbox" name="op3_<%=i%>"></span> <span><%=option3_1[i]%></span>
-     <span class="option1_right"><span><input type="checkbox" name="op3_<%=option3_1.length+i%>"></span> <span><%=option3_2[i]%></span></span></div>
+      %><div class="option1_wrap"><span><input type="checkbox" name="op3_<%=i%>" <%if(hto.getOption3().charAt(i)=='1'){%>checked<%}%>></span> <span><%=option3_1[i]%></span>
+     <span class="option1_right"><span><input type="checkbox" name="op3_<%=option3_1.length+i%>" <%if(hto.getOption3().charAt(i+option3_1.length)=='1'){%>checked<%}%>></span> <span><%=option3_2[i]%></span></span></div>
    <%}%>   
    </div>
 	</div>
 	<div class="border_bottom"> </div>
 	<div id="insert_map">
-					<div style="font-size:17px;">주소 (기본값은 본인의 주소로 되어있습니다.)</div>
-					<input type="text" name="address" id="address"><input type="button" id = "upmap" value="위치 확인"><br>
+					<div class="section" style="font-size: 30px; font-weight: bold;">숙소 위치</div>
+					<input size="<%=mb.getAddress2().length()*2%>" type="text" name="address" id="address" value="<%=mb.getAddress2()%>"><input type="button" id = "upmap" value="위치 확인"><br>
 					<div id= "map" style="width: 700px; height: 700px;margin-left: auto;
     margin-right: auto; "></div>
 					</div>
 					<div id="insert_btn">
 						<input type="submit" value="호스팅하기" onclick="test()" class="hosting_button btn">  
-						<input type="reset" value="다시쓰기" class="btn">
+						<input type="button" value="메인으로" onclick="location.href='./Main.me'" class="btn">
 					</div>
 				</form>
 			</div>
