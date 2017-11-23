@@ -116,8 +116,9 @@
 					<!-- 호스팅내용이 없으면 안뜨게 -->
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
-					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
+					<a href="./Hostingupdate.ho">호스팅수정하기</a>
 					<span id="close_hosting">호스팅닫기 <input type="checkbox" id="simple_2"><label for="simple_2" class="red"></label></span>
+					<%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=860 location=no left=600px'); return false">1:1채팅</a>
