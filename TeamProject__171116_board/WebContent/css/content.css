@@ -403,4 +403,26 @@ to {
 	position : absolute;
 	left : 35px;
 }
-
+.commentbtn{
+	display: inline-block;
+    border: none;
+    text-align: center;
+    cursor : pointer;
+    width: 100px;
+    height: 30px;
+    background-color : #DBDBDB;
+    border-radius: 5px;
+    padding-top : 2px;
+}
+.commentbtn_submit{
+	display: inline-block;
+    border: none;
+    text-align: center;
+    cursor : pointer;
+    width: 70px;
+    margin: 10px;
+    height: 80px;
+    background-color : #DBDBDB;
+    border-radius: 5px;
+    float :right;
+}

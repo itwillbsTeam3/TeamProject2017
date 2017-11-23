@@ -18,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css?v=3" rel="stylesheet" type="text/css">
-<link href="./css/content.css?v=31" rel="stylesheet" type="text/css">
+<link href="./css/content.css?v=35" rel="stylesheet" type="text/css">
 <link href="./css/star.css?v=7" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./css/style.css" type="text/css">
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -467,17 +467,23 @@ function popup()
 						</div>
 						<div class="review_content"><%=clist.get(i).getContent()%>
 					
-						
+						<!-- 댓글달기 -->
 						<form action ="./recommentaction.co" method="post">
 						<%String str = (String)session.getAttribute("id"); %>
-						<%if(str!=null)if(str.equals(mb.getId())){%><div style ="text-align: right;"><span class="commentbtn" style ="cursor: pointer; border: solid;">댓글달기 </span></div>	<%}%></div>
-						<span class="comment" style="display: none;"><textarea name="recomment" class="review_write"cols="80" rows="5"></textarea><input type="submit" value="답글"></span>
+						<%if(str!=null)if(str.equals(mb.getId())){%>
+						<div style ="text-align: right;">
+							<span class="commentbtn">댓글달기</span>
+						</div>	<%}%></div>
+						<span class="comment" style="display: none;">
+						<textarea name="recomment" class="review_write"cols="80" rows="5" style="margin:5px;"></textarea>
+						<input type="submit" value="답글" class="commentbtn_submit"></span>
 							<input type="hidden" name="target" value="<%=clist.get(i).getName()%>">
 							<input type="hidden" name="name" value="<%=session.getAttribute("id")%>">
 							<input type="hidden" name="num" value="<%=hb.getNum()%>">
 							<input type="hidden" name="re_ref" value="<%=clist.get(i).getRe_ref()%>">
+							<div class="clear"></div>
 						</form>
-						
+						<!-- 댓글달기 -->
 		
 						
 						
