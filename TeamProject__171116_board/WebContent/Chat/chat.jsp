@@ -1,4 +1,5 @@
 
+<%@page import="net.member.db.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +15,9 @@
 	<script src="js/bootstrap.js"></script>
 	
 <%
+		MemberDAO mdad = new MemberDAO();
+		String img = (String)request.getAttribute("img");
+		
 		String id = null;
 		if (session.getAttribute("id") != null){
 			id = (String) session.getAttribute("id");
@@ -74,6 +78,7 @@
 				$('#chatContent').val('');
 		}
 		var lastId = 0; //마지막 채팅 아이디
+		var img = "";
 		
 		function chatListFunction(type){
 			var fromId = '<%= id %>';
@@ -93,34 +98,56 @@
 					var result = parsed.result;
 					for(var i=0; i<result.length; i++){
 						if(result[i][0].value == fromId){
-							result[i][0].value = '본인 ID : '+'<%= id %>';
+							result[i][0].value = '<%= id %>'; //본인 ID
+							addChat_from(result[i][0].value, result[i][2].value, result[i][3].value, result[i][4].value);
 						}else if(result[i][0].value == toId){
-							result[i][0].value = '받는 ID : '+'<%= toId %>';
+							result[i][0].value = '<%= toId %>'; //받는 ID
+							addChat_to(result[i][0].value, result[i][2].value, result[i][3].value, result[i][4].value);
 						}
-						addChat(result[i][0].value, result[i][2].value, result[i][3].value);
 					}
 					lastId = Number(parsed.last);
 				}
 			});
 		}
-		function addChat(chatName, chatContent, chatTime){
+		function addChat_from(chatName, chatContent, chatTime, img){
+
 			$('#chatList').append(
 					'<div class="row">' +
 					'<div class="col-lg-12">' +
 					'<div class="media">' +
-					'<a class="pull-left" href="#">' +
-					'<img class="media-object img-circle" style="width: 30px; height: 30px;" src="img/icon.png" alt="">' +
-					'</a>' +
+					'<div class="pull-left">' +
+					'<img class="media-object img-circle" style="width: 30px; height: 30px;" src="./upload/'+img+'" alt="">' +					
+					'</div>' +
 					'<div class="media-body">' +
-					'<h4 class="media-heading">' +
-					chatName + 
-					'<span class="small pull-right">' +
-					chatTime +
-					'</span>' +
+					'<h4 class="media-heading" style="text-align:left;">' +
+					 chatName +
 					'</h4>' +
-					'<p>' +
-					chatContent +
-					'</p>' +
+					'<p style="clear:both; float:left; box-shadow: 10px; border-radius: 50px; background-color: skyblue;">' +
+					chatContent + 
+					'</p>' + '<span class="small" style="float:left;">' + chatTime + '</span>' + 
+					'</div>' +
+					'</div>' +
+					'</div>' +
+					'</div>' +
+					'<hr>');
+			 $('#chatList').scrollTop($('#chatList')[0].scrollHeight); 
+		}
+		function addChat_to(chatName, chatContent, chatTime, img){
+
+			$('#chatList').append(
+					'<div class="row">' +
+					'<div class="col-lg-12">' +
+					'<div class="media">' +
+					'<div class="pull-right">' +
+					'<img class="media-object img-circle" style="width: 30px; height: 30px;" src="./upload/'+img+'" alt="">' +					
+					'</div>' +
+					'<div class="media-body">' +
+					'<h4 class="media-heading" style="text-align:right;">' +
+					 chatName +
+					'</h4>' +
+					'<p style="clear:both; float:right; box-shadow: 10px; border-radius: 50px; background-color: yellow;">' +
+					chatContent + 
+					'</p>' + '<span class="small" style="float:right;">' + chatTime + '</span>' + 
 					'</div>' +
 					'</div>' +
 					'</div>' +

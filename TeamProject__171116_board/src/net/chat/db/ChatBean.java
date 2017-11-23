@@ -10,7 +10,21 @@ public class ChatBean {
 	String toId;
 	String chatContent;
 	Timestamp chatTime;
+	int chatRead;
+	String img;
 	
+	public int getChatRead() {
+		return chatRead;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setChatRead(int chatRead) {
+		this.chatRead = chatRead;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public int getNum() {
 		return num;
 	}
