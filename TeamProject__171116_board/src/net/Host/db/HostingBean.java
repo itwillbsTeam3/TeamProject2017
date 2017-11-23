@@ -19,7 +19,14 @@ public class HostingBean {
 	private String file5;
 	private int readcount;
 	private double grade;
+	private int oc;
 	
+	public int getOc() {
+		return oc;
+	}
+	public void setOc(int oc) {
+		this.oc = oc;
+	}
 	public int getReadcount() {
 		return readcount;
 	}

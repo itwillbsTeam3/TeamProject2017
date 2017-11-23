@@ -55,7 +55,7 @@
 					},
 					success : function(data) {
 						text = data.trim();
-						alert(check);
+						$("#text").html(text);
 					}
 				});
 		});
@@ -101,7 +101,7 @@
 	MemberBean mb = mdao.getMember(id);
 	
 	HostingDAO hdao = new HostingDAO();
-	HostingBean hb =hdao.getContent(id);
+	HostingBean hb = hdao.getContent(id);
 
 	AlramDAO adao = new AlramDAO();
 	int alrampopup = 0;
@@ -181,7 +181,7 @@
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
 					<a href="./Hostingupdate.ho">호스팅수정하기</a>
-					<span id="close_hosting">호스팅닫기 <input type="checkbox" id="simple_2"><label for="simple_2" class="red"></label></span>
+					<span id="close_hosting"><pre id="text"><%if(hb.getOc()==1){%>Open<%}else{%>Close<%}%></pre><input type="checkbox" <%if(hb.getOc()==0){%>checked<%}%> id="simple_2"><label for="simple_2" class="red"></label></span>
 					<%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>

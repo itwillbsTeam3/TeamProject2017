@@ -138,6 +138,7 @@ public class HostingDAO {
 				temp.setFile5(rs.getString("file5"));
 				temp.setReadcount(rs.getInt("readcount"));
 				temp.setGrade(rs.getDouble("grade"));
+				temp.setOc(rs.getInt("oc"));
 			}
 			
 			
@@ -358,10 +359,63 @@ public class HostingDAO {
 		return hostList;
 	}
 	
-	public void updatereadcount(String id){
-		
+	public String OpenClose(String id){
+		int flag = 0;
+		String text = "";
+		try {
+			con = getConnection();
+			sql="select oc from hosting where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				flag = rs.getInt("oc");
+			}
+			sql="update hosting set oc = ? where id = ?";
+			pstmt = con.prepareStatement(sql);
+			if(flag == 1){
+			pstmt.setInt(1, 0);
+			text = "Close";
+			}
+			else{
+			pstmt.setInt(1, 1);
+			text = "Open";
+			}
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();	
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return text;
 	}
 	
+	public int roomStatus(String id){
+		int flag = 0;
+		try {
+			con = getConnection();
+			sql="select oc from hosting where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				flag = rs.getInt("oc");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return flag;
+	}
 	
 }
 
