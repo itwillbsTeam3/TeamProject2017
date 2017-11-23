@@ -34,7 +34,6 @@ public class HostingListAction implements Action{
 		}
 		if(!(request.getParameter("checkin")==null && request.getParameter("checkout")==null)){
 			if(!request.getParameter("checkin").equals("")){
-				System.out.println("병신");
 				checkin = request.getParameter("checkin");
 			}
 			if(!request.getParameter("checkout").equals("")){

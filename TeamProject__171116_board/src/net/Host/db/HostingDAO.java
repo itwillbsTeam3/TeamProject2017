@@ -171,6 +171,8 @@ public class HostingDAO {
 			if(!(temp.getFile5()==null)){
 				sql += ", file5 = ?";
 			}
+			sql += "where id = ?";
+			
 			int index = 1;
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(index,temp.getSubject());index++;
@@ -198,6 +200,7 @@ public class HostingDAO {
 			//	System.out.println("file5 값들어옴");
 				pstmt.setString(index,temp.getFile5());index++;
 			}
+			pstmt.setString(index, temp.getId());
 			pstmt.executeUpdate();		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

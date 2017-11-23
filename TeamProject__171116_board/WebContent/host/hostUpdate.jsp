@@ -262,7 +262,7 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
     margin-right: auto; "></div>
 					</div>
 					<div id="insert_btn">
-						<input type="submit" value="호스팅하기" onclick="test()" class="hosting_button btn">  
+						<input type="submit" value="수정하기" onclick="test()" class="hosting_button btn">  
 						<input type="button" value="메인으로" onclick="location.href='./Main.me'" class="btn">
 					</div>
 				</form>

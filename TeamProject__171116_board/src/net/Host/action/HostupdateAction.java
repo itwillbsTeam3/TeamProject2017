@@ -1,5 +1,7 @@
 package net.Host.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,6 +19,7 @@ public class HostupdateAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=UTF-8");
 		boolean flag = true;
 		System.out.println("HostUpdateAction()");
 		String path = request.getServletContext().getRealPath("/upload");
@@ -29,12 +32,7 @@ public class HostupdateAction implements Action{
 		String address = multi.getParameter("address");//주소
 		String subject = multi.getParameter("subject"); // 소재목
 		String content = multi.getParameter("content"); // 글내용
-		
 		String file1 = multi.getFilesystemName("File1");
-		if(multi.getFilesystemName("File1")==null){
-			System.out.println("첫번째 파일이 비었음");
-			flag = false;
-		}
 		String file2 = multi.getFilesystemName("File2");
 		String file3 = multi.getFilesystemName("File3");
 		String file4 = multi.getFilesystemName("File4");
@@ -104,10 +102,16 @@ public class HostupdateAction implements Action{
 		
 		htodao.updateRoomOptionBoard(hto, r_num);
 		
-		ActionForward forward=new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("./Main.me");
-		return forward;
+		PrintWriter out = response.getWriter();
+		
+		out.println("<script>");
+		out.println("alert('수정이 완료되었습니다.');");
+		out.println("location.href = './Main.me'");
+		out.println("</script>");
+		out.close();
+		
+		
+		return null;
 		
 	}
 

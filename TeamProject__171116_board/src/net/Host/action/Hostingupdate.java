@@ -1,5 +1,7 @@
 package net.Host.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -31,7 +33,6 @@ public class Hostingupdate implements Action {
 		hto = htodao.getRoomOptionBoard(temp.getNum());
 		request.setAttribute("hto", hto);
 
-		
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("./host/hostUpdate.jsp");
