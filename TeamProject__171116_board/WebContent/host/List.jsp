@@ -230,7 +230,7 @@ $(function(){
 						<%=dc.format(list.get(i).getPrice()) %>원
 					</div>
 					<div class="mainbooking_star">
-						<%if(list.get(i).getGrade()==0){%> NEW!!
+						<%if(list.get(i).getGrade()==null){%> NEW!!
 						<%}else{%> <%int s=(int)(list.get(i).getGrade()*10);
 						int a=s/10;
 						int b=s%10;

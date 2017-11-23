@@ -451,6 +451,7 @@ function popup()
 						%><img src="./star/star00.png"width="35px" height="35px"><%
 					}
 					}%>  </span> </span><br>
+				<%if(clist.size()==0){%><div style="text-align: center;"><h3>후기가 없습니다.<br>후기를 남겨주세요!</h3></div><%}else{ %>
 				<%for(int i = 0 ; i < clist.size() ;i++ ) {%>
 				<%if(clist.get(i).getRe_lev() == 0){ %>
 					<div class="hosting_review">
@@ -527,10 +528,11 @@ int endNum = pagesize;
 <img src="./img/arrow/rr.png" width="30px">
 </div>
 </div>
+<%} %>
 <div class="review_input">
 <div class="star-input-wrap"></div>
 
-<%if(session.getAttribute("id")==null) {%>로그인후에 이용해주세요.<%}else if(session.getAttribute("id").equals(mb.getId())){ %><%}%><%else{ %>
+<%if(session.getAttribute("id")==null) {%><div ><h3>로그인후에 이용해주세요.</h3></div><%}else if(session.getAttribute("id").equals(mb.getId())){ %><%}%><%else{ %>
 <form id ="comment" action="./insertcomment.co" method="post">
 		<span class="star-input">
 			<span class="input">
@@ -564,6 +566,7 @@ int endNum = pagesize;
 		<input type="submit" value="평가하기" class="btn_review_write">
 </form>
 <%} %>
+
 <!-- <script src="./starRating/js/jquery-1.11.3.min.js"></script> -->
 
 </div>
@@ -647,9 +650,20 @@ int endNum = pagesize;
 					<input type="text" name="checkin" id="checkin" placeholder="체크인" class="datepicker1">~
 					<input type="text"  name="checkout" id="checkout" placeholder="체크아웃" class="datepicker2"><br>
 					</div>
-					<button id="content_btn" <%if(session.getAttribute("id")==null){ %>onclick="go()"<%}else{%>onclick="fo()"<%} %>>
+					
+					<%String sid;
+					if(session.getAttribute("id")!=null){
+						sid = (String)session.getAttribute("id");
+					}
+					else{
+						sid = "hi";
+					}
+					 %>
+					<%if(!sid.equals(mb.getId())){ %>
+					<button id="content_btn" <%if(session.getAttribute("id")==null){%>onclick="go()"<%}else{%>onclick="fo()"<%} %>>
 						<span>예약</span>
 					</button>
+					<% }%>
 					</form>
 				</div>	
 			</div>
