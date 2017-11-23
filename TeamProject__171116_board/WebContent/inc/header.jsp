@@ -1,3 +1,6 @@
+<%@page import="net.chat.db.ChatBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="net.chat.db.ChatDAO"%>
 <%@page import="net.Host.db.HostingBean"%>
 <%@page import="net.Host.db.HostingDAO"%>
 <%@page import="java.text.DecimalFormat"%>
@@ -11,6 +14,28 @@
 <!-- <script src ="js/jquery-3.2.1.min.js"></script> -->
 <link href="css/Login.css?v=11" rel="stylesheet" type="text/css">
 <link href="css/header.css?v=6" rel="stylesheet" type="text/css">
+<style>
+.dropdown_c {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content_c {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    overflow:scroll;
+}
+.dropdown-content_c a{
+	line-height: 30px;
+}
+.dropdown_c:hover .dropdown-content_c {
+    display: block;
+}
+</style>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -56,6 +81,7 @@
 
 <%
 	String id = (String) session.getAttribute("id");
+
 	MemberDAO mdao = new MemberDAO();
 	MemberBean mb = mdao.getMember(id);
 	
@@ -72,6 +98,10 @@
 	MileBean mibean = midao.getMileage(id);
 
 	DecimalFormat dc = new DecimalFormat("###,###,###,###");
+	
+	ChatDAO cdao = new ChatDAO();
+	ArrayList<ChatBean> clist = new ArrayList<ChatBean>();
+	clist = cdao.getChatList((String)session.getAttribute("id"));
 %>
 
 <!-- 추가 -->
@@ -99,6 +129,25 @@
 			<%}else if(profile == null){ %>
 			<img src="./img/nopro.png" width="50px" height="50px" style="border-radius: 50%;">
 			<%} %>
+			
+			<span class="dropdown_c">
+				<button class="login">
+					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
+				</button>
+				<span class="dropdown-content_c">
+				<%
+					for(int i = 0; i<clist.size();i++){
+						if(clist.get(i).getChatRead() == 0){
+						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
+						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br><%
+						}
+					}
+				%>
+					
+				</span>
+			</span>
+			
 			<span class="dropdown">
 				<button class="login">
 					<%
@@ -116,8 +165,9 @@
 					<!-- 호스팅내용이 없으면 안뜨게 -->
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
-					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
+					<a href="./Hostingupdate.ho">호스팅수정하기</a>
 					<span id="close_hosting">호스팅닫기 <input type="checkbox" id="simple_2"><label for="simple_2" class="red"></label></span>
+					<%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=860 location=no left=600px'); return false">1:1채팅</a>
@@ -149,6 +199,25 @@
 			<%}else if(profile == null){ %>
 			<img src="./img/nopro.png" width="50px" height="50px" style="border-radius: 50%;">
 			<%} %>
+			
+			<span class="dropdown_c">
+				<button class="login">
+					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
+				</button>
+				<span class="dropdown-content_c">
+				<%
+					for(int i = 0; i<clist.size();i++){
+						if(clist.get(i).getChatRead() == 0){
+						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
+						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br><%
+						}
+					}
+				%>
+					
+				</span>
+			</span>
+			
 			<span class="dropdown">
 				<button class="login">
 					<%
