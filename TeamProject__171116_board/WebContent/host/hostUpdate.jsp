@@ -125,43 +125,61 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
 					<div class="section">소개</div>
 					<textarea rows="5" cols="60" name="content" ><%=temp.getContent()%></textarea>
 						<div class="border_bottom"> </div>
-					<div class="section">가격(원)</div>
+					<div class="section">가격(원)  (1박기준)</div>
 					<input type="text" name="price" value="<%=temp.getPrice()%>">
 						<div class="border_bottom"> </div>
 					<div class="section">인원/침실</div>
 					인원 :			
 					<select name="numberOfGuest">
-					<option value="1">1인</option>
-					<option value="2">2인</option>
-					<option value="3">4인</option>
-					<option value="4">8인</option>
+					<option value="1" <%if(hto.getNumberOfGuest().equals("1")){%>selected<%} %>>1인</option>
+					<option value="2" <%if(hto.getNumberOfGuest().equals("2")){%>selected<%} %>>2인</option>
+					<option value="3" <%if(hto.getNumberOfGuest().equals("3")){%>selected<%} %>>4인</option>
+					<option value="4" <%if(hto.getNumberOfGuest().equals("4")){%>selected<%} %>>8인</option>
 					</select>
 					침실 : 
 					<select name="numberOfRoom">
-					<option value="1">1개</option>
-					<option value="2">2개</option>
-					<option value="3">3개</option>
-					<option value="4">4개</option>
+					<option value="1" <%if(hto.getNumberOfRoom().equals("1")){%>selected<%} %>>1개</option>
+					<option value="2" <%if(hto.getNumberOfRoom().equals("2")){%>selected<%} %>>2개</option>
+					<option value="3" <%if(hto.getNumberOfRoom().equals("3")){%>selected<%} %>>3개</option>
+					<option value="4" <%if(hto.getNumberOfRoom().equals("4")){%>selected<%} %>>4개</option>
 					</select>
 					침대 : 
 					<select name = "numberOfBed">
-					<option value="1">1개</option>
-					<option value="2">2개</option>
-					<option value="3">3개</option>
-					<option value="4">4개</option>
+					<option value="1" <%if(hto.getNumberOfBed().equals("1")){%>selected<%} %>>1개</option>
+					<option value="2" <%if(hto.getNumberOfBed().equals("2")){%>selected<%} %>>2개</option>
+					<option value="3" <%if(hto.getNumberOfBed().equals("3")){%>selected<%} %>>3개</option>
+					<option value="4" <%if(hto.getNumberOfBed().equals("4")){%>selected<%} %>>4개</option>
 					</select>
 					욕실 : 
 					<select name ="numberOfToilet">
-					<option value="1">1개</option>
-					<option value="2">2개</option>
-					<option value="3">3개</option>
-					<option value="4">4개</option>
+					<option value="1" <%if(hto.getNumberOfToilet().equals("1")){%>selected<%} %>>1개</option>
+					<option value="2" <%if(hto.getNumberOfToilet().equals("2")){%>selected<%} %>>2개</option>
+					<option value="3" <%if(hto.getNumberOfToilet().equals("3")){%>selected<%} %>>3개</option>
+					<option value="4" <%if(hto.getNumberOfToilet().equals("4")){%>selected<%} %>>4개</option>
 					</select>
 	<div class="border_bottom"> </div>
 					<div class="section">이용 규칙</div>
-					<textarea rows="5" cols="60" name="Etc"></textarea>
+					<textarea rows="5" cols="60" name="Etc"><%=temp.getEtc() %></textarea>
 						<div class="border_bottom"> </div>
 					<div class="section">숙소이미지</div>
+					<div>
+					<table width="800px">
+					<tr>
+					<th>1번</th>
+					<th>2번</th>
+					<th>3번</th>
+					<th>4번</th>
+					<th>5번</th>
+					</tr>
+					<tr>
+					<td><img src="./<%if(temp.getFile1()!=null){%>upload/<%=temp.getFile1()%><%}else{%>img/nonimage.png<%}%>" width="160px" height="160px"></td>
+					<td><img src="./<%if(temp.getFile2()!=null){%>upload/<%=temp.getFile2()%><%}else{%>img/nonimage.png<%}%>" width="160px" height="160px"></td>
+					<td><img src="./<%if(temp.getFile3()!=null){%>upload/<%=temp.getFile3()%><%}else{%>img/nonimage.png<%}%>" width="160px" height="160px"></td>
+					<td><img src="./<%if(temp.getFile4()!=null){%>upload/<%=temp.getFile4()%><%}else{%>img/nonimage.png<%}%>" width="160px" height="160px"></td>
+					<td><img src="./<%if(temp.getFile5()!=null){%>upload/<%=temp.getFile5()%><%}else{%>img/nonimage.png<%}%>" width="160px" height="160px"></td>
+					</tr>
+					</table>
+					</div>
 					<div id="insert_img">
 					<input type="file" id="File1" name="File1">
 					<input type="button" id="btn_plus" value="사진 추가하기">
@@ -178,8 +196,8 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
    String option1_1[] = {"반려동물","가족/어린이적합","흡연가능","수영장","헬스장","아침식사","자쿠지 욕조","무료주차","건조기","휠체어접근가능","실내벽난로","이벤트/행사가능","경비원","초인종","노트북작업공간"};
    String option1_2[] = {"엘리베이터","다리미","인터넷","필수품목","무선인터넷","드라이기","세탁기","샴푸","옷걸이","에어컨","TV","난방","부엌","케이블TV","게스트전용출입문"};
    for(int i=0; i<option1_1.length; i++){
-      %><div class="option1_wrap"><span><input type="checkbox" name="op1_<%=i%>"></span> <span><%=option1_1[i]%></span>
-      <span class="option1_right"><span><input type="checkbox" name="op1_<%=option1_1.length+i%>"></span> <span><%=option1_2[i]%></span></span></span></div>
+      %><div class="option1_wrap"><span><input type="checkbox" name="op1_<%=i%>" <%if(hto.getOption1().charAt(i)=='1'){%>checked<%}%>></span> <span><%=option1_1[i]%></span>
+      <span class="option1_right"><span><input type="checkbox" name="op1_<%=option1_1.length+i%>"<%if(hto.getOption1().charAt(i+option1_1.length)=='1'){%>checked<%}%>></span> <span><%=option1_2[i]%></span></span></span></div>
    <%}%>
    </div>
    <div class="border_bottom"> </div>
