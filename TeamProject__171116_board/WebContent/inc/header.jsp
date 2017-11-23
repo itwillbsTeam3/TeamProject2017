@@ -36,14 +36,29 @@
     display: block;
 }
 </style>
-
+<script	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		//	alert($('.popuptext').html())
 		if ($('.popuptext').html() != 0) {
 			$('.popuptext').show();
 		}
-
+		var check;
+		var text;
+		$("#simple_2").click(function(){
+			check = $(this).is(":checked");
+				$.ajax({
+					type : "POST",
+					url : "./inc/OpenClose.jsp",
+					data : {
+						"check" : check,
+					},
+					success : function(data) {
+						text = data.trim();
+						alert(check);
+					}
+				});
+		});
 		/*    	if($('.headerProfile').attr('src')=='./upload/null'){
 		 $('.headerProfile').attr('src','./img/noimg.jpg');
 		 } */
