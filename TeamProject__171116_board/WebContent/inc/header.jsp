@@ -9,8 +9,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- <script src ="js/jquery-3.2.1.min.js"></script> -->
-<link href="css/Login.css?v=10" rel="stylesheet" type="text/css">
-<link href="css/header.css?v=1" rel="stylesheet" type="text/css">
+<link href="css/Login.css?v=11" rel="stylesheet" type="text/css">
+<link href="css/header.css?v=6" rel="stylesheet" type="text/css">
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -117,6 +117,7 @@
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
 					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
+					<span id="close_hosting">호스팅닫기 <input type="checkbox" id="simple_2"><label for="simple_2" class="red"></label></span>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=860 location=no left=600px'); return false">1:1채팅</a>
