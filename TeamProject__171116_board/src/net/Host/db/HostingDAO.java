@@ -213,14 +213,14 @@ public class HostingDAO {
 		}
 		return 1;
 	}
-	public ArrayList<HostingBean> getcontentList(int start,int size,String address){
+	public ArrayList<HostingBean> getcontentList(int start,int size, String address){
 		
 		
 		address = "%"+address+"%";
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? limit ?,?";
+        	sql = "select * from hosting where address like ? and oc = 1 limit ?,?";
         	pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, address);
 			pstmt.setInt(2, start);
@@ -265,7 +265,7 @@ public class HostingDAO {
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
+        	sql = "select * from hosting where address like ? and oc = 1 and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
         	pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, address);
 			pstmt.setString(2, checkin);
@@ -317,10 +317,10 @@ public class HostingDAO {
 		try {
         	con = getConnection();
         	if(!type.equals("price")){
-        		sql = "select * from hosting order by "+type+" desc limit 0,7";
+        		sql = "select * from hosting where oc = 1 order by "+type+" desc limit 0,7";
         	}
         	else{
-        		sql = "select * from hosting order by "+type+" asc limit 0,7";
+        		sql = "select * from hosting where oc = 1 order by "+type+" asc limit 0,7";
         	}
         	pstmt = con.prepareStatement(sql);
  
