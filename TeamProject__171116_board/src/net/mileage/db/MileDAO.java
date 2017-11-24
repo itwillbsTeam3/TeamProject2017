@@ -177,6 +177,7 @@ public class MileDAO {
 		}
 		return check;
 	}
+	
 	public int updateMileage(String host_id,String guest_id,int money){
 		Connection con=null;
 		PreparedStatement pstmt=null;
@@ -217,69 +218,6 @@ public class MileDAO {
 			pstmt.executeUpdate();
 			//---------------------------------------------------------
 			System.out.println("updateMileage sql 끝");
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			if(pstmt!=null){try{pstmt.close();}catch(SQLException ex){}}
-			if(con!=null){try{con.close();}catch(SQLException ex){}}
-		}
-		return check;
-	}
-	//마일리지 환불
-	public int refundMileage(String id,int money){
-		Connection con=null;
-		PreparedStatement pstmt=null;
-		String sql="";
-		int MyMoney = 0;
-		int check = 0; //
-		int alram = 0;
-		System.out.println("마일리지 조작대상" + id);
-		
-		try{
-			con = getConnection();
-			System.out.println("useMileage sql 시작");
-			sql = "select mileage from mileage where id = ?";
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if(rs.next()){
-				MyMoney = rs.getInt("mileage");
-			}
-			if(MyMoney - money < 0){
-				check = -1; //Acition 에서 check = -1 (금액 부족)
-				return check;
-			}
-			
-			sql = "update mileage set mileage = mileage + ? where id = ?";
-			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, money);
-			pstmt.setString(2, id);
-			pstmt.executeUpdate();
-			
-			//---------------------------------------------------------
-			sql = "select max(num) from alram";
-			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if(rs.next()){
-				alram = rs.getInt("max(num)")+1;
-			}
-			else{
-				alram = 1;
-			}
-			sql = "insert into alram values(?,?,?,?,?,now(),0,?,?)";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, alram);
-			pstmt.setString(2, id);
-			pstmt.setInt(3, 3);
-			pstmt.setString(4, "sys");
-			pstmt.setString(5, "sys");
-			pstmt.setInt(6, 0);
-			pstmt.setString(7, "\""+money+"마일리지를 환불받으셨습니다."+"\"");
-			pstmt.executeUpdate();
-			
-			check=1;//정상결제
-			//---------------------------------------------------------
-			System.out.println("useMileage sql 끝");
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{

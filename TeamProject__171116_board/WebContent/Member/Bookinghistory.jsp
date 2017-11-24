@@ -46,6 +46,8 @@ $(document).ready(function(){
 			<%
 				for (int i = 0; i < hb.size(); i++) {
 			%>
+		<form action="./HistorydeleteAction.hi?num=<%=hb.get(i).getNum() %>&flag=3" method="post">
+		<table class="booking_table">
 			<tr>
 				<td><%=a = i + 1%></td>
 				<td><%=hb.get(i).getSubject()%></td>
@@ -54,12 +56,14 @@ $(document).ready(function(){
 				<td><%=hb.get(i).getCheckout()%></td>
 				<td><%=dc.format(hb.get(i).getPrice())%>원</td>
 				<td><%=hb.get(i).getDate()%></td>
-				<td>취소</td>
+				<td><input type="submit" value="취소"></td>
 			</tr>
+		</table>
+		</form>
 			<%
 				}
 			%>
-		</table>
+
 			<div class="main_wrap">
 			<div class="history_back"><a href="./Main.me">메인으로</a></div>
 			</div>

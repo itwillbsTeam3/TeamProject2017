@@ -19,15 +19,14 @@ public class HosthistoryAction implements Action{
 		String id=(String)session.getAttribute("id");
 		reponse.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = reponse.getWriter();
-//		String id="test";
-//		if(id==null){
-//			out.println("<script>");
-//			out.println("alert('로그인 상태가 아닙니다.');");
-//			out.println("location.href = './Main.me'");
-//			out.println("</script>");
-//			out.close();
-//			return null;
-//		}
+		if(id==null){
+			out.println("<script>");
+			out.println("alert('로그인 상태가 아닙니다.');");
+			out.println("location.href = './Main.me'");
+			out.println("</script>");
+			out.close();
+			return null;
+		}
 		HistoryDAO hdao = new HistoryDAO();
 		ArrayList<BookingBean> hb = hdao.getHosthistory(id);
 		System.out.println(hb.size());

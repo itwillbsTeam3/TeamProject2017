@@ -46,6 +46,13 @@ public class HistoryFrontController extends HttpServlet{
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+		}else if(command.equals("/HistorydeleteAction.hi")){
+			action=new HistorydeleteAction();
+			try{
+				forward=action.execute(request,response);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 
 		//3. 이동
