@@ -15,7 +15,7 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=3" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=4" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){

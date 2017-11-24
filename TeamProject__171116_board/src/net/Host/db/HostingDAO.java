@@ -409,11 +409,11 @@ public class HostingDAO {
 			pstmt = con.prepareStatement(sql);
 			if(flag == 1){
 			pstmt.setInt(1, 0);
-			text = "Close";
+			text = "일시중지";
 			}
 			else{
 			pstmt.setInt(1, 1);
-			text = "Open";
+			text = "호스팅중";
 			}
 			pstmt.setString(2, id);
 			pstmt.executeUpdate();	

@@ -184,7 +184,7 @@
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
 					<a href="./Hostingupdate.ho">호스팅수정하기</a>
-					<span id="close_hosting"><span id="text"><%if(hb.getOc()==1){%>Open<%}else{%>Close<%}%></span><input type="checkbox" <%if(hb.getOc()==0){%>checked<%}%> id="simple_2"><label for="simple_2" class="red"></label></span>
+					<span id="close_hosting"><span id="text"><%if(hb.getOc()==1){%>호스팅중<%}else{%>일시중지<%}%></span><input type="checkbox" <%if(hb.getOc()==0){%>checked<%}%> id="simple_2"><label for="simple_2" class="red"></label></span>
 					<%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
