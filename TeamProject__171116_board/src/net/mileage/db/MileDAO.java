@@ -98,7 +98,7 @@ public class MileDAO {
 			pstmt.setString(4, "sys");
 			pstmt.setString(5, "sys");
 			pstmt.setInt(6, 0);
-			pstmt.setString(7,"\""+mb.getMileage()+"마일리지를 충전"+"\"");
+			pstmt.setString(7,"\""+mb.getMileage()+"마일리지를 충전하셨습니다."+"\"");
 			pstmt.executeUpdate();
 			//---------------------------------------------------------
 			System.out.println("updateMileage sql 끝");
