@@ -54,6 +54,16 @@ $(document).ready(function(){
 			<tr>
 				<td>입금</td>
 				<%
+					} else if(hb.get(i).getFlag() == 3){
+				%>
+			<tr>
+				<td>예약취소금</td>
+				<%
+					} else if(hb.get(i).getFlag() == 4){
+				%>
+			<tr>
+				<td>환불금</td>
+				<%
 					}
 				%>
 				<td><%=dc.format(hb.get(i).getMileage())%>원</td>

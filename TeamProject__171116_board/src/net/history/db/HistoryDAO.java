@@ -3,11 +3,14 @@ package net.history.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import net.Host.db.HostingBean;
 import net.booking.db.BookingBean;
 
 public class HistoryDAO {
@@ -44,35 +47,61 @@ public class HistoryDAO {
 			}
 		}
 	}
-	public int getHistoryCount(String id, int flag){ //내역 갯수>>페이징
-		int count = 0;
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		try{
-		con = getConnection();
-		String sql = "select count(*) from history where id = ?" ;
-		pstmt = con.prepareStatement(sql);
-		pstmt.setString(1, id);
-		pstmt.setInt(2, flag);
-		rs = pstmt.executeQuery();
-		
-		if(rs.next())
-			count = rs.getInt("count(*)");
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		finally{
-			if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
-			if(con!=null){try {con.close();}catch(Exception cone){cone.printStackTrace();}
-			if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+	
+	public void insertHistory(int num){
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			try{
+			con = getConnection();
+			String sql = "update booking set flag=? where num=?" ;
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1,3);
+			pstmt.setInt(2,num);
+			pstmt.executeUpdate();
 			}
+			catch(Exception e){
+				e.printStackTrace();
 			}
+			finally{
+				if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
+				if(con!=null){try {con.close();}catch(Exception cone){cone.printStackTrace();}
+				if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+				}
+				}
+				}
 			}
 		}
-		return count;
-	}
+//	public int getHistoryCount(String id, int flag){ //내역 갯수
+//		int count = 0;
+//		Connection con = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		try{
+//		con = getConnection();
+//		String sql = "select count(*) from history where id = ?" ;
+//		pstmt = con.prepareStatement(sql);
+//		pstmt.setString(1, id);
+//		pstmt.setInt(2, flag);
+//		rs = pstmt.executeQuery();
+//		
+//		if(rs.next())
+//			count = rs.getInt("count(*)");
+//		}
+//		catch(Exception e){
+//			e.printStackTrace();
+//		}
+//		finally{
+//			if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
+//			if(con!=null){try {con.close();}catch(Exception cone){cone.printStackTrace();}
+//			if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+//			}
+//			}
+//			}
+//		}
+//		return count;
+//	}
 	public ArrayList<HistoryBean> getHistory(String id){ // 결제내역 내용 출력
 		ArrayList<HistoryBean> templist = new ArrayList<HistoryBean>();
 		Connection con = null;
@@ -119,6 +148,7 @@ public class HistoryDAO {
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			BookingBean temp = new BookingBean();
+			temp.setNum(rs.getInt("num"));
 			temp.setSubject(rs.getString("subject"));
 			temp.setHost_id(rs.getString("host_id"));
 			temp.setGuest_id(rs.getString("guest_id"));
@@ -127,6 +157,7 @@ public class HistoryDAO {
 			temp.setDate(rs.getDate("date"));
 			temp.setPrice(rs.getInt("price"));
 			temp.setEtc(rs.getString("etc"));
+			temp.setFlag(rs.getInt("flag"));
 			templist.add(temp);
 			}
 		}
@@ -156,6 +187,7 @@ public class HistoryDAO {
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 			BookingBean temp = new BookingBean();
+			temp.setNum(rs.getInt("num"));
 			temp.setSubject(rs.getString("subject"));
 			temp.setHost_id(rs.getString("host_id"));
 			temp.setGuest_id(rs.getString("guest_id"));
@@ -179,5 +211,73 @@ public class HistoryDAO {
 			}
 		}
 		return templist;
+	}
+	public int deleteHistory(int num){ // 매개변수선언
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		String sql="";
+		ResultSet rs=null;
+		int check=-1;
+		try{
+			//예외가 발생할 것 같은 명령문
+			//1단계 드라이버로더			//2단계 디비연결
+			con=getConnection();
+			//3단계 sql id 조건에 해당하는  pass가져오기
+			sql="select * from booking where num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			//4단계 rs=실행 
+			rs=pstmt.executeQuery();
+			//5 rs 첫행 데이터 있으면 비교 맞으면 check=1
+			if(rs.next()){
+					sql="delete from booking where num=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					//4단계 실행
+					pstmt.executeUpdate();
+					check=1;
+			}else{
+				check=-1;//내역없음
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			//예외 상관없이 마무리 작업
+			//객체 생성 닫기
+			if(rs!=null){try{rs.close();}catch(SQLException ex){}}
+			if(pstmt!=null){try{pstmt.close();}catch(SQLException ex){}}
+			if(con!=null){try{con.close();}catch(SQLException ex){}}
+		}
+		return check;
+	}
+	public BookingBean getHistory(int num){ // 예약내역 내용 출력
+		BookingBean hb = new BookingBean();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try{
+		con = getConnection();
+		String sql = "select * from booking where num=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		rs.next();
+			hb.setNum(rs.getInt("num"));
+			hb.setHost_id(rs.getString("host_id"));
+			hb.setGuest_id(rs.getString("guest_id"));
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally{
+			if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
+			if(con!=null){try {con.close();}catch(Exception cone){cone.printStackTrace();}
+			if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+			}
+				}
+			}
+		}
+		return hb;
 	}
 }

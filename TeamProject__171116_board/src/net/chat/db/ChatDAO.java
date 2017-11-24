@@ -31,7 +31,7 @@ public class ChatDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String SQL = "select * from chat where toId=? and chatRead = 0 group by fromId order by num desc";
+		String SQL = "select * from chat where toId = ? and chatRead = 0 group by fromId order by num desc";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(SQL);
@@ -61,6 +61,7 @@ public class ChatDAO {
 		}
 		 return chatList;
 	}
+	
 	public ArrayList<ChatBean> getChatListById(String fromId, String toId, String num){
 		ArrayList<ChatBean> chatList = null;
 		Connection conn = null;

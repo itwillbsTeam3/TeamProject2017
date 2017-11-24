@@ -283,7 +283,7 @@ public class MemberDAO {
 						pstmt.setString(4, "sys");
 						pstmt.setString(5, "sys");
 						pstmt.setInt(6, 0);
-						pstmt.setString(7, "회원정보 수정하");
+						pstmt.setString(7, "회원정보 수정하셨습니다.");
 						pstmt.executeUpdate();
 						//---------------------------------------------------------
 						

@@ -71,7 +71,6 @@ public class BookingDAO {
 			if(interval<=0){
 				return 0;
 			}
-		  System.out.println("ㅅㅅㅅㅅㅅㅅ");
 		      try {
 		         con = getConnection();
 		         sql = "select distinct(host_id) from booking where host_id = ? and checkin > ? and checkout < ?";

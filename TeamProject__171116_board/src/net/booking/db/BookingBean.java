@@ -4,10 +4,23 @@ import java.sql.Date;
 
 public class BookingBean {
 	
-	private int price; 
+	private int price,num,flag; 
 	private String host_id,subject,guest_id;
 	private String checkin,checkout;
 	private String etc;
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
 	public String getEtc() {
 		return etc;
 	}

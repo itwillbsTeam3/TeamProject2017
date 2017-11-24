@@ -117,6 +117,7 @@
 	ChatDAO cdao = new ChatDAO();
 	ArrayList<ChatBean> clist = new ArrayList<ChatBean>();
 	clist = cdao.getChatList((String)session.getAttribute("id"));
+	
 %>
 
 <!-- 추가 -->
@@ -150,17 +151,19 @@
 					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
-				<span class="dropdown-content_c">
+				
 				<%
 					for(int i = 0; i<clist.size();i++){
 						if(clist.get(i).getChatRead() == 0){
-						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
-						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br><%
+							%><span class="dropdown-content_c"><%
+							%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
+						 	<img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
+						 	</span><%
 						}
 					}
 				%>
 					
-				</span>
+				
 			</span>
 			
 			<span class="dropdown">
@@ -220,17 +223,16 @@
 					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
-				<span class="dropdown-content_c">
 				<%
 					for(int i = 0; i<clist.size();i++){
 						if(clist.get(i).getChatRead() == 0){
+						%><span class="dropdown-content_c"><%	
 						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
-						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br><%
+						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
+						 </span><%
 						}
 					}
 				%>
-					
-				</span>
 			</span>
 			
 			<span class="dropdown">
