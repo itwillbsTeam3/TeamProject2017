@@ -266,6 +266,7 @@ public class HistoryDAO {
 			hb.setNum(rs.getInt("num"));
 			hb.setHost_id(rs.getString("host_id"));
 			hb.setGuest_id(rs.getString("guest_id"));
+			hb.setPrice(rs.getInt("price"));
 		}
 		catch(Exception e){
 			e.printStackTrace();

@@ -55,15 +55,18 @@ public class HistorydeleteAction implements Action{
 //			//환불내역에 넣는 dao호출
 //			Rnum=rdao.appRefund(htb);
 //			
-		}else if(flag==4){ //호스트가 예약취소 승인사
-			hdao.getHistory(num);
+		}else if(flag==4){ //호스트가 예약취소 승인시
+			hb=hdao.getHistory(num);
 			int price =hb.getPrice();
+			System.out.println(price);
 			String host_id=hb.getHost_id();
+			System.out.println(host_id);
 			String guest_id=hb.getGuest_id();
+			System.out.println(guest_id);
 			
 			//마일리지 호스트에서 가격만큼 차감
-			rdao.refundMileage_host(host_id,price);
-			rdao.refundMileage_guest(guest_id,price);
+			rdao.refundMileage_guest(guest_id, price);
+			rdao.refundMileage_host(host_id, price);
 			//호스트 결제 내역에 환불 내용 들어가는 구문
 			htb.setFlag(4);
 			htb.setId(hb.getHost_id());
@@ -86,6 +89,7 @@ public class HistorydeleteAction implements Action{
 		out.println("alert('예약취소가 승인되었습니다 .');");
 		}
 		out.println("history.back();");
+		out.println("window.location.reload(true);");
 		out.println("</script>");
 		out.close();
 		System.out.println("종료 페이지 끝");

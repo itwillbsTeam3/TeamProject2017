@@ -44,7 +44,7 @@ public class RefundDAO {
 		try{
 			con = getConnection();
 			System.out.println("useMileage sql 시작");
-			sql = "select * from mileage where id = ?";
+			sql = "select * from mileage where id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, guest_id);
 			rs = pstmt.executeQuery();
