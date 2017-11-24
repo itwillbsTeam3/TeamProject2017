@@ -99,3 +99,60 @@
 	display: table-cell;
 	vertical-align: middle;
 }
+/* 숙박 열고닫기 */
+#simple_2[type="checkbox"] {
+  display: none;
+}
+#simple_2[type="checkbox"] + label {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0px 10px;
+  box-sizing: border-box;
+}
+#simple_2[type="checkbox"] + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#simple_2:checked + label.red{
+  background: #ECA9A7;
+}
+#simple_2:checked + label.red:after{
+  background: #D9534F;
+}
+#simple_2:checked + label.green{
+  background: #AEDCAE;
+}
+#simple_2:checked + label.green:after{
+  background: #5CB85C;
+}
+#simple_2:checked + label:after{
+  left: calc(100% - 20px);
+}
+
+#simple_2 + label{
+  background: #5CB85C;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px #aaa;
+}
+
+#simple_2 + label:after{
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px #aaa;
+}
+
+#close_hosting{
+	position : relative;
+}

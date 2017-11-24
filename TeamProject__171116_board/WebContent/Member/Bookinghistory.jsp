@@ -19,9 +19,9 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){
-	  $('table tr:odd').css("backgroundColor","white");         // odd 홀수
-	  $('table tr:even').css("backgroundColor","#EBEBEB");
-	  $('.first_tr').css("backgroundColor","#666")// even 짝수
+	  $('.booking_table tr:odd').css("backgroundColor","white");         
+	  $('.booking_table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.first_tr').css("backgroundColor","#666")
 	}); 
 </script>
 </head>

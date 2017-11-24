@@ -18,8 +18,8 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){
-	  $('table tr:odd').css("backgroundColor","white");         
-	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.pay_table tr:odd').css("backgroundColor","white");         
+	  $('.pay_table tr:even').css("backgroundColor","#EBEBEB");
 	  $('.first_tr').css("backgroundColor","#666")
 	}); 
 </script>

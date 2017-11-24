@@ -10,6 +10,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import net.member.db.MemberBean;
+import net.member.db.MemberDAO;
+
 public class ChatDAO {
 	
 	private Connection getConnection()throws Exception{
@@ -22,6 +25,42 @@ public class ChatDAO {
 		conn=ds.getConnection();
 		return conn;
 		}	
+	public ArrayList<ChatBean> getChatList(String toId){
+		ArrayList<ChatBean> chatList = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String SQL = "select * from chat where toId = ? and chatRead = 0 group by fromId order by num desc";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, toId);
+			rs = pstmt.executeQuery();
+			chatList = new ArrayList<ChatBean>();
+			while(rs.next()) {
+				ChatBean chat = new ChatBean();
+				chat.setNum(rs.getInt("num"));
+				chat.setFromId(rs.getString("fromId"));
+				chat.setToId(rs.getString("toId"));
+				chat.setChatContent(rs.getString("chatContent"));
+				chat.setChatTime(rs.getTimestamp("chatTime"));
+				chat.setChatRead(rs.getInt("chatRead"));
+				chat.setImg(rs.getString("img"));
+				chatList.add(chat);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
+			if(conn!=null){try {conn.close();}catch(Exception cone){cone.printStackTrace();}
+			if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+			}
+				}
+			}
+		}
+		 return chatList;
+	}
 	
 	public ArrayList<ChatBean> getChatListById(String fromId, String toId, String num){
 		ArrayList<ChatBean> chatList = null;
@@ -32,6 +71,10 @@ public class ChatDAO {
 		String SQL = "SELECT * FROM CHAT WHERE ((fromId = ? AND toId =? ) OR (fromId = ? AND toId=?)) AND num > ? ORDER BY chatTime";
 		
 		try {
+			MemberBean temp = new MemberBean();
+			MemberDAO mdao = new MemberDAO();
+			temp = mdao.getMember(fromId);
+			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, fromId);
@@ -48,6 +91,7 @@ public class ChatDAO {
 				chat.setToId(rs.getString("toId").replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>"));
 				chat.setChatContent(rs.getString("chatContent").replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>"));
 				chat.setChatTime(rs.getTimestamp("chatTime"));
+				chat.setImg(temp.getProfile());
 				chatList.add(chat);
 			}
 		}catch (Exception e) {
@@ -93,6 +137,7 @@ public class ChatDAO {
 				chat.setToId(rs.getString("toId").replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>"));
 				chat.setChatContent(rs.getString("chatContent").replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>"));
 				chat.setChatTime(rs.getTimestamp("chatTime"));
+				chat.setImg(rs.getString("img"));
 				chatList.add(chat);
 			}
 		}catch (Exception e) {
@@ -115,7 +160,11 @@ public class ChatDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String SQL = "insert into chat values (null, ?, ?, ?, now(), 0)";
+		MemberBean temp = new MemberBean();
+		MemberDAO mdao = new MemberDAO();
+		temp = mdao.getMember(fromId);
+		
+		String SQL = "insert into chat values (null, ?, ?, ?, now(), 0, ?)";
 		
 		try {
 			conn = getConnection();
@@ -123,6 +172,7 @@ public class ChatDAO {
 			pstmt.setString(1, fromId);
 			pstmt.setString(2, toId);
 			pstmt.setString(3, chatContent);
+			pstmt.setString(4,temp.getProfile());
 			return pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -195,13 +245,14 @@ public class ChatDAO {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
 		ChatDAO chatDAO = new ChatDAO();
-		ArrayList<ChatBean> chatList = chatDAO.getChatListByRecent(fromId, toId, 100);
+		ArrayList<ChatBean> chatList = chatDAO.getChatListByRecent(fromId, toId, 2147483647);
 		if(chatList.size() == 0 ) return "";
 		for(int i=0; i<chatList.size(); i++) {
 			result.append("[{\"value\": \"" + chatList.get(i).getFromId()+ "\"},");
 			result.append("{\"value\": \"" + chatList.get(i).getToId()+ "\"},");
 			result.append("{\"value\": \"" + chatList.get(i).getChatContent()+ "\"},");
-			result.append("{\"value\": \"" + chatList.get(i).getChatTime()+ "\"}]");
+			result.append("{\"value\": \"" + chatList.get(i).getChatTime()+ "\"},");
+			result.append("{\"value\": \"" + chatList.get(i).getImg()+ "\"}]");
 			
 			if(i != chatList.size() -1) result.append(",");
 		}
@@ -220,7 +271,8 @@ public class ChatDAO {
 			result.append("[{\"value\": \"" + chatList.get(i).getFromId()+ "\"},");
 			result.append("{\"value\": \"" + chatList.get(i).getToId()+ "\"},");
 			result.append("{\"value\": \"" + chatList.get(i).getChatContent()+ "\"},");
-			result.append("{\"value\": \"" + chatList.get(i).getChatTime()+ "\"}]");
+			result.append("{\"value\": \"" + chatList.get(i).getChatTime()+ "\"},");
+			result.append("{\"value\": \"" + chatList.get(i).getImg()+ "\"}]");
 			
 			if(i != chatList.size() -1) result.append(",");
 		}

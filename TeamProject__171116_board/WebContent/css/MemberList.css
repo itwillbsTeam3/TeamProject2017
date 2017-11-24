@@ -24,7 +24,11 @@
 	font-size: 13px;
 }
 /* 테이블 */
-.body table td,th{
+.Memberlist_table th{
+    border: 1px solid #C1C3D1;
+    height: 55px;
+}
+.Memberlist_table td{
     border: 1px solid #C1C3D1;
     height: 55px;
 }

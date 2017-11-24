@@ -46,7 +46,6 @@ else{
 MemberDAO mdao = new MemberDAO();
 MemberBean mb = new MemberBean();
 mb = mdao.getMember(id);
-
 %>
 		function first(geocoder, resultsMap) {
 		    var address = "<%=mb.getAddress2()%>";

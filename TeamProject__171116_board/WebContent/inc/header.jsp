@@ -1,3 +1,6 @@
+<%@page import="net.chat.db.ChatBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="net.chat.db.ChatDAO"%>
 <%@page import="net.Host.db.HostingBean"%>
 <%@page import="net.Host.db.HostingDAO"%>
 <%@page import="java.text.DecimalFormat"%>
@@ -9,16 +12,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- <script src ="js/jquery-3.2.1.min.js"></script> -->
-<link href="css/Login.css?v=10" rel="stylesheet" type="text/css">
-<link href="css/header.css?v=1" rel="stylesheet" type="text/css">
-
+<link href="css/Login.css?v=12" rel="stylesheet" type="text/css">
+<link href="css/header.css?v=6" rel="stylesheet" type="text/css">
+<style>
+.dropdown_c {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content_c {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    overflow:scroll;
+}
+.dropdown-content_c a{
+	line-height: 30px;
+}
+.dropdown_c:hover .dropdown-content_c {
+    display: block;
+}
+</style>
+<script	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		//	alert($('.popuptext').html())
 		if ($('.popuptext').html() != 0) {
 			$('.popuptext').show();
 		}
-
+		var check;
+		var text;
+		$("#simple_2").click(function(){
+			check = $(this).is(":checked");
+				$.ajax({
+					type : "POST",
+					url : "./inc/OpenClose.jsp",
+					data : {
+						"check" : check,
+					},
+					success : function(data) {
+						text = data.trim();
+						$("#text").html(text);
+					}
+				});
+		});
 		/*    	if($('.headerProfile').attr('src')=='./upload/null'){
 		 $('.headerProfile').attr('src','./img/noimg.jpg');
 		 } */
@@ -56,11 +96,12 @@
 
 <%
 	String id = (String) session.getAttribute("id");
+
 	MemberDAO mdao = new MemberDAO();
 	MemberBean mb = mdao.getMember(id);
 	
 	HostingDAO hdao = new HostingDAO();
-	HostingBean hb =hdao.getContent(id);
+	HostingBean hb = hdao.getContent(id);
 
 	AlramDAO adao = new AlramDAO();
 	int alrampopup = 0;
@@ -72,6 +113,11 @@
 	MileBean mibean = midao.getMileage(id);
 
 	DecimalFormat dc = new DecimalFormat("###,###,###,###");
+	
+	ChatDAO cdao = new ChatDAO();
+	ArrayList<ChatBean> clist = new ArrayList<ChatBean>();
+	clist = cdao.getChatList((String)session.getAttribute("id"));
+	
 %>
 
 <!-- 추가 -->
@@ -99,6 +145,27 @@
 			<%}else if(profile == null){ %>
 			<img src="./img/nopro.png" width="50px" height="50px" style="border-radius: 50%;">
 			<%} %>
+			
+			<span class="dropdown_c">
+				<button class="login">
+					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
+				</button>
+				
+				<%
+					for(int i = 0; i<clist.size();i++){
+						if(clist.get(i).getChatRead() == 0){
+							%><span class="dropdown-content_c"><%
+							%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
+						 	<img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
+						 	</span><%
+						}
+					}
+				%>
+					
+				
+			</span>
+			
 			<span class="dropdown">
 				<button class="login">
 					<%
@@ -116,7 +183,9 @@
 					<!-- 호스팅내용이 없으면 안뜨게 -->
 					<%if(hb.getNum()!=0){ %>
 					<a href="./Host_history.hi">호스팅내역</a>
-					<a href="./Hostingupdate.ho">호스팅수정하기</a><%} %>
+					<a href="./Hostingupdate.ho">호스팅수정하기</a>
+					<span id="close_hosting"><span id="text"><%if(hb.getOc()==1){%>Open<%}else{%>Close<%}%></span><input type="checkbox" <%if(hb.getOc()==0){%>checked<%}%> id="simple_2"><label for="simple_2" class="red"></label></span>
+					<%} %>
 					<!-- 호스팅 내용이 있으면 수정가능하게 -->
 					<a href="./Booking_history.hi">예약내역</a>
 					<a href="#" onclick="window.open('./ChatIdFind.ch','', 'resizable=no width=500 height=860 location=no left=600px'); return false">1:1채팅</a>
@@ -148,6 +217,24 @@
 			<%}else if(profile == null){ %>
 			<img src="./img/nopro.png" width="50px" height="50px" style="border-radius: 50%;">
 			<%} %>
+			
+			<span class="dropdown_c">
+				<button class="login">
+					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
+				</button>
+				<%
+					for(int i = 0; i<clist.size();i++){
+						if(clist.get(i).getChatRead() == 0){
+						%><span class="dropdown-content_c"><%	
+						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
+						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
+						 </span><%
+						}
+					}
+				%>
+			</span>
+			
 			<span class="dropdown">
 				<button class="login">
 					<%

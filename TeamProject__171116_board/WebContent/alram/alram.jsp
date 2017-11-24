@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="./css/default.css" rel="stylesheet" type="text/css">
-<link href="./css/alram.css?v=3" rel="stylesheet" type="text/css">
+<link href="./css/alram.css?v=4" rel="stylesheet" type="text/css">
 
 <script src ="js/jquery-3.2.1.min.js"></script>	
 <script type="text/javascript">

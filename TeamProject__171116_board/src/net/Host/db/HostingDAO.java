@@ -138,6 +138,7 @@ public class HostingDAO {
 				temp.setFile5(rs.getString("file5"));
 				temp.setReadcount(rs.getInt("readcount"));
 				temp.setGrade(rs.getDouble("grade"));
+				temp.setOc(rs.getInt("oc"));
 			}
 			
 			
@@ -171,6 +172,8 @@ public class HostingDAO {
 			if(!(temp.getFile5()==null)){
 				sql += ", file5 = ?";
 			}
+			sql += "where id = ?";
+			
 			int index = 1;
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(index,temp.getSubject());index++;
@@ -198,6 +201,7 @@ public class HostingDAO {
 			//	System.out.println("file5 값들어옴");
 				pstmt.setString(index,temp.getFile5());index++;
 			}
+			pstmt.setString(index, temp.getId());
 			pstmt.executeUpdate();		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -209,14 +213,14 @@ public class HostingDAO {
 		}
 		return 1;
 	}
-	public ArrayList<HostingBean> getcontentList(int start,int size,String address){
+	public ArrayList<HostingBean> getcontentList(int start,int size, String address){
 		
 		
 		address = "%"+address+"%";
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? limit ?,?";
+        	sql = "select * from hosting where address like ? and oc = 1 limit ?,?";
         	pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, address);
 			pstmt.setInt(2, start);
@@ -261,7 +265,7 @@ public class HostingDAO {
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
+        	sql = "select * from hosting where address like ? and oc = 1 and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
         	pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, address);
 			pstmt.setString(2, checkin);
@@ -313,10 +317,10 @@ public class HostingDAO {
 		try {
         	con = getConnection();
         	if(!type.equals("price")){
-        		sql = "select * from hosting order by "+type+" desc limit 0,7";
+        		sql = "select * from hosting where oc = 1 order by "+type+" desc limit 0,7";
         	}
         	else{
-        		sql = "select * from hosting order by "+type+" asc limit 0,7";
+        		sql = "select * from hosting where oc = 1 order by "+type+" asc limit 0,7";
         	}
         	pstmt = con.prepareStatement(sql);
  
@@ -355,10 +359,63 @@ public class HostingDAO {
 		return hostList;
 	}
 	
-	public void updatereadcount(String id){
-		
+	public String OpenClose(String id){
+		int flag = 0;
+		String text = "";
+		try {
+			con = getConnection();
+			sql="select oc from hosting where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				flag = rs.getInt("oc");
+			}
+			sql="update hosting set oc = ? where id = ?";
+			pstmt = con.prepareStatement(sql);
+			if(flag == 1){
+			pstmt.setInt(1, 0);
+			text = "Close";
+			}
+			else{
+			pstmt.setInt(1, 1);
+			text = "Open";
+			}
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();	
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return text;
 	}
 	
+	public int roomStatus(String id){
+		int flag = 0;
+		try {
+			con = getConnection();
+			sql="select oc from hosting where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				flag = rs.getInt("oc");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return flag;
+	}
 	
 }
 
