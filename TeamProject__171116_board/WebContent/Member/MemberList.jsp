@@ -12,12 +12,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/MemberList.css?v=6" rel="stylesheet" type="text/css">
+<link href="css/MemberList.css?v=7" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){
-	  $('table tr:odd').css("backgroundColor","white");         
-	  $('table tr:even').css("backgroundColor","#EBEBEB");
+	  $('.Memberlist_table tr:odd').css("backgroundColor","white");         
+	  $('.Memberlist_table tr:even').css("backgroundColor","#EBEBEB");
 	  $('.first_tr').css("backgroundColor","#666");
 	}); 
 </script>
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		<div class="body">
 		<h1 style="font-size : 40px;">회원 목록 및 관리</h1><h2>회원 수 : <%=count%>명</h2>
 	
-	<table border="1">
+	<table border="1" class="Memberlist_table">
 		<tr class="first_tr">
 		<th id="pro">프로필</th>
 		<th id="id">아이디</th>
@@ -126,10 +126,15 @@ if(mb.get(i).getSelfinfo().length()>16){
 			//이전
 			if (startPage > pageBlock) {%><a href="./MemberList.me?pageNum=<%=startPage - pageBlock%>">[이전]</a><%}
 			// 1~10
-			for (int i = startPage; i <= endPage; i++) {%><a href="./MemberList.me?pageNum=<%=i%>">[<%=i%>]</a><%}
+			for (int i = startPage; i <= endPage; i++) {
+			if(currentPage==i){
+			%>
+			<a href="./MemberList.me?pageNum=<%=i%>" style="font-weight:bold">[<%=i%>]</a>
+			<%}else{ %>
+			<a href="./MemberList.me?pageNum=<%=i%>">[<%=i%>]</a><%}
 			//다음
 			if (endPage < pageCount) {%><a href="./MemberList.me?pageNum=<%=startPage + pageBlock%>">[다음]</a><%}
-		}
+		}}
 	%>
 		</div>
 	</div>
