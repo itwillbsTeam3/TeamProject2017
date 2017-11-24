@@ -137,4 +137,16 @@
 	background-color: #DBDBDB;
 	line-height: 40px;
 }
+
+.cancel{
+    display: inline-block;
+    border: none;
+    text-align: center;
+    width: 38px;
+    cursor: pointer;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #FF5A5F;
+    color : white;
+}
 /* 메인으로  */

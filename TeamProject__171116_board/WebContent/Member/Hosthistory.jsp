@@ -15,7 +15,7 @@
 	DecimalFormat dc = new DecimalFormat("#,###");
 %>
 <link href="./css/default.css?v=17" rel="stylesheet" type="text/css">
-<link href="./css/history.css?v=4" rel="stylesheet" type="text/css">
+<link href="./css/history.css?v=5" rel="stylesheet" type="text/css">
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -56,8 +56,8 @@ $(document).ready(function(){
 			<td><%=hb.get(i).getCheckout()%></td>
 			<td><%=dc.format(hb.get(i).getPrice())%>원</td>
 			<td><%=hb.get(i).getDate()%></td>
-			<td><input type="submit" value="취소"></td>
-			<td><%if(hb.get(i).getFlag()==3){%><input type="submit" value="승인"><%} %></td>
+			<td><input type="submit" value="취소" class="cancel"></td>
+			<td><%if(hb.get(i).getFlag()==3){%><input type="submit" value="승인" class="cancel"><%} %></td>
 		</tr>
 		</form>
 		<%
