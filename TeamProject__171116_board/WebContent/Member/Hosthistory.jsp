@@ -41,15 +41,13 @@ $(document).ready(function(){
 			<td class="Hos_td td5">체크아웃</td>
 			<td class="Hos_td td6">결제액</td>
 			<td class="Hos_td td7">결제일자</td>
-			<td class="Boo_td td8">취소</td>
+			<td class="Hos_td td8">취소</td>
+			<td class="Hos_td td9">취소승인</td>
 		</tr>
-		</table>
-		
 		<%
 			for (int i = 0; i < hb.size(); i++) {
 		%>
 		<form action="./HistorydeleteAction.hi?num=<%=hb.get(i).getNum() %>&flag=4" method="post">
-		<table class="hosting_table">
 		<tr>
 			<td><%=a=i+1%></td>
 			<td class="Hos_td td2"><%=hb.get(i).getSubject()%></td>
@@ -58,17 +56,14 @@ $(document).ready(function(){
 			<td><%=hb.get(i).getCheckout()%></td>
 			<td><%=dc.format(hb.get(i).getPrice())%>원</td>
 			<td><%=hb.get(i).getDate()%></td>
-			<td><%=hb.get(i).getDate()%></td>
 			<td><input type="submit" value="취소"></td>
-			<%if(hb.get(i).getFlag()==3){%>
-			<td><input type="submit" value="승인"></td>
-			<%} %>
+			<td><%if(hb.get(i).getFlag()==3){%><input type="submit" value="승인"><%} %></td>
 		</tr>
-		</table>
 		</form>
 		<%
 			}
 		%>
+		</table>
 
 	<div class="main_wrap">
 		<div class="history_back"><a href="./Main.me">메인으로</a></div>

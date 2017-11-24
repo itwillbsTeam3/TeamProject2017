@@ -4,7 +4,7 @@
 .pay_body{
 	margin-right: auto;
     margin-left: auto;
-    width: 700px;
+    width: 1000px;
     min-height: 600px;
     margin-top: 100px;
     margin-right : auto;
@@ -117,6 +117,12 @@
 }
 .Hos_td.td7{
 	width : 100px;
+}
+.Hos_td.td8{
+	width : 70px;
+}
+.Hos_td.td9{
+	width : 70px;
 }
 
 .history_back{	
