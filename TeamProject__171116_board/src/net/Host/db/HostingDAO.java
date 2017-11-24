@@ -215,17 +215,34 @@ public class HostingDAO {
 	}
 	public ArrayList<HostingBean> getcontentList(int start,int size, String address){
 		
-		
-		address = "%"+address+"%";
+		String str []; 
+		str = address.split(",");
+		int index = 1;
+		for(int i = 0 ; i < str.length;i++){
+			str[i] = str[i].trim();
+			str[i] = "%"+str[i]+"%";
+			System.out.println(str[i]);
+		}
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? and oc = 1 limit ?,?";
+        	sql = "select * from hosting where(";
+        	for(int i  = 1 ; i <= str.length ; i ++){
+        		 sql = sql +" address like ?";
+        		 if(i != str.length){
+        			 //System.out.println(i+" "+str.length);
+        			 sql = sql +" or"; 
+        		 }
+        	}
+        	sql = sql + ") and oc = 1 limit ?,?";
         	pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, address);
-			pstmt.setInt(2, start);
-			pstmt.setInt(3, size);
-        	rs = pstmt.executeQuery(); 
+        	for(int i = 0 ; i < str.length ; i++){
+			pstmt.setString(index, str[i]);index++;
+        	}
+			pstmt.setInt(index, start);index++;
+			pstmt.setInt(index, size);
+			System.out.println(sql);
+        	rs = pstmt.executeQuery();
             while(rs.next()) 
             {
                 HostingBean temp = new HostingBean();
@@ -260,22 +277,39 @@ public class HostingDAO {
 		return hostList;
 	}
 	public ArrayList<HostingBean> getcontentList(int start,int size,String address,String checkin,String checkout){
-		address = "%"+address+"%";
-		System.out.println("주소 : "+address);
+		String str []; 
+		str = address.split(",");
+		int index = 1;
+		for(int i = 0 ; i < str.length;i++){
+			str[i] = str[i].trim();
+			str[i] = "%"+str[i]+"%";
+			System.out.println(str[i]);
+		}
 		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
 		try {
         	con = getConnection();
-        	sql = "select * from hosting where address like ? and oc = 1 and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
+        	sql = "select * from hosting where (";
+        	for(int i = 1 ; i <= str.length ; i++){
+        		 sql = sql +" address like ?";
+        		 if(i != str.length){
+        			 //System.out.println(i+" "+str.length);
+        			 sql = sql +" or"; 
+        		 }
+        	}
+        	sql = sql + ") and oc = 1 and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?)) limit ?,?;";
         	pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, address);
-			pstmt.setString(2, checkin);
-			pstmt.setString(3, checkin);
-			pstmt.setString(4, checkout);
-			pstmt.setString(5, checkout);
-			pstmt.setString(6, checkin);
-			pstmt.setString(7, checkout);
-			pstmt.setInt(8, start);
-			pstmt.setInt(9, size);
+        	for(int i = 0 ; i < str.length ; i++){
+    			pstmt.setString(index, str[i]);index++;
+            }
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkout);index++;
+			pstmt.setString(index, checkout);index++;
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkout);index++;
+			pstmt.setInt(index, start);index++;
+			pstmt.setInt(index, size);
+			System.out.println(sql);
         	rs = pstmt.executeQuery(); 
             while(rs.next()) 
             {
