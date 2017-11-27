@@ -145,7 +145,7 @@ HostingOptionBean hto = (HostingOptionBean)request.getAttribute("hto");
 		<div class="body">
 			
 			<div class="clear"></div>
-			
+			<h1>숙소정보 수정하기</h1>
 			<!-- 입력 폼 -->
 			<form action="./HostupdateAction.ho" method="post" enctype="multipart/form-data">
 			<div id="hosting">
