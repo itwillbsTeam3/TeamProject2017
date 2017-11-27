@@ -32,7 +32,7 @@ public class HostingDAO {
 	public void insertContent(HostingBean temp){
 		try {
 			con = getConnection();
-			sql="insert into hosting(id,subject,content,price,address,date,etc,file1,file2,file3,file4,file5,readcount) values(?,?,?,?,?,now(),?,?,?,?,?,?,?)";
+			sql="insert into hosting(id,subject,content,price,address,date,etc,file1,file2,file3,file4,file5,readcount,oc) values(?,?,?,?,?,now(),?,?,?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,temp.getId());
 			pstmt.setString(2,temp.getSubject());
@@ -46,6 +46,7 @@ public class HostingDAO {
 			pstmt.setString(10,temp.getFile4());
 			pstmt.setString(11,temp.getFile5());
 			pstmt.setInt(12, 0);
+			pstmt.setInt(13, 1);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
