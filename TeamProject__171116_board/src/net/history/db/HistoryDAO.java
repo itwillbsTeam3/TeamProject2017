@@ -107,7 +107,7 @@ public class HistoryDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from history where id=? order by date desc";
+		String sql = "select * from history where id=? order by num desc";
 		try{
 		con = getConnection();
 		pstmt = con.prepareStatement(sql);
@@ -266,6 +266,7 @@ public class HistoryDAO {
 			hb.setNum(rs.getInt("num"));
 			hb.setHost_id(rs.getString("host_id"));
 			hb.setGuest_id(rs.getString("guest_id"));
+			hb.setPrice(rs.getInt("price"));
 		}
 		catch(Exception e){
 			e.printStackTrace();

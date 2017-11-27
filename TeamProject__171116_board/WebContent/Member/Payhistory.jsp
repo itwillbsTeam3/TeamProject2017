@@ -22,6 +22,9 @@ $(document).ready(function(){
 	  $('.pay_table tr:even').css("backgroundColor","#EBEBEB");
 	  $('.first_tr').css("backgroundColor","#666")
 	}); 
+<%
+String s="";
+%>
 </script>
 </head>
 <body>
@@ -42,31 +45,31 @@ $(document).ready(function(){
 					if (hb.get(i).getFlag() == 1) {
 			%>
 			<tr>
-				<td>사용</td>
+				<td>사용</td><%s="-"; %>
 				<%
 					} else if(hb.get(i).getFlag() == 0){
 				%>
 			<tr>
-				<td>충전</td>
+				<td>충전</td><%s="+"; %>
 				<%
 					} else if(hb.get(i).getFlag() == 2){
 				%>
 			<tr>
-				<td>입금</td>
+				<td>입금</td><%s="+"; %>
 				<%
 					} else if(hb.get(i).getFlag() == 3){
 				%>
 			<tr>
-				<td>예약취소금</td>
+				<td>예약취소금</td><%s="+"; %>
 				<%
 					} else if(hb.get(i).getFlag() == 4){
 				%>
 			<tr>
-				<td>환불금</td>
+				<td>환불금</td><%s="-"; %>
 				<%
 					}
 				%>
-				<td><%=dc.format(hb.get(i).getMileage())%>원</td>
+				<td><%=s+dc.format(hb.get(i).getMileage())%>원</td>
 				<td><%=hb.get(i).getDate()%></td>
 			</tr>
 			<%
