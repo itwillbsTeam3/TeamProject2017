@@ -30,9 +30,9 @@ MemberBean mb = (MemberBean)request.getAttribute("mb");
 			<tr class="form_row">
 				<td class="form_col">아이디</td><td><%=mb.getId() %></td>
 			</tr>
-			<tr>
-				<td>비밀번호</td><td><%=mb.getPass() %></td>
-			</tr>
+<!-- 			<tr> -->
+<%-- 				<td>비밀번호</td><td><%=mb.getPass() %></td> --%>
+<!-- 			</tr> -->
 			<tr>
 				<td>이름</td><td><%=mb.getName() %></td>
 			</tr>
