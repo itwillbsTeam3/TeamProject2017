@@ -165,6 +165,7 @@
 					
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
+				<%if(chatpopup != 0){ %>
 				<span class="dropdown-content_c">
 				<%
 					for(int i = 0; i<clist.size();i++){
@@ -175,8 +176,9 @@
 						}
 					}
 				%>
-				</span>
 				
+				</span>
+				<%}%>
 			</span>
 			
 			<span class="dropdown">
@@ -245,6 +247,7 @@
 					
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
+				<%if(chatpopup != 0){ %>
 				<span class="dropdown-content_c">
 				<%
 					for(int i = 0; i<clist.size();i++){
@@ -256,6 +259,7 @@
 					}
 				%>
 				</span>
+				<%}%>
 			</span>
 			
 			<span class="dropdown">
