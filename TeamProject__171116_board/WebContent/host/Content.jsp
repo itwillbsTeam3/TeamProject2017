@@ -284,8 +284,11 @@ function popup()
 					<div style="font-size: 27px;"><%=hb.getSubject()%></div>
 					<div>
 						<span id="content_host">
+						<%if(session.getAttribute("id").equals(mb.getId())){ %>
+						호스트 : <%=mb.getId()%>님<br>
+						<%}else{ %>
 						<a href="#" onclick="window.open('./Chat.ch?toId=<%=mb.getId() %>','', 'resizable=no width=500 height=800'); return false">호스트 : <%=mb.getId()%>님</a><br>
-						
+						<%} %>
 <!-- 						===================수정================= -->
 <%-- 						<span id="content_host">호스트 : <%=mb.getId()%>님</span> --%>
 <!-- 						===================수정=================  -->

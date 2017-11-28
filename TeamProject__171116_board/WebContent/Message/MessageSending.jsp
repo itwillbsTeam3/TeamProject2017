@@ -25,6 +25,17 @@
 	<%
 		}
 	%>
+	<%
+	if (host_id.equals(id)) {
+	%>
+	<script>
+		alert("동일 아이디는 메시지 보내기가 불가능합니다.");
+		self.close();
+	</script>
+	<%
+		}
+	%>
+	
 	<form action="./MessageSendingAction.ms" method="post">
 		<h2>호스트에게 메시지 보내기</h2>
 		<table class="message_table">
