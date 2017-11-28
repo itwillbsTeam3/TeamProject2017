@@ -17,17 +17,16 @@
 <style>
 .dropdown_c {
     position: relative;
-    display: inline-block;
+    display: block;
 }
 .dropdown-content_c {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 200px;
+    min-width: 400px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
-    overflow:scroll;
 }
 .dropdown-content_c a{
 	line-height: 30px;
@@ -118,6 +117,12 @@
 	ArrayList<ChatBean> clist = new ArrayList<ChatBean>();
 	clist = cdao.getChatList((String)session.getAttribute("id"));
 	
+	int chatpopup = 0;
+	if (session.getAttribute("id") != null) {
+		chatpopup = cdao.getChatCount((String)session.getAttribute("id"));
+	}
+	
+	
 %>
 
 <!-- 추가 -->
@@ -147,22 +152,30 @@
 			<%} %>
 			
 			<span class="dropdown_c">
-				<button class="login">
-					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+				<button class="login">	
+					<%if(chatpopup != 0){%>
+					<table><tr><th>
+					<img src="./img/c3.png" style="width:15px; height:15px;">
+					</th></tr>
+					<%}else{%>
+					<table><tr><th>
+					<img src="./img/c1.png" style="width:15px; height:15px;">
+					</th></tr>
+					<%} %>
+					
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
-				
+				<span class="dropdown-content_c">
 				<%
 					for(int i = 0; i<clist.size();i++){
 						if(clist.get(i).getChatRead() == 0){
-							%><span class="dropdown-content_c"><%
 							%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
-						 	<img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
-						 	</span><%
+						 	<img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b>알림! [<%=clist.get(i).getFromId() %>]님이 대화글을 남기셨습니다.</b></a><br>
+						 	<%
 						}
 					}
 				%>
-					
+				</span>
 				
 			</span>
 			
@@ -219,20 +232,30 @@
 			<%} %>
 			
 			<span class="dropdown_c">
-				<button class="login">
-					<table><tr><th><img src="./img/c1.png" style="width:15px; height:15px;"></th></tr>
+				<button class="login">	
+					<%if(chatpopup != 0){%>
+					<table><tr><th>
+					<img src="./img/c3.png" style="width:15px; height:15px;">
+					</th></tr>
+					<%}else{%>
+					<table><tr><th>
+					<img src="./img/c1.png" style="width:15px; height:15px;">
+					</th></tr>
+					<%} %>
+					
 					<tr><td><small>CHAT MESSAGE</small></td></tr></table>
 				</button>
+				<span class="dropdown-content_c">
 				<%
 					for(int i = 0; i<clist.size();i++){
 						if(clist.get(i).getChatRead() == 0){
-						%><span class="dropdown-content_c"><%	
 						%><a href="#" onclick="window.open('./Chat.ch?toId=<%=clist.get(i).getFromId() %>','', 'resizable=no width=500 height=800'); return false">
-						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b><%=clist.get(i).getFromId() %>님과의 대화</b></a><br>
-						 </span><%
+						 <img src="./img/plus.png" style="width:15px; height:15px;">&nbsp;<b>알림! [<%=clist.get(i).getFromId() %>]님이 대화글을 남기셨습니다.</b></a><br>
+						 <%
 						}
 					}
 				%>
+				</span>
 			</span>
 			
 			<span class="dropdown">

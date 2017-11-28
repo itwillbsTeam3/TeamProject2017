@@ -25,6 +25,35 @@ public class ChatDAO {
 		conn=ds.getConnection();
 		return conn;
 		}	
+	
+	public int getChatCount(String toId){
+		int count = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try{
+		con = getConnection();
+		String sql = "select count(*) from chat where toId = ? and chatRead = 0";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, toId);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next())
+			count = rs.getInt("count(*)");
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally{
+			if(pstmt!=null){try {pstmt.close();}catch(Exception pstmte){pstmte.printStackTrace();}
+			if(con!=null){try {con.close();}catch(Exception cone){cone.printStackTrace();}
+			if(rs!=null){try {rs.close();}catch(Exception rse){rse.printStackTrace();}
+			}
+			}
+			}
+		}
+		return count;
+	}
 	public ArrayList<ChatBean> getChatList(String toId){
 		ArrayList<ChatBean> chatList = null;
 		Connection conn = null;
