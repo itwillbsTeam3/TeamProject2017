@@ -297,7 +297,7 @@ function popup()
 <!-- 						===================추가================= -->
 						
 <!-- 						===================수정================= -->
-						<a href="#" onclick="window.open('./MessageSending.ms?host_id=<%=hb.getId()%>','', 'resizable=no width=400 height=300'); return false">
+						<a href="#" onclick="window.open('./MessageSending.ms?host_id=<%=hb.getId()%>','', 'resizable=no width=450 height=400'); return false">
 						<span style="color:#008489;">호스트에게 메시지 보내기</span></a>
 						<br> 
 						<img alt=""

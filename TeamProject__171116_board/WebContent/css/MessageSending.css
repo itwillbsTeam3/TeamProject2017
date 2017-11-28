@@ -1,0 +1,23 @@
+.message_table{
+	width: 400px;
+}
+.right{
+	text-align : center;
+}
+h2{
+	text-align: center;
+}
+textarea{
+	resize: none;
+}
+.btn{
+	display: inline-block;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin: 5px;
+	color: #333;
+	height: 40px;
+}
