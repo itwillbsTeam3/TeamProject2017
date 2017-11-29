@@ -175,7 +175,7 @@ $(function(){
 							<td id="where">
 								<div id="where_where">위치</div>
 								<div id="where_click">
-									<input type="text" name="address" id ="address"  class="search_address" placeholder="부산광역시">
+									<input type="text" name="address" id ="address"  class="search_address" placeholder="부산광역시" value="<%=(String)request.getAttribute("address")%>">
 									<div class="dropdown-content_where">
 										<div class="dropdown_span">기장군</div>
 										<div class="dropdown_span">금정구, 동래구</div>
@@ -260,7 +260,38 @@ $(function(){
 			<!-- 페이지버튼 -->
 
 			</div>
-			
+<%
+int pagesize = (int)request.getAttribute("pagesize"); 
+int pageNum = (int)request.getAttribute("pageNum");
+int starNum = 1;
+int endNum = pagesize;
+String address= "";
+if((String)request.getAttribute("address")!=null){
+	address = (String)request.getAttribute("address");
+}
+%>
+<div style="text-align : center;">
+
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=starNum%>&address=<%=address%>'" class="reviewBtn btn1">
+<img src="./img/arrow/l.png" width="30px" style="cursor: pointer;">
+</span>
+<%if(pageNum==1) {%>
+<%}else{ %>
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum-1%>&address=<%=address%>'" class="reviewBtn btn2">
+<img src="./img/arrow/ll.png" width="30px" style="cursor: pointer;">
+</span>
+<%} %>
+<%if(pageNum==pagesize){ %>
+<%}else{ %>
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum+1%>&address=<%=address%>'" class="reviewBtn btn3">
+<img src="./img/arrow/r.png" width="30px" style="cursor: pointer;">
+</span>
+<%}%>
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=endNum%>&address=<%=address%>'" class="reviewBtn btn4">
+<img src="./img/arrow/rr.png" width="30px" style="cursor: pointer;">
+</span>
+</div>
+
 		</div>
 		<%-- <h1>호스팅 list 사이즈 : <%=list.size()%></h1> --%>
 		<div id="map_wrap">

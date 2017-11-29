@@ -243,6 +243,7 @@ public class HostingDAO {
 			pstmt.setInt(index, start);index++;
 			pstmt.setInt(index, size);
 			System.out.println(sql);
+			System.out.println("리미트 :"+ start+" "+size);
         	rs = pstmt.executeQuery();
             while(rs.next()) 
             {
@@ -450,6 +451,113 @@ public class HostingDAO {
 			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
 		}
 		return flag;
+	}
+	public int gethostingcount(){
+		int size = 0;
+		try {
+			con = getConnection();
+			sql="select count(*) from hosting where oc = 1";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				size = rs.getInt("count(*)");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return size;
+	}
+	public int gethostingcount(String address){
+		String str []; 
+		str = address.split(",");
+		int index = 1;
+		for(int i = 0 ; i < str.length;i++){
+			str[i] = str[i].trim();
+			str[i] = "%"+str[i]+"%";
+			System.out.println(str[i]);
+		}
+		int size = 0;
+		try {
+	       	con = getConnection();
+        	sql = "select count(*) from hosting where(";
+        	for(int i  = 1 ; i <= str.length ; i ++){
+        		 sql = sql +" address like ?";
+        		 if(i != str.length){
+        			 //System.out.println(i+" "+str.length);
+        			 sql = sql +" or"; 
+        		 }
+        	}
+        	sql = sql + ") and oc = 1";
+        	pstmt = con.prepareStatement(sql);
+        	for(int i = 0 ; i < str.length ; i++){
+			pstmt.setString(index, str[i]);index++;
+        	}
+			System.out.println(sql);
+        	rs = pstmt.executeQuery();
+			if(rs.next()){
+				size = rs.getInt("count(*)");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return size;
+	}
+	public int gethostingcount(String address,String checkin,String checkout){
+		int size = 0;
+		String str []; 
+		str = address.split(",");
+		int index = 1;
+		for(int i = 0 ; i < str.length;i++){
+			str[i] = str[i].trim();
+			str[i] = "%"+str[i]+"%";
+			System.out.println(str[i]);
+		}
+		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
+		try {
+        	con = getConnection();
+        	sql = "select count(*) from hosting where (";
+        	for(int i = 1 ; i <= str.length ; i++){
+        		 sql = sql +" address like ?";
+        		 if(i != str.length){
+        			 //System.out.println(i+" "+str.length);
+        			 sql = sql +" or"; 
+        		 }
+        	}
+        	sql = sql + ") and oc = 1 and not id = any(select host_id from booking where (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?));";
+        	pstmt = con.prepareStatement(sql);
+        	for(int i = 0 ; i < str.length ; i++){
+    			pstmt.setString(index, str[i]);index++;
+            }
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkout);index++;
+			pstmt.setString(index, checkout);index++;
+			pstmt.setString(index, checkin);index++;
+			pstmt.setString(index, checkout);
+			System.out.println(sql);
+        	rs = pstmt.executeQuery(); 
+			if(rs.next()){
+				size = rs.getInt("count(*)");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return size;
 	}
 	
 }

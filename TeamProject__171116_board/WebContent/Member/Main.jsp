@@ -197,25 +197,26 @@ jb(function(){
 					</table>
 				</form>
 			</div>
+			<%
+			request.setCharacterEncoding("utf-8");
+			HostingDAO htdao = new HostingDAO();
+			ArrayList<HostingBean> plist = (ArrayList<HostingBean>)request.getAttribute("plist");
+			int plist_num = plist.size();
+			ArrayList<HostingBean> rlist = (ArrayList<HostingBean>)request.getAttribute("rlist");
+			int rlist_num = rlist.size();
+			ArrayList<HostingBean> glist = (ArrayList<HostingBean>)request.getAttribute("glist");
+			int glist_num = glist.size();
+			DecimalFormat dc = new DecimalFormat("#,###");
+			%>
 			<div id="bookingtext">
-				<div id="bookingtext_left">예약</div>
+				<div id="bookingtext_left">호스팅 (전체 <%=htdao.gethostingcount()%> 개의 호스팅이 있습니다.)</div>
 				<div id="bookingtext_right">
 					<a href="./HostingListAction.ho?pageNum=1">전체보기<img alt=""
 						src="./img/right.png" width="17px"></a>
 				</div>
 			</div>
 			<div class="clear"></div>
-						<%
-							request.setCharacterEncoding("utf-8");
-							HostingDAO htdao = new HostingDAO();
-							ArrayList<HostingBean> plist = (ArrayList<HostingBean>)request.getAttribute("plist");
-							int plist_num = plist.size();
-							ArrayList<HostingBean> rlist = (ArrayList<HostingBean>)request.getAttribute("rlist");
-							int rlist_num = rlist.size();
-							ArrayList<HostingBean> glist = (ArrayList<HostingBean>)request.getAttribute("glist");
-							int glist_num = glist.size();
-							DecimalFormat dc = new DecimalFormat("#,###");
-						%>
+
 			<div class="mainbooking_wrap">
 			<!-- 별점 -->
 			<div class="mainslider_font">가격순</div>
