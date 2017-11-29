@@ -13,7 +13,8 @@
 /* 글전체 */
 .Join_Main{
 	text-align: center;
-	line-height : 2;	
+	line-height : 2;
+	padding-top: 50px;	
 }
 /* 회원가입 약관동의 */
 .content{
@@ -74,6 +75,7 @@
 	height: 40px;
 	font-size: 1.2em;
 	transition: 0.3s ease;
+	font-weight: bold;
 }
 
 .button:hover {

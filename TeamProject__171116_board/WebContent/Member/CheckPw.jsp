@@ -24,7 +24,7 @@
 		<div class="clear"></div>
 		<div class="body">
 			<article class="article">
-				<h2>비밀번호 확인</h2>
+				<h2><img src="img/password.png" height="27px" width="27px" style="margin-right:10px">비밀번호 확인</h2>
 				<form action="./MemberCheckPwAction.me" method="post" name="fr"
 					id="CheckPw_fr" onsubmit="return fun_pass()">
 					<table id="notice">

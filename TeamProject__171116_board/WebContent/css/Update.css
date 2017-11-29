@@ -13,6 +13,12 @@
 
 }
 /* 글 */
+h1{
+	font-size: 27px;
+	text-align: center;
+	
+}
+
 .form_table th{
 	text-align: left;
 	width: 170px;
@@ -35,7 +41,7 @@
 	margin: 5px;
 	height: 28px;
 	padding:3px;
-
+	font-weight: bold;
 }
 /* 번호 우편번호 찾기 파일선택 */
 
@@ -74,6 +80,7 @@ display: inline-block;
 	background-color: #DBDBDB;
 	font-size: 0.9em;
 	line-height: 30px;
+	font-weight: bold;
 }
 /* btn named upload */
 
@@ -104,6 +111,7 @@ display: inline-block;
 	margin: 5px 5px 5px 20px;
 	height: 40px;
 	transition: 0.3s ease;
+	font-weight: bold;
 }
 
 .btn:hover {
@@ -125,6 +133,12 @@ display: inline-block;
 	background-color: #FF5A5F;
 	margin-left: 205px;
 }
-h1{
-	text-align: center;
+
+.form_table input{
+	padding-left: 10px;
+}
+/* input 파일선택 부분이랑 달라서 강제 적용*/
+
+#selfinfo{
+	padding:10px;
 }

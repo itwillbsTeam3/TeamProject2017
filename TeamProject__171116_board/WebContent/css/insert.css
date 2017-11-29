@@ -32,10 +32,12 @@
 
 #host_3table {
 	height: 240px;
-	width: 1100px;
+	width: 1066px;
 	display: flex;
 	position: absolute;
 	top: 600px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 #host_3table>div {
@@ -95,6 +97,9 @@
 	font-size: 17px;
 	outline-width: 0;
 }
+#insert_checkbox{
+	line-height: 2;
+}
 
 #insert_checkbox>input {
 	margin-left: 10px;
@@ -123,6 +128,7 @@
 	cursor: pointer;
 	border-radius: 5px;
 	transition: 0.3s ease;
+	font-weight: bold;
 }
 
 .btn:hover {
@@ -133,6 +139,10 @@
 }
 .section{
 	font-size : 20px;
+	border-left: 3px solid #ccc;
+	padding-left:10px;
+	font-weight: bold;
+	padding-bottom: 10px;
 }
 #address{
 	margin : 10px;
