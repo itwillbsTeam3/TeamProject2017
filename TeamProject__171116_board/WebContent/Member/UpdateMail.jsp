@@ -15,18 +15,29 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <style type="text/css">
 .body{
-width: 550px !important;
+	width: auto;
 } 
+.form_table{
+	margin: auto;
+}
 .form_table th {
-width: 145px;
+	width: 100px !important;
 }
 #login_btn{
-margin-top: 20px;
+	margin-top: 20px;
 }
 .btn_sub{
-margin-left: 170px;
+	margin-left: 140px;
 }
-
+.article{
+	margin-left: auto;
+	margin-right: auto; 
+	width: 520px;
+	padding: 30px 30px;
+    margin-top: 200px;
+    margin-bottom: -200px;
+    border: 1px solid #DBDBDB
+}
 </style>
 <script type="text/javascript">
 function up_em_echeck(){
@@ -84,7 +95,8 @@ function sub(){
 		<jsp:include page="../inc/header.jsp" />
 		<div class="clear"></div>
 		<div class="body">
-			<h1 class="UpdateMail h1">이메일 변경</h1><br>
+		<article class="article">
+			<h1 class="UpdateMail h1"><img src="img/email.png" height="27px" width="27px" style="margin-right:10px;">이메일 변경</h1><br>
 			<form action="./MemberEmailUpdateAction.me" class="form" name="fr" id="update" method="post" enctype="multipart/form-data">
 			<table class="form_table">
 				<input type="hidden" name="id" id="id" value="<%=mb.getId()%>" readonly>
@@ -119,6 +131,7 @@ function sub(){
 					<input type="button" value="취소" onclick="location.href='./Main.me' " class="btn">
 				</div>
 			</form>
+			</article>
 		</div>
 		<jsp:include page="../inc/footer.jsp" />
 	</div>
