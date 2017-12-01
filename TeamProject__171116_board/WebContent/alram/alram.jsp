@@ -15,7 +15,7 @@
 $(document).ready(function(){
 	$('.plus').parent().next().hide();
 	$('.plus').click(function(){$(this).parent().next().slideToggle('slow');});
-	$('.what').mouseover(function(){$(this).css('text-decoration','underline');});
+// 	$('.what').mouseover(function(){$(this).css('text-decoration','underline');});
 	$('.what').mouseleave(function(){$(this).css('text-decoration','none');});
 });
 </script>
@@ -66,7 +66,7 @@ list1 = alram.getsysAlram(name);
 }else if(list.get(i).getType()==1) {%><img class="imgs" src ="./img/red.png"><%
 }else{
 }%>
-<%=list.get(i).getTarget()%><%=list.get(i).getContent()%>
+<%=list.get(i).getTarget()%> : <%=list.get(i).getContent()%>
 <a href="Sysalram.ar?num=<%=list.get(i).getNum()%>">
 <img src="./img/x.png" style ="width:20px;background-color: black;cursor:pointer;"></a><br>
 <%String timestr = list.get(i).getDate().toString(); %>
