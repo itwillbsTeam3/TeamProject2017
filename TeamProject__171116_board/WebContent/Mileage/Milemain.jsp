@@ -73,7 +73,7 @@ function mil_charge() {
 				</tr>
 				<tr>
 				<th>코드입력</th>
-				<td><input type="text" name="m_num" id="m_num" placeholder="ex)예시 번호[하이픈('-'포함')] : 1111-1111-111111111" size="50"></td>
+				<td><input type="text" name="m_num" id="m_num" placeholder="ex)예시 번호[하이픈('-'포함')] : 1111-1111-111111111" size="55"></td>
 				</tr>
 					<tr class="form_row">
 						<th class="form_col">금액선택</th>
