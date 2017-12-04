@@ -1,5 +1,5 @@
 <Context>
-	<Resource 
+<!-- 	<Resource 
 		name="jdbc/MysqlDB"
 		auth="Container"
 		type="javax.sql.DataSource"
@@ -7,5 +7,14 @@
 		url="jdbc:mysql://localhost:3306/bnb"
 		username="bnbid"
 		password="bnbpass"
-	/>
+	/> -->
+	<Resource 
+		name="jdbc/MysqlDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/itwillbs7"
+		username="itwillbs7"
+		password="itwillbs8030909"
+	/> 
 </Context>

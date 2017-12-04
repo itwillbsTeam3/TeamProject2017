@@ -92,7 +92,7 @@ $(document).ready(function(){
 <input type="button" value="인증번호재발급" class="regogo" style="display: none;"></div>
 
 <!-- Cafe24 올릴시 주석처리 할 것! -->
-<span class="in" style="display: none;"><%=y%></span>
+<%-- <span class="in" style="display: none;"><%=y%></span> --%>
 
 </div>
 
