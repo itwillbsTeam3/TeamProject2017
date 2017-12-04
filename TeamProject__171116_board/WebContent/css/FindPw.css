@@ -19,6 +19,10 @@
 	margin-bottom: 20px;
 }
 /* 가입정보 */
+
+#notice{
+	margin-top: 30px;
+}
 .btn{
 	display: inline-block;
 	border-radius: 10px;
@@ -31,10 +35,19 @@
 	height: 40px;
 	transform: translateY(-3px);
 	font-weight: bold;
+	font-size: 17px;
 }
 /* button 전체 */
+.btn:hover {
+	transform: translateY(-3px);
+}
 .btn_submit{
 	background-color: #FF5A5F;
 	margin-left: 140px;
 }
 /* 회원가입 btn */
+.btn_login_Pwd{
+	margin-left:220px;
+	background-color: #FF5A5F;
+	
+}

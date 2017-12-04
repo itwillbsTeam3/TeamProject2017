@@ -29,10 +29,12 @@
 	margin: 5px;
 	color: #333;
 	height: 40px;
-	transform: translateY(-3px);
-		font-weight: bold;
+	font-weight: bold;
 }
 /* button 전체 */
+.btn:hover {
+	transform: translateY(-3px);
+}
 .btn_submit{
 	background-color: #FF5A5F;
 	margin-left: 140px;
