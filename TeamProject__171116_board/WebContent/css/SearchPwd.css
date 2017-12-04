@@ -9,6 +9,7 @@
 .body{
 	width: 300px;
 	height: 600px;
+	line-height: 35px;
 }
 /* 전체 div */
 
@@ -17,6 +18,12 @@
 	font-size: 27px;
 }
 /* 아이디 찾기 */
+
+.Pwd_h2_td{
+	height: 60px;
+	
+	
+}
 .find_table{
 	    box-shadow: 0 22px 33px rgba(0, 0, 0, 0.2);
 }
@@ -34,6 +41,12 @@
 	font-size: 1em;
 }
 /* th style none */
+
+.Pwd_btn_td{
+	height: 80px;
+	
+}
+/* btn td */
 #notice input{
 	margin-left: 10px;
 	border : 0;
@@ -44,6 +57,8 @@
 	width: 123px;
 }
 /* table input */
+
+
 .btn{
 	display: inline-block;
 	border-radius: 10px;
@@ -54,6 +69,8 @@
 	margin: 5px;
 	color: #333;
 	height: 40px;
+	transform: translateY(-3px);
+		font-weight: bold;
 }
 /* button 전체 */
 .submit{

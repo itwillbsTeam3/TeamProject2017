@@ -10,6 +10,7 @@
 	line-height: 2em;
 	width: 500px;
 	height: 600px;
+	padding-top: 100px;
 }
 /* 전체 div */
 .body h1{
@@ -28,6 +29,8 @@
 	margin: 5px;
 	color: #333;
 	height: 40px;
+	transform: translateY(-3px);
+		font-weight: bold;
 }
 /* button 전체 */
 .btn_submit{
@@ -35,3 +38,6 @@
 	margin-left: 140px;
 }
 /* 회원가입 btn */
+.btn_login2{
+	margin-left: 200px;
+}

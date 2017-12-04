@@ -67,6 +67,7 @@
 	color: #333;
 	height: 40px;
 	font-size: 17px;
+	font-weight: bold;
 }
 /* 로그인버튼 */
 .btn_cancel {
@@ -74,6 +75,7 @@
 	height: 40px;
 	font-size: 1.2em;
 	margin-left: 29px;
+	font-weight: bold;
 }
 /* 취소버튼 */
 .login_btn_find {
