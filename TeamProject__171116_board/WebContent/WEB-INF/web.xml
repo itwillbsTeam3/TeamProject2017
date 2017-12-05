@@ -81,14 +81,17 @@
     <servlet-name>ChatFrontController</servlet-name>
     <url-pattern>*.ch</url-pattern>
   </servlet-mapping>
+
      <servlet>
     <servlet-name>HistoryFrontController</servlet-name>
     <servlet-class>net.history.action.HistoryFrontController</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>HistoryFrontController</servlet-name>
     <url-pattern>*.hi</url-pattern>
   </servlet-mapping>
+
   <resource-ref>
     <description>db</description>
     <res-ref-name>jdbc/MysqlDB</res-ref-name>
