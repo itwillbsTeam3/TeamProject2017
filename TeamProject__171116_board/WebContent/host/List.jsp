@@ -14,8 +14,9 @@
 
 <link rel = "stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+<script> var jb = jQuery.noConflict(); </script>
 <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="./js/jquery-3.2.1.js"></script>
 <%
 request.setCharacterEncoding("utf-8");
 HostingBean hb = new HostingBean();
@@ -126,12 +127,11 @@ DecimalFormat dc = new DecimalFormat("#,###");
       }
     </script>
      <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap">
     </script>
     <script>
-$(function(){
-	var disabledDays = ["2017-11-2","2017-11-3","2017-11-4","2017-11-5"];
-	$(".datepicker").datepicker({
+jb(function(){
+	jb(".datepicker").datepicker({
 		showOtherMonths:true,
 		selectOtherMonths:true,
 		dateFormat : "yy-mm-dd",
@@ -149,11 +149,9 @@ $(function(){
  	function noBefore(date){
 		
  		var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
- 		for (i = 0; i < disabledDays.length; i++) {
- 			if($.inArray(y + '-' +(m+1) + '-' + d,disabledDays) != -1 || date < new Date()) {
+ 			if(date < new Date()) {
  				return [false];
  				}
- 		}
  		return [true];
  	}
 });
@@ -272,22 +270,22 @@ if((String)request.getAttribute("address")!=null){
 %>
 <div style="text-align : center;">
 
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=starNum%>&address=<%=address%>'" class="reviewBtn btn1">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=starNum%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn1">
 <img src="./img/arrow/l.png" width="30px" style="cursor: pointer;">
 </span>
 <%if(pageNum==1) {%>
 <%}else{ %>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum-1%>&address=<%=address%>'" class="reviewBtn btn2">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum-1%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn2">
 <img src="./img/arrow/ll.png" width="30px" style="cursor: pointer;">
 </span>
 <%} %>
 <%if(pageNum==pagesize){ %>
 <%}else{ %>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum+1%>&address=<%=address%>'" class="reviewBtn btn3">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum+1%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn3">
 <img src="./img/arrow/r.png" width="30px" style="cursor: pointer;">
 </span>
 <%}%>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=endNum%>&address=<%=address%>'" class="reviewBtn btn4">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=endNum%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn4">
 <img src="./img/arrow/rr.png" width="30px" style="cursor: pointer;">
 </span>
 </div>
