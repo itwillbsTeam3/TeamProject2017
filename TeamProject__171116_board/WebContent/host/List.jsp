@@ -270,22 +270,22 @@ if((String)request.getAttribute("address")!=null){
 %>
 <div style="text-align : center;">
 
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=starNum%>&address=<%=address%>'" class="reviewBtn btn1">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=starNum%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn1">
 <img src="./img/arrow/l.png" width="30px" style="cursor: pointer;">
 </span>
 <%if(pageNum==1) {%>
 <%}else{ %>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum-1%>&address=<%=address%>'" class="reviewBtn btn2">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum-1%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn2">
 <img src="./img/arrow/ll.png" width="30px" style="cursor: pointer;">
 </span>
 <%} %>
 <%if(pageNum==pagesize){ %>
 <%}else{ %>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum+1%>&address=<%=address%>'" class="reviewBtn btn3">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=pageNum+1%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn3">
 <img src="./img/arrow/r.png" width="30px" style="cursor: pointer;">
 </span>
 <%}%>
-<span onclick="location.href='./HostingListAction.ho?pageNum=<%=endNum%>&address=<%=address%>'" class="reviewBtn btn4">
+<span onclick="location.href='./HostingListAction.ho?pageNum=<%=endNum%>&address=<%=address%>&checkin=<%if(request.getParameter("checkin")==null){}else{%><%=request.getParameter("checkin")%><%}%>&checkout=<%if(request.getParameter("checkout")==null){}else{%><%=request.getParameter("checkout")%><%}%>'" class="reviewBtn btn4">
 <img src="./img/arrow/rr.png" width="30px" style="cursor: pointer;">
 </span>
 </div>
