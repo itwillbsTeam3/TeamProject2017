@@ -593,6 +593,21 @@ int endNum = pagesize;
 						<%=mb.getSelfinfo() %> 
 					</div>
 				</div>
+				<div id="host_intro_wrap">
+				<span>위치정보</span><br>
+				<div id="host_introduce">
+						<%String strtemp[] = mb.getAddress().split(" ");
+		  				  String add = "" ;
+						%>
+						<%for(int i = 0 ; i < strtemp.length;i++){
+							add  = add +" " + strtemp[i];
+							if(strtemp[i].charAt(strtemp[i].length()-1)=='구'){
+								break;
+							}
+						}%>
+						<%=add%>에 위치해 있습니다.
+					</div>
+				</div>
 <!-- 		버튼위치 조정 필요합니다 -->
 <!-- 		<div>
             <input type="button" value="수정" onclick="location.href=''" class="btn">
