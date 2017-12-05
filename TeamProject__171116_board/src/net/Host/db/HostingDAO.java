@@ -559,6 +559,40 @@ public class HostingDAO {
 		}
 		return size;
 	}
+	public int gethostingcount(String checkin,String checkout){
+		System.out.println("날짜만 으로 count");
+		ArrayList<HostingBean> hostList = new ArrayList<HostingBean>();
+    	int size = 0;
+    	try {
+    		con = getConnection();
+    		sql="select count(*) from hosting where oc = 1 and (checkin <= ? and checkout > ?) or (checkin < ? and checkout >= ?) or(checkin>=? and checkout<=?));";
+    		pstmt = con.prepareStatement(sql);
+    		rs = pstmt.executeQuery();
+    		if(rs.next()){
+    			size = rs.getInt("count(*)");
+    		}
+        	pstmt = con.prepareStatement(sql);
+        	pstmt.setString(1, checkin);
+			pstmt.setString(2, checkin);
+			pstmt.setString(3, checkout);
+			pstmt.setString(4, checkout);
+			pstmt.setString(5, checkin);
+			pstmt.setString(6, checkout);
+			System.out.println(sql);
+        	rs = pstmt.executeQuery(); 
+			if(rs.next()){
+				size = rs.getInt("count(*)");
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException se){}
+			if(con!=null) try{con.close();}catch(SQLException se){}// 마무리 객체닫기
+		}
+		return size;
+	}
 	
 }
 

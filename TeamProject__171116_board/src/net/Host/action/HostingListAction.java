@@ -19,15 +19,21 @@ public class HostingListAction implements Action{
 		int size = 9;
 		int start;
 		int count = 0;
+		
 		String address;
 		String checkin = null;
 		String checkout = null;
+		
+		HostingDAO htdao = new HostingDAO();
+		ArrayList<HostingBean> list = new ArrayList<HostingBean>();
+		
 		pageNum = Integer.parseInt(request.getParameter("pageNum"));
 		//System.out.println(pageNum);
 		start = (pageNum-1)*size; 
 		if(request.getParameter("address")==null){
 			address = "";
 			request.setAttribute("address","부산 진구 부전동");
+			count = htdao.gethostingcount();
 		}
 		else{
 			address = request.getParameter("address");
@@ -41,16 +47,23 @@ public class HostingListAction implements Action{
 				checkout = request.getParameter("checkout");
 			}
 		}
-		HostingDAO htdao = new HostingDAO();
-		ArrayList<HostingBean> list = new ArrayList<HostingBean>();
 		
-		if(checkin==null && checkout==null ){
-		System.out.println("날짜안드감");
+		
+		if(checkin==null && checkout==null && request.getParameter("address")!=null){
+		System.out.println("날짜없고 주소값 있음");
 		list = htdao.getcontentList(start, size, address);
 		count = htdao.gethostingcount(address);
 		}
+		else if(request.getParameter("address")==null && checkin==null && checkout==null){
+			System.out.println("날짜와 주소가 둘다 없음");	
+			count = htdao.gethostingcount();
+		}
+		else if(request.getParameter("address")==null && checkin!=null && checkout!=null){
+			System.out.println("주소는 없고 날짜만 있음");	
+			count = htdao.gethostingcount(checkin,checkout);
+		}
 		else{
-		System.out.println("날짜드감");
+		System.out.println("날짜와 주소가 다있음");
 		list = htdao.getcontentList(start,size,address,checkin,checkout);
 		count = htdao.gethostingcount(address,checkin,checkout);
 		}
@@ -72,7 +85,7 @@ public class HostingListAction implements Action{
 		System.out.println(address);
 		request.setAttribute("address", address);
 		
-		
+		request.setAttribute("count", count);
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("./host/List.jsp");

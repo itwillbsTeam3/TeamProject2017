@@ -207,7 +207,7 @@ jb(function(){
 				</form>
 			</div>
 			<div id="bookingtext">
-				<div id="bookingtext_left">예약</div>
+				<div id="bookingtext_left">예약 (조건에 해당하는 호스팅이 <%=request.getAttribute("count")%>건 검색되었습니다.)</div>
 				<!-- <div id="bookingtext_right">전체보기<img alt="" src="./img/right.png" width="17px"></div> -->
 			</div>
 			<div class="clear"></div>
