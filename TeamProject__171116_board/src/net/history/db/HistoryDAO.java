@@ -48,14 +48,59 @@ public class HistoryDAO {
 		}
 	}
 	
-	public void insertHistory(int num){
+	public void insertHistory(int num, String host_id, String guest_id){
 			
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
+			int alram = 0;
+			String sql = "";
 			try{
 			con = getConnection();
-			String sql = "update booking set flag=? where num=?" ;
+			
+			//---------------------------------------------------------
+			sql = "select max(num) from alram";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				alram = rs.getInt("max(num)")+1;
+			}
+			else{
+				alram = 1;
+			}
+			System.out.println(alram+"1");
+			sql = "insert into alram values(?,?,?,?,?,now(),0,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, alram);
+			pstmt.setString(2, host_id);//받는 사람 (주인)
+			pstmt.setInt(3, 3);
+			pstmt.setString(4, guest_id);//보내는 사람
+			pstmt.setString(5, "sys");
+			pstmt.setInt(6, 0);
+			pstmt.setString(7,"\""+host_id+"님에게 "+guest_id+"님이 예약 취소를 요청하셨습니다."+"\"");
+			pstmt.executeUpdate();
+			//---------------------------------------------------------
+			sql = "select max(num) from alram";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				alram = rs.getInt("max(num)")+1;
+			}
+			else{
+				alram = 1;
+			}
+			sql = "insert into alram values(?,?,?,?,?,now(),0,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, alram);
+			pstmt.setString(2, guest_id);//받는 사람 (손님)
+			pstmt.setInt(3, 3);
+			pstmt.setString(4, host_id);//보내는 사람
+			pstmt.setString(5, "sys");
+			pstmt.setInt(6, 0);
+			pstmt.setString(7,"\""+guest_id+"님에게 "+host_id+"님에게 예약 취소요청 되셨습니다."+"\"");
+			pstmt.executeUpdate();
+			
+			sql = "update booking set flag=? where num=?" ;
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1,3);
 			pstmt.setInt(2,num);

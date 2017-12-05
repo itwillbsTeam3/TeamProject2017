@@ -19,15 +19,15 @@ public class HistorydeleteAction implements Action{
 	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse reponse) throws Exception {
-		System.out.println("컨텐트 처리 페이지");
 		request.setCharacterEncoding("UTF-8");
 		reponse.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = reponse.getWriter();
 		
 		HttpSession session = request.getSession();
 		String id=(String)session.getAttribute("id");
+		String host_id=request.getParameter("host_id");
+		String guest_id=request.getParameter("guest_id");
 		int num = Integer.parseInt(request.getParameter("num"));
-		int Rnum=0;
 		int flag = Integer.parseInt(request.getParameter("flag"));
 		BookingBean hb = new BookingBean();
 		HistoryBean htb = new HistoryBean();
@@ -42,26 +42,15 @@ public class HistorydeleteAction implements Action{
 			return null;
 		}
 		if(flag==3){//예약자가 예약취소 신청시
-			System.out.println(num);
-			hdao.insertHistory(num);
-//			int price =hb.getPrice();
-//			String host_id=hb.getHost_id();
-//			String guest_id=hb.getGuest_id();
-//			//마일리지 게스트에게 가격만큼 추가
-//			htb.setHost_id("host_id");
-//			htb.setGuest_id("guest_id");
-//			htb.setFlag(0);
-//			htb.setPrice(price);
-//			//환불내역에 넣는 dao호출
-//			Rnum=rdao.appRefund(htb);
-//			
+			hdao.insertHistory(num,host_id,guest_id);
+			
 		}else if(flag==4){ //호스트가 예약취소 승인시
 			hb=hdao.getHistory(num);
 			int price =hb.getPrice();
 			System.out.println(price);
-			String host_id=hb.getHost_id();
+			host_id=hb.getHost_id();
 			System.out.println(host_id);
-			String guest_id=hb.getGuest_id();
+			guest_id=hb.getGuest_id();
 			System.out.println(guest_id);
 			
 			//마일리지 호스트에서 가격만큼 차감

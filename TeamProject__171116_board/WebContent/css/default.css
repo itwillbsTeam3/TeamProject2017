@@ -50,7 +50,6 @@ textarea{
 
 #maintext>span {
 	color: red;
-	font-family: fantasy;
 	padding-left: 5px;
 }
 
@@ -194,10 +193,10 @@ textarea{
 }
 
 #bookingtext_right {
-	float: right;
-	font-size: 17px;
-	padding-top: 15px;
-	margin-right: 30px;
+    float: right;
+    font-size: 21px;
+    padding-top: 12px;
+    margin-right: 0px;
 }
 
 .mainslider_star {
@@ -264,7 +263,11 @@ textarea{
 	height: 320px;
 	width: 244px;
 }
-
+.mainbooking_img:hover{
+	height: 320px;
+	width: 244px;
+    box-shadow: 4px 4px 5px #999;
+}
 .mainbooking_img>img {
 	width: 244px;
 	height: 320px;

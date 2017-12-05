@@ -46,7 +46,7 @@ $(document).ready(function(){
 			<%
 				for (int i = 0; i < hb.size(); i++) {
 			%>
-		<form action="./HistorydeleteAction.hi?num=<%=hb.get(i).getNum() %>&flag=3" method="post">
+		<form action="./HistorydeleteAction.hi?num=<%=hb.get(i).getNum() %>&host_id=<%=hb.get(i).getHost_id() %>&guest_id=<%=hb.get(i).getGuest_id()%>&flag=3" method="post">
 			<tr>
 				<td><%=a = i + 1%></td>
 				<td><%=hb.get(i).getSubject()%></td>
