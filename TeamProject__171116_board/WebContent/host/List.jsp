@@ -145,7 +145,6 @@ jb(function(){
 		showMonthAfteryear:true,
 		yearSuffix:'년',
 		beforeShowDay: noBefore
-		
 	});
  	function noBefore(date){
 		
