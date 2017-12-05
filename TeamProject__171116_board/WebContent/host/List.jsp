@@ -16,7 +16,7 @@
 <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
 <script> var jb = jQuery.noConflict(); </script>
 <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="./js/jquery-3.2.1.js"></script>
 <%
 request.setCharacterEncoding("utf-8");
 HostingBean hb = new HostingBean();
