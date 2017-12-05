@@ -89,6 +89,7 @@ public class HostingListAction implements Action{
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("./host/List.jsp");
+		
 		return forward;
 	}
 
