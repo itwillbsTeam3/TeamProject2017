@@ -14,6 +14,7 @@
 
 <link rel = "stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+<script> var jb = jQuery.noConflict(); </script>
 <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <%
@@ -126,12 +127,12 @@ DecimalFormat dc = new DecimalFormat("#,###");
       }
     </script>
      <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM56gRYD0iGeLl1iWXFpAuiqiWM9BBK7w&callback=initMap">
     </script>
     <script>
-$(function(){
-	var disabledDays = ["2017-11-2","2017-11-3","2017-11-4","2017-11-5"];
-	$(".datepicker").datepicker({
+jb(function(){
+	
+	jb(".datepicker").datepicker({
 		showOtherMonths:true,
 		selectOtherMonths:true,
 		dateFormat : "yy-mm-dd",
@@ -149,11 +150,9 @@ $(function(){
  	function noBefore(date){
 		
  		var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
- 		for (i = 0; i < disabledDays.length; i++) {
- 			if($.inArray(y + '-' +(m+1) + '-' + d,disabledDays) != -1 || date < new Date()) {
+ 			if(date < new Date()) {
  				return [false];
  				}
- 		}
  		return [true];
  	}
 });
