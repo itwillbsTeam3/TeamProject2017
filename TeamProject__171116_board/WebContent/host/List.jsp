@@ -131,7 +131,6 @@ DecimalFormat dc = new DecimalFormat("#,###");
     </script>
     <script>
 jb(function(){
-	
 	jb(".datepicker").datepicker({
 		showOtherMonths:true,
 		selectOtherMonths:true,
