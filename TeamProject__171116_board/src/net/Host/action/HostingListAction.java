@@ -55,11 +55,13 @@ public class HostingListAction implements Action{
 		count = htdao.gethostingcount(address);
 		}
 		else if(request.getParameter("address")==null && checkin==null && checkout==null){
+			list = htdao.getcontentList(start, size, address);
 			System.out.println("날짜와 주소가 둘다 없음");	
 			count = htdao.gethostingcount();
 		}
 		else if(request.getParameter("address")==null && checkin!=null && checkout!=null){
 			System.out.println("주소는 없고 날짜만 있음");	
+			list = htdao.getcontentList(start,size,address,checkin,checkout);
 			count = htdao.gethostingcount(checkin,checkout);
 		}
 		else{
