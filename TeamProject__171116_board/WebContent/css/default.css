@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 * {
 	margin: 0;
 	padding: 0;
@@ -50,7 +51,6 @@ textarea{
 
 #maintext>span {
 	color: red;
-	font-family: fantasy;
 	padding-left: 5px;
 }
 
