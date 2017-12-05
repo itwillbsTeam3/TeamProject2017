@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/FindId.css?v=3" rel="stylesheet" type="text/css">
+<link href="css/FindId.css?v=4" rel="stylesheet" type="text/css">
 <title>아이디 찾기</title>
 </head>
 <%
@@ -32,7 +32,7 @@
    	<h1><span style="font-weight:bold; color:red;"><%=mb.getId()%></span>
    	(가입일 : <% String reg = mb.getReg_date().toString();%><%=reg.substring(0,reg.length()-10)%>)</h1>
 	<div id="notice">
-	<input type="button" value="로그인" onclick="location.href='./Main.me'" class="btn">
+	<input type="button" value="로그인" onclick="location.href='./Main.me'" class="btn btn_login2">
 	</div>
    <%
    }else{

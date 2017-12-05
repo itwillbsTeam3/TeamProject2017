@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/default.css?v=1" rel="stylesheet" type="text/css">
-<link href="css/FindPw.css?v=2" rel="stylesheet" type="text/css">
+<link href="css/FindPw.css?v=3" rel="stylesheet" type="text/css">
 <title>비밀번호 찾기</title>
 </head>
 <%
@@ -35,7 +35,7 @@
 	<h1><span style="font-weight:bold; color:red;"><%=mb.getId() %></span> 회원님의 비밀번호는 아래와 같습니다.</h1>
 	<h1>(비밀번호 : <%=pass.replaceAll("(?<=.{2}).", "*") %>)</h1>
 	<div id="notice">
-	<input type="button" class="btn btn_submit" value="로그인" onclick="location.href='./MemberLogin.me'">
+	<input type="button" class="btn btn_login_Pwd" value="로그인" onclick="location.href='./MemberLogin.me'">
 	<%
 	}else{
 	%>

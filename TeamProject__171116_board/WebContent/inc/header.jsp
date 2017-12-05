@@ -13,7 +13,7 @@
 	pageEncoding="UTF-8"%>
 <!-- <script src ="js/jquery-3.2.1.min.js"></script> -->
 <link href="css/Login.css?v=12" rel="stylesheet" type="text/css">
-<link href="css/header.css?v=6" rel="stylesheet" type="text/css">
+<link href="css/header.css?v=8" rel="stylesheet" type="text/css">
 <style>
 .dropdown_c {
     position: relative;
@@ -154,11 +154,11 @@
 			<span class="dropdown_c">
 				<button class="login">	
 					<%if(chatpopup != 0){%>
-					<table><tr><th>
+					<table><tr><th class="header_center">
 					<img src="./img/c3.png" style="width:15px; height:15px;">
 					</th></tr>
 					<%}else{%>
-					<table><tr><th>
+					<table><tr><th class="header_center">
 					<img src="./img/c1.png" style="width:15px; height:15px;">
 					</th></tr>
 					<%} %>
@@ -236,11 +236,11 @@
 			<span class="dropdown_c">
 				<button class="login">	
 					<%if(chatpopup != 0){%>
-					<table><tr><th>
+					<table><tr><th class="header_center">
 					<img src="./img/c3.png" style="width:15px; height:15px;">
 					</th></tr>
 					<%}else{%>
-					<table><tr><th>
+					<table><tr><th class="header_center">
 					<img src="./img/c1.png" style="width:15px; height:15px;">
 					</th></tr>
 					<%} %>
