@@ -16,7 +16,7 @@ public class HostingListAction implements Action{
 		request.setCharacterEncoding("utf-8");
 		
 		int pageNum;
-		int size = 2;
+		int size = 9;
 		int start;
 		int count = 0;
 		String address;
